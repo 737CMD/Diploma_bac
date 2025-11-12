@@ -84,7 +84,8 @@ ic_hex_move_node 39 pnt.02
 ic_hex_move_node 41 pnt.01 
 ic_hex_move_node 21 pnt.04
 ic_hex_move_node 19 pnt.03
-ic_geo_set_part curve {crv.00 crv.01 crv.02 crv.03} FARFIELD 0
+ic_geo_set_part curve {crv.00 crv.01 crv.03} INLET 0
+ic_geo_set_part curve {crv.02} OUTLET 0
 
 ic_hex_set_edge_projection 32 40 0 1 crv1
 ic_hex_set_edge_projection 33 42 0 1 crv0 
@@ -202,9 +203,9 @@ ic_hex_auto_split_edge 32 33
 ic_hex_auto_split_edge 32 40
 }
 
-ic_hex_create_mesh WALL GEOM SOLID FARFIELD proj 2 dim_to_mesh 2
+ic_hex_create_mesh WALL GEOM SOLID proj 2 dim_to_mesh 2
 
-ic_hex_write_file ./hex.uns WALL GEOM SOLID FARFIELD proj 2 dim_to_mesh 2 no_boco
+ic_hex_write_file ./hex.uns WALL GEOM SOLID proj 2 dim_to_mesh 2 no_boco
 ic_uns_load ./hex.uns 3 0 {} 1
 ic_exec {E:/Program files/ANSYS Inc/v221/icemcfd/win64_amd/icemcfd/output-interfaces/fluent6} -dom hex.uns -dim2d geom.msh
 
