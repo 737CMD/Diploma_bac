@@ -121,7 +121,7 @@ ic_hex_set_mesh 11 44 n $nr2 h1 0.0 h2 linked 44 32 r1 1 r2 1.05 lmax 0 geo2 loc
 
 ic_hex_set_mesh 32 33 n $nyA h1 0.0 h2 0.0 r1 2 r2 2 lmax 0 default unlocked
 
-ic_hex_set_mesh 19 46 n $nr2 h1rel 0.0 h2rel linked 45 40 r1 2 r2 1.05 lmax 0 geo2 locked
+ic_hex_set_mesh 19 46 n $nr2 h1rel 0.0 h2rel linked 46 34 r1 2 r2 1.05 lmax 0 geo2 locked
 ic_hex_set_mesh 32 40 n $nxA h1rel 0.0 h2rel 0.0 r1 2 r2 2 lmax 0 default unlocked
 
 set tol 1e-08
@@ -154,7 +154,8 @@ ic_hex_set_edge_projection 32 40 0 1 crv0
 ic_hex_set_edge_projection 33 40 0 1 crv0
 ic_hex_place_node 34 curve:crv.02 0.5
 ic_hex_set_mesh 49 40 n $nr1 h1 0.0 h2 $dyWall r1 2 r2 1.02 lmax 0 geo2 unlocked
-ic_hex_set_mesh 50 34 n $nr1 h1 0.0 h2 linked 34 46 r1 2 r2 1.05 lmax 0 geo2 unlocked
+ic_hex_set_mesh 46 34 n $nr1 h1 0.0 h2 0.01 r1 2 r2 1.02 lmax 0 default locked
+ic_hex_set_mesh 50 34 n $nr1 h1 0.0 h2 linked 34 46 r1 2 r2 1.02 lmax 0 default unlocked
 ic_hex_set_mesh 21 50 n $nr2 h1 0.0 h2 linked 50 34 r1 2 r2 1.05 lmax 0 geo2 locked
 ic_hex_set_mesh 48 49 n $nxA h1 0.0 h2 linked 40 32 r1 1.05 r2 1.05 lmax 0 geo2 unlocked
 ic_hex_set_mesh 44 45 n $nxA h1 0.0 h2 linked 40 32 r1 1.05 r2 1.05 lmax 0 geo2 unlocked
@@ -175,10 +176,10 @@ ic_hex_set_node_location x [expr -0.5*$chord] y [expr 0.5*$chord] z 0 -csys glob
 
 if {$dy_tail < $tol} {
 ic_hex_get_node_location {  49  } _tempx _tempy _tempz
-ic_hex_set_node_location y {20} -csys global node_numbers {{  50  }}
-ic_hex_set_node_location y {5} -csys global node_numbers {{  34  }}
+ic_hex_set_node_location y {15} -csys global node_numbers {{  50  }}
+ic_hex_set_node_location y {0} -csys global node_numbers {{  34  }}
 ic_hex_get_node_location {  45  } _tempx _tempy _tempz
-ic_hex_set_node_location y {$_tempy} -csys global node_numbers {{  46  }}
+ic_hex_set_node_location y {-15} -csys global node_numbers {{  46  }}
 }
 
 set sp1_low  [ic_hex_get_edge_param 11 39 sp1a]
