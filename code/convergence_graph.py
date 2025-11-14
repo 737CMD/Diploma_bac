@@ -3,7 +3,7 @@ import numpy as np
 import os
 from matplotlib.ticker import MultipleLocator
 
-def plot_convergence(filename):
+def plot_convergence(filename, iter = 2000):
     # Получаем текущую директорию скрипта
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
@@ -42,10 +42,8 @@ def plot_convergence(filename):
     # Находим максимальный номер итерации
     max_iteration = max(iterations)
     
-    # Определяем диапазон последних 2000 итераций по номерам
-    start_iteration = max_iteration - 2000
+    start_iteration = max_iteration - iter
     
-    # Фильтруем данные, оставляя только последние 2000 итераций по номеру
     filtered_indices = [i for i, iter_num in enumerate(iterations) if iter_num >= start_iteration]
     
     filtered_iterations = [iterations[i] for i in filtered_indices]
@@ -110,7 +108,7 @@ def plot_convergence(filename):
     ax1.axhline(y=avg_cya, color='r', linestyle='--', linewidth=1, 
                 label=f'Среднее Cya: {avg_cya:.6f}')
     ax1.set_ylabel('Cya')
-    ax1.set_title(f'Сходимость Cya за последние 2000 итераций (с {filtered_iterations[0]} по {filtered_iterations[-1]})')
+    ax1.set_title(f'Сходимость Cya за последние {iter} итераций (с {filtered_iterations[0]} по {filtered_iterations[-1]})')
     ax1.legend(loc='best')
     
     # Настраиваем сетку для Cya
@@ -124,7 +122,7 @@ def plot_convergence(filename):
                 label=f'Среднее Cxa: {avg_cxa:.6f}')
     ax2.set_xlabel('Номер итерации')
     ax2.set_ylabel('Cxa')
-    ax2.set_title(f'Сходимость Cxa за последние 2000 итераций (с {filtered_iterations[0]} по {filtered_iterations[-1]})')
+    ax2.set_title(f'Сходимость Cxa за последние {iter} итераций (с {filtered_iterations[0]} по {filtered_iterations[-1]})')
     ax2.legend(loc='best')
     
     # Настраиваем сетку для Cxa
@@ -143,4 +141,4 @@ def plot_convergence(filename):
     plt.show()
 
 # Пример использования
-plot_convergence("2.83deg-report.out")
+plot_convergence("naca2.92deg-report.out", iter = 1000)

@@ -5,7 +5,7 @@ ic_set_meshing_params global 0 gttol $toler gtrel 1
 ic_delete_elements family SOLID no_undo 1
 ic_delete_geometry curve all 1 1
 ic_delete_geometry point all 1 1
-ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/profiles_base/naca0012icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
+ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/profiles_base/rae2822icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
 
 ic_boco_solver 
 ic_boco_clear_icons 
@@ -26,6 +26,9 @@ ic_comment "Radial far"
 set nr2 80
 ic_comment "Along x - farfield"
 set nxFar 120
+
+ic_comment "gradient of wake block"
+set w_grad 0.1
 
 ic_point crv_par WALL pnt.05 {crv0 1}
 ic_point crv_par WALL pnt.06 {crv1 1}
@@ -176,10 +179,10 @@ ic_hex_set_node_location x [expr -0.5*$chord] y [expr 0.5*$chord] z 0 -csys glob
 
 if {$dy_tail < $tol} {
 ic_hex_get_node_location {  49  } _tempx _tempy _tempz
-ic_hex_set_node_location y {15} -csys global node_numbers {{  50  }}
+ic_hex_set_node_location y [expr $w_grad * $L_hor] -csys global node_numbers {{  50  }}
 ic_hex_set_node_location y {0} -csys global node_numbers {{  34  }}
 ic_hex_get_node_location {  45  } _tempx _tempy _tempz
-ic_hex_set_node_location y {-15} -csys global node_numbers {{  46  }}
+ic_hex_set_node_location y [expr -1 *$w_grad * $L_hor] -csys global node_numbers {{  46  }}
 }
 
 set sp1_low  [ic_hex_get_edge_param 11 39 sp1a]
@@ -194,12 +197,13 @@ ic_hex_mark_blocks unmark
 ic_hex_mark_blocks superblock 4
 ic_hex_change_element_id VORFN
 
+ic_hex_create_composite {crv0 crv1}
+ic_hex_set_edge_projection 32 33 0 1 crv0
+
 ic_comment "Otherwise spacings may be linked incorrectly"
 if {$dy_tail > $tol} {
 } else {
 ic_hex_auto_split_edge 33 40
-ic_hex_create_composite {crv0 crv1}
-ic_hex_set_edge_projection 32 33 0 1 crv0
 ic_hex_auto_split_edge 32 33
 ic_hex_auto_split_edge 32 40
 }
