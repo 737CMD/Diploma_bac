@@ -5,7 +5,7 @@ ic_set_meshing_params global 0 gttol $toler gtrel 1
 ic_delete_elements family SOLID no_undo 1
 ic_delete_geometry curve all 1 1
 ic_delete_geometry point all 1 1
-ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/profiles_base/rae2822icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
+ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/profiles_base/ch14_icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
 
 ic_boco_solver 
 ic_boco_clear_icons 
@@ -17,13 +17,13 @@ set L_hor_rel 100
 set dyWall 1e-06
 
 ic_comment "Along airfoil"
-set nxA 130
+set nxA 100
 ic_comment "Across airfoil"
 set nyA 40
 ic_comment "Radial close"
-set nr1 200
+set nr1 180
 ic_comment "Radial far"
-set nr2 80
+set nr2 70
 ic_comment "Along x - farfield"
 set nxFar 120
 
