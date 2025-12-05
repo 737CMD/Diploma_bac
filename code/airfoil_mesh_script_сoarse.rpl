@@ -14,21 +14,21 @@ ic_undo_group_end
 ic_comment "relative sizes"
 set R_rel 50
 set L_hor_rel 100
-set dyWall 1e-06
+set dyWall 2e-06
 
-ic_comment "Along airfoil"
-set nxA 100
-ic_comment "Across airfoil"
+ic_comment "Along airfoil *0.9"
+set nxA 90 
+ic_comment "Across airfoil *0.4"
 set nyA 40
-ic_comment "Radial close"
-set nr1 180
-ic_comment "Radial far"
-set nr2 70
-ic_comment "Along x - farfield"
-set nxFar 120
+ic_comment "Radial close *1"
+set nr1 100 
+ic_comment "Radial far *0.33"
+set nr2 33 
+ic_comment "Along x - farfield *0.8"
+set nxFar 80 
 
 ic_comment "gradient of wake block"
-set w_grad 0.1
+set w_grad 0.07
 
 ic_point crv_par WALL pnt.05 {crv0 1}
 ic_point crv_par WALL pnt.06 {crv1 1}
@@ -157,7 +157,7 @@ ic_hex_set_edge_projection 32 40 0 1 crv0
 ic_hex_set_edge_projection 33 40 0 1 crv0
 ic_hex_place_node 34 curve:crv.02 0.5
 ic_hex_set_mesh 49 40 n $nr1 h1 0.0 h2 $dyWall r1 2 r2 1.02 lmax 0 geo2 unlocked
-ic_hex_set_mesh 46 34 n $nr1 h1 0.0 h2 linked 40 45 r1 2 r2 1.15 lmax 0 default locked
+ic_hex_set_mesh 46 34 n $nr1 h1 0.0 h2 [expr $dyWall*100] r1 2 r2 1.15 lmax 0 default locked
 ic_hex_set_mesh 50 34 n $nr1 h1 0.0 h2 linked 34 46 r1 2 r2 1.15 lmax 0 default unlocked
 ic_hex_set_mesh 21 50 n $nr2 h1 0.0 h2 linked 50 34 r1 2 r2 1.05 lmax 0 geo2 locked
 ic_hex_set_mesh 48 49 n $nxA h1 0.0 h2 linked 40 32 r1 1.05 r2 1.05 lmax 0 geo2 unlocked
@@ -174,10 +174,9 @@ ic_hex_set_mesh 44 48 n $nyA h1 linked 44 45 h2 linked 48 49 r1 1.03 r2 1.03 lma
 ic_hex_set_mesh 45 46 n $nxFar h1rel linked 40 32 h2rel 0.0 r1 1.05 r2 2 lmax 0 geo1 default copy_to_parallel locked
 ic_hex_set_node_location x $chord y [expr -0.5*$chord] z 0 -csys global node_numbers {{  45  }}
 ic_hex_set_node_location x $chord y [expr 0.5*$chord] z 0 -csys global node_numbers {{  49  }}
-ic_hex_set_node_location x [expr -0.4*$chord] y [expr -0.5*$chord] z 0 -csys global node_numbers {{  44  }}
-ic_hex_set_node_location x [expr -0.4*$chord] y [expr 0.5*$chord] z 0 -csys global node_numbers {{  48  }}
+ic_hex_set_node_location x [expr -0.45*$chord] y [expr -0.5*$chord] z 0 -csys global node_numbers {{  44  }}
+ic_hex_set_node_location x [expr -0.45*$chord] y [expr 0.5*$chord] z 0 -csys global node_numbers {{  48  }}
 
-set tempy 0.5
 
 if {$dy_tail < $tol} {
 set coords [ic_hex_get_node_location 49]

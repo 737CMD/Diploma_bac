@@ -141,4 +141,4 @@ def plot_convergence(filename, iter = 2000):
     plt.show()
 
 # Пример использования
-plot_convergence("naca2.92deg-report.out", iter = 1000)
+plot_convergence("0deg-pres-report.out", iter = 200)
