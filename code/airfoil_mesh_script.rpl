@@ -5,7 +5,7 @@ ic_set_meshing_params global 0 gttol $toler gtrel 1
 ic_delete_elements family SOLID no_undo 1
 ic_delete_geometry curve all 1 1
 ic_delete_geometry point all 1 1
-ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/profiles_base/rae2822icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
+ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/optimisation_working_folder/bezier_airfoil_icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
 
 ic_boco_solver 
 ic_boco_clear_icons 
@@ -16,7 +16,7 @@ set R_rel 50
 set L_hor_rel 100
 set dyWall 2e-06
 
-set mesh_number 100
+set mesh_number 120
 
 ic_comment "Along airfoil *0.9"
 set nxA [expr  0.9*$mesh_number]
@@ -24,8 +24,8 @@ ic_comment "Across airfoil *0.4"
 set nyA [expr  0.4*$mesh_number]
 ic_comment "Radial close *1"
 set nr1 [expr  1*$mesh_number] 
-ic_comment "Radial far *0.33"
-set nr2 [expr  0.33*$mesh_number] 
+ic_comment "Radial far *0.35"
+set nr2 [expr  0.35*$mesh_number] 
 ic_comment "Along x - farfield *0.8"
 set nxFar [expr  0.8*$mesh_number] 
 
@@ -155,8 +155,6 @@ ic_hex_set_edge_projection 40 42 0 1 crv.04
 ic_comment "For zero tail thickness"
 ic_hex_collapse_edge 40 42 join keep_first -version 101 fix_first
 ic_hex_collapse_edge 34 35 join keep_first -version 101 fix_first
-ic_hex_set_edge_projection 32 40 0 1 crv0
-ic_hex_set_edge_projection 33 40 0 1 crv0
 ic_hex_place_node 34 curve:crv.02 0.5
 ic_hex_set_mesh 49 40 n $nr1 h1 0.0 h2 $dyWall r1 2 r2 1.02 lmax 0 geo2 unlocked
 ic_hex_set_mesh 46 34 n $nr1 h1 0.0 h2 [expr $dyWall*100] r1 2 r2 1.15 lmax 0 default locked
@@ -202,16 +200,21 @@ ic_hex_mark_blocks unmark
 ic_hex_mark_blocks superblock 4
 ic_hex_change_element_id VORFN
 
-ic_hex_create_composite {crv0 crv1}
-ic_hex_set_edge_projection 32 33 0 1 crv0
 
-ic_comment "Otherwise spacings may be linked incorrectly"
+
+ic_comment "Linking edges to airfoil"
 if {$dy_tail > $tol} {
 } else {
+ic_hex_set_edge_projection 32 40 0 1 crv1
+ic_hex_set_edge_projection 33 40 0 1 crv0
 ic_hex_auto_split_edge 33 40
-ic_hex_auto_split_edge 32 33
 ic_hex_auto_split_edge 32 40
+ic_hex_create_composite {crv0 crv1}
+ic_hex_set_edge_projection 32 33 0 1 crv0
+ic_hex_auto_split_edge 32 33
 }
+ic_hex_create_composite {crv0 crv1}
+ic_hex_set_edge_projection 32 33 0 1 crv0
 
 ic_hex_create_mesh WALL GEOM SOLID proj 2 dim_to_mesh 2
 
@@ -219,5 +222,4 @@ ic_hex_write_file ./hex.uns WALL GEOM SOLID proj 2 dim_to_mesh 2 no_boco
 ic_uns_load ./hex.uns 3 0 {} 1
 ic_exec {E:/Program files/ANSYS Inc/v221/icemcfd/win64_amd/icemcfd/output-interfaces/fluent6} -dom hex.uns -dim2d geom.msh
 
-exit
 

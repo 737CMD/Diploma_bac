@@ -23,8 +23,3 @@ def run_icem(icem_exe, rpl_path):
         print(f"[Exception] Критическая ошибка запуска: {e}")
         return False
 
-
-ICEM_BIN = r"E:\Program files\ANSYS Inc\v242\icemcfd\win64_amd\bin\icemcfd.bat"
-SCRIPT = r"E:\tsagi_dipl\Diploma_bac\optimisation_working_folder\airfoil_mesh_script.rpl"
-if run_icem(ICEM_BIN, SCRIPT):
-    print("Скрипт выполнен успешно.")

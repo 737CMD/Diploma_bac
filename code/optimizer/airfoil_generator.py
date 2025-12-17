@@ -6,13 +6,15 @@ import os
 
 class airfoil_structured:
     #класс для хранения данных о профиле с структурированными точками (расстояние между всеми абсциссами одинаковое)
-    def __init__(self, r_forw, up_coords, down_coords, dy_te, min_thick = -1):   
+    def __init__(self, r_forw, up_coords, down_coords, teta, dy_te, min_thick = -1):   
         self.N = len(up_coords) + 3
         self.r_forw = r_forw
         self.dy_te = dy_te
         self.x_coords = np.append([0], np.linspace(0, 1, self.N-1)) #вторая точка должна висеть на нуле и задавать 1) радиус кривизны 2) вертикальность касательной передней кромки 
         self.up_y_coords = np.concatenate(([0, 0], up_coords, [dy_te/2]))
-        self.down_y_coords = np.concatenate(([0, 0], down_coords, [-dy_te/2]))
+        dx = self.x_coords[-1] - self.x_coords[-2]
+        penultimate_y = np.tan(np.atan(self.up_y_coords[-2]/dx)-teta) * dx
+        self.down_y_coords = np.concatenate(([0, 0], down_coords, [penultimate_y], [-dy_te/2]))
         D = self.x_coords[2] #там на самом деле сложная формула и с ней можно ознакомиться в папке с материалами, но она упрощается до такого вида
         t = (r_forw*D*(self.N-2)/(self.N-1))**0.5
         self.up_y_coords[1] = t
@@ -76,7 +78,8 @@ class airfoil_structured:
         upper_curve, lower_curve = self.coords(N)
         x_upper, y_upper = upper_curve
         x_lower, y_lower = lower_curve
-        filename = "bezier_airfoil_icem.txt"
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        filename = os.path.join(script_dir, "bezier_airfoil_icem.txt")
         upper_sorted = zip(x_upper, y_upper)
         lower_sorted = zip(x_lower, y_lower)
         with open(filename, 'w') as f:
@@ -116,4 +119,3 @@ class airfoil_structured:
         self.x_coords, self.up_y_coords = self.upcurve.nodes
         self.down_y_coords = self.downcurve.nodes[1]
         self.N = len(self.x_coords)
-            

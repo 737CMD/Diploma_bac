@@ -1,0 +1,18 @@
+Node 3 Fatal signal raised sig = Segmentation fault
+ 3fe5aa20 CX_Primitive_Error
+ 46dce820 seh_filter_exe
+ 3fed17f0 logical_right_shift
+ 33aee530 _C_specific_handler
+ 49286260 _chkstk
+ 49131d90 RtlLocateExtendedFeature
+ 49285c10 KiUserExceptionDispatcher
+ 3e1d6960 free_v
+ 3da97ec0 Build_Grid
+ 3d5d2070 CX_Interrupts_Enabled
+ 3febb780 eval
+ 3d6e7380 PRF_Command_Start
+ 3d6e9ab0 PRF_Node_repl
+ 3d6f5a40 Delay_Error
+ 3fed17f0 logical_right_shift
+ 482fe8c0 BaseThreadInitThunk
+ 491ac510 RtlUserThreadStart
