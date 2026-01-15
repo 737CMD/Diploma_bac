@@ -222,4 +222,5 @@ ic_hex_write_file ./hex.uns WALL GEOM SOLID proj 2 dim_to_mesh 2 no_boco
 ic_uns_load ./hex.uns 3 0 {} 1
 ic_exec {E:/Program files/ANSYS Inc/v221/icemcfd/win64_amd/icemcfd/output-interfaces/fluent6} -dom hex.uns -dim2d geom.msh
 
+exit
 

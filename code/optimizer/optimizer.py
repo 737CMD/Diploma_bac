@@ -95,7 +95,7 @@ class optimizer:
             print("Ошибка при расчете в Fluent. Пропуск итерации.")
             return 1000  # штраф за ошибку расчета    
         # Целевая функция: минимизация Cd при достижении целевого Cl
-        objective_value = (np.round(cd*10000, 4) + 10*self.fine_function**2)
+        objective_value = (np.round(cd*10000, 2) + 10*self.fine_function**2)
         print(f"Вызов целевой номер {self.tf_count}, Cya = {cl}, Cxa = {np.round(cd*10000, 4)}, K = {cl/cd}, object = {objective_value}")
         return objective_value
     
