@@ -15,7 +15,7 @@ T = 300 #температура воздуха в Кельвинах
 
 #Требования на профиль
 min_thick = 12  #минимальная толщина профиля в процентах от хорды
-target_cl = 0.3 #целевое значение Cl
+target_cl = 0.5 #целевое значение Cl
 min_r_forw = 0.007 #минимальный радиус кривизны передней кромки
 points = 3 #количество точек на верхней и нижней поверхностях профиля (без учета точек передней и задней кромок)
 dy_te = 0.0 #зазор в задней кромке
@@ -102,9 +102,9 @@ class optimizer:
     def optimize(self, initial_params, method = 'CG'):
         self.tf_count = 0
         self.params_history = np.array([initial_params])
-        self.solver = pyfluent.launch_fluent(processor_count= 10, dimension = 2, cwd = script_dir, precision= "double", case_file_name = fluent_case_path,
+        self.solver = pyfluent.launch_fluent(processor_count = 10, dimension = 2, cwd = script_dir, precision= "double", case_file_name = fluent_case_path,
                                         show_gui= True, start_transcript = False)
-        result = minimize(self.objective_function, initial_params, method=method, options = {'disp': True, 'eps': 1e-2}, callback=self.logger)
+        result = minimize(self.objective_function, initial_params, method=method, options = {'disp': True, 'eps': 1e-2, 'gtol': 25}, callback=self.logger)
         return result
 
 start_time = time.time()

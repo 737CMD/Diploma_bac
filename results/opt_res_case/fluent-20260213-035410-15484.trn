@@ -1,0 +1,123 @@
+Auto-Transcript Start Time:  03:54:10, 13 Feb 2026 Russia TZ 2 Standard Time 
+Current Directory: "E:\tsagi_dipl\Diploma_bac\results\opt_res_case"
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@localhost
+Host spawning Node 0 on machine "VVCh" (win64).
+
+--------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    Vendor                               
+--------------------------------------------------------------------------------
+n7    VVCh      8/16  Windows-x64  3672   AMD Ryzen 7 5700X 8-Core Processor   
+n6    VVCh      7/16  Windows-x64  20740  AMD Ryzen 7 5700X 8-Core Processor   
+n5    VVCh      6/16  Windows-x64  19832  AMD Ryzen 7 5700X 8-Core Processor   
+n4    VVCh      5/16  Windows-x64  4340   AMD Ryzen 7 5700X 8-Core Processor   
+n3    VVCh      4/16  Windows-x64  13576  AMD Ryzen 7 5700X 8-Core Processor   
+n2    VVCh      3/16  Windows-x64  24096  AMD Ryzen 7 5700X 8-Core Processor   
+n1    VVCh      2/16  Windows-x64  23400  AMD Ryzen 7 5700X 8-Core Processor   
+n0*   VVCh      1/16  Windows-x64  13656  AMD Ryzen 7 5700X 8-Core Processor   
+host  VVCh            Windows-x64  4288   AMD Ryzen 7 5700X 8-Core Processor   
+
+MPI Option Selected: intel
+Selected system interconnect: default
+--------------------------------------------------------------------------------
+
+Cleanup script file is E:\\tsagi_dipl\\Diploma_bac\\results\\opt_res_case\\cleanup-fluent-VVCh-4288.bat
+Fast-loading "E:\Program files\ANSYS Inc\v242\fluent\fluent24.2.0\\addons\afd\lib\hdfio.bin"
+Done.
+Multicore SMT processors detected. Processor affinity set!
+
+Reading from VVCh:"E:/tsagi_dipl/Diploma_bac/results/opt_res_case/cl0.3M0.75.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+Warning: reading 10 partition grid onto 8 compute node machine.
+         will auto partition.
+       72160 cells,     1 cell zone  ...
+          72160 quadrilateral cells,  zone id: 7
+      144836 faces,     4 face zones ...
+         143804 2D interior faces,  zone id: 8
+            261 2D wall faces,  zone id: 9
+            451 2D pressure-far-field faces,  zone id: 10
+            320 2D pressure-outlet faces,  zone id: 11
+       72676 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast, Laplace),
+	distributing mesh
+		parts........,
+		faces........,
+		nodes........,
+		cells........,
+        bandwidth reduction using Reverse Cuthill-McKee: 8193/87 = 94.1724
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	outlet
+	wall
+	int_solid
+	inlet
+	solid
+     parallel,
+Done.
+
+Reading from VVCh:"E:/tsagi_dipl/Diploma_bac/results/opt_res_case/cl0.3M0.75.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+
+> (cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Mesh|mesh-1"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Mesh|mesh-1"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Mesh|mesh-1"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Mesh|mesh-1"))
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(dolly-camera -0.0291737 -0.0412772 0)
+(cx-use-window-id 51)
+(dolly-camera -0.119134 -0.0299764 0)
+(cx-use-window-id 51)
+(dolly-camera -0.0847376 -0.0130448 0)
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")
+(cx-use-window-id 51)
+(dolly-camera 0.309603 0.0372091 0)
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(dolly-camera -0.13243 -0.051449 0)
+(cx-use-window-id 51)
+(dolly-camera 0.190596 -0.0239119 0)
+(cx-use-window-id 51)
+(dolly-camera 0.674521 -0.0352418 0)
+(cx-use-window-id 51)
+(dolly-camera 0.175816 0.00640779 0)
+(cx-use-window-id 51)
+(handle-key "??")
+(cx-use-window-id 51)
+(handle-key "??")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Plots|XY Plot|cp"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Plots|XY Plot|cp"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Plots|XY Plot|cp"))
+(cx-gui-do cx-activate-item "Solution XY Plot*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Solution XY Plot*PanelButtons*PushButton2(Cancel)")
+/exit y
+Auto-Transcript Stop Time:  04:47:28, 13 Feb 2026 Russia TZ 2 Standard Time 
+Total Transcript Time: 53 Minute 18 Second.
