@@ -31,37 +31,44 @@ def check_convergence(file_name, tol_cya, tol_cxa, conv_iter):
         cya_ok = np.all(np.abs(last_ma_cya - final_cya) <= tol_cya)
         cxa_ok = np.all(np.abs(last_ma_cxa - final_cxa) <= tol_cxa)
         return (cya_ok and cxa_ok), final_cya, final_cxa
-    except Exception as e:
-    
+    except Exception as e:    
         return False, 0.0, 0.0
 
 def run_fluent_simulation(solver_session, target_cya, cya_tol, cxa_tol, Mach, Re, T, conv_iter, mesh_file, file_name):
-    solver_session.tui.file.replace_mesh(mesh_file, "ok")
-    solver_session.settings.parameters.input_parameters.expression["alpha"].value = 2
+    solver_session.settings.file.replace_mesh(file_name = mesh_file)
+    solver_session.settings.parameters.input_parameters.expression["alpha"].value = 0
     solver_session.settings.parameters.input_parameters.expression["Re"].value = Re
     solver_session.settings.parameters.input_parameters.expression["Mach"].value = Mach
     solver_session.settings.parameters.input_parameters.expression["Temperature"].value = T
-    solver_session.solution.initialization.initialize()
-    solver_session.solution.initialization.hybrid_initialize()
-    solver_session.setup.reference_values.compute(from_zone_type = 'pressure-far-field', from_zone_name = 'inlet')
+    solver_session.settings.solution.initialization.initialize()
+    solver_session.settings.solution.initialization.hybrid_initialize()
+    solver_session.settings.setup.reference_values.compute(from_zone_type = 'pressure-far-field', from_zone_name = 'inlet')
     solver_session.tui.solve.report_files.clear_data('integral_char')
+    total_iterations = 0
     def run_calc(step_iter, cya_tol, cxa_tol):
+        nonlocal total_iterations
         solver_session.settings.solution.run_calculation.iterate(iter_count=step_iter)
+        total_iterations += step_iter
         converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)  
         while not converged: 
             solver_session.settings.solution.run_calculation.iterate(iter_count=step_iter)
+            total_iterations += step_iter
             converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)
+            if total_iterations >= 2500: return target_cya, 1
         return cya, cxa
     cya, cxa = run_calc(100, cya_tol, cxa_tol)
+    if cya < 0: return cya, 0.5
+    alpha_step = 0.5
     #метод Ньютона для решения 
     while(abs(cya-target_cya) > cya_tol):
-        alpha_step = -0.5
+        if total_iterations >= 2500: return cya, 0.5
+        alpha_step *= -1
         curralpha = solver_session.settings.parameters.input_parameters.expression["alpha"].value()
         newalpha = curralpha + alpha_step
         solver_session.settings.parameters.input_parameters.expression["alpha"].value = newalpha
-        newcya, newcxa = run_calc(100, cya_tol, cxa_tol)
+        newcya, newcxa = run_calc(50, cya_tol, cxa_tol)
         cya_a = (newcya - cya)/alpha_step
         newalpha = curralpha + (target_cya-cya)/cya_a
         solver_session.settings.parameters.input_parameters.expression["alpha"].value = newalpha
-        cya, cxa = run_calc(100, cya_tol, cxa_tol)
-    print(f"При целевом Суа = {target_cya} получен фактический Cya = {cya} с Cxa = {cxa}")
+        cya, cxa = run_calc(50, cya_tol, cxa_tol)
+    return cya, cxa

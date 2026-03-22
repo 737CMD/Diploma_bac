@@ -1,0 +1,463 @@
+Dakota version 6.23 released Nov. 17 2025.
+Repository revision a3b2eb477 (2025-11-12) built Nov 13 2025 08:39:49.
+Running serial Dakota executable in serial mode.
+Start time: Sun Mar 22 01:26:03 2026
+
+------------------
+Begin Dakota input
+------------------
+environment
+    tabular_data
+        tabular_data_file = 'opt_history.dat'
+
+method
+    efficient_global
+    initial_samples = 50
+    max_iterations = 100
+    seed = 54321
+
+variables
+    continuous_design = 7
+    lower_bounds     0.01   -1.0  -1.0  -1.0  -1.0  -1.0   0.0
+    upper_bounds     1.0    1.0   1.0   1.0   1.0   1.0   1.0
+    descriptors      'x1'  'x2'  'x3'  'x4'  'x5'  'x6'  'x7'
+
+interface
+    fork
+    analysis_driver = 'python eval_worker.py'
+    parameters_file = 'params.in'
+    file_save
+
+
+responses
+    objective_functions = 1
+    no_gradients
+    no_hessians
+----------------
+End Dakota input
+----------------
+
+Using provided Dakota input string
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running efficient_global iterator.
+
+>>>>> Building global_kriging approximations.
+
+NonD lhs Samples = 50 Seed (user-specified) = 54321
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      2.4929568633e-01 x1
+                     -1.4370607845e-01 x2
+                      1.6710507886e-01 x3
+                      2.5618452403e-01 x4
+                      9.1441580831e-01 x5
+                      6.4538099241e-01 x6
+                      5.8589842816e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_9syMajI3
+
+Active response data for evaluation 1:
+Active set vector = { 1 }
+                      2.1772304258e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      4.1666085043e-01 x1
+                      1.7572433021e-01 x2
+                      6.8908010478e-01 x3
+                     -6.5827074999e-01 x4
+                     -9.9935819466e-01 x5
+                      8.5071029089e-01 x6
+                      6.7895592118e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_k16cuiJ5
+
+Active response data for evaluation 2:
+Active set vector = { 1 }
+                      2.3296043019e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      6.2272801985e-01 x1
+                     -3.0459576575e-01 x2
+                     -5.1065970982e-01 x3
+                      3.1779389992e-01 x4
+                      2.0239609806e-01 x5
+                     -8.7625318150e-01 x6
+                      2.2597939004e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_Pd6yAg8t
+
+Active response data for evaluation 3:
+Active set vector = { 1 }
+                      3.3626967683e+02 obj_fn
+
+
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      8.4306290850e-01 x1
+                     -2.7284058500e-01 x2
+                      4.3796662759e-01 x3
+                     -7.7600569025e-01 x4
+                     -8.6448918114e-01 x5
+                     -8.9988439316e-02 x6
+                      5.3454065416e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_ePpWInhT
+
+Active response data for evaluation 4:
+Active set vector = { 1 }
+                      2.2620369825e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      8.4049097494e-01 x1
+                      6.8033536376e-01 x2
+                     -5.2484914405e-01 x3
+                      1.8867415132e-01 x4
+                     -5.5589001150e-01 x5
+                      2.3645927590e-01 x6
+                      5.7523839701e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_cUOqOfPG
+
+Active response data for evaluation 5:
+Active set vector = { 1 }
+                      2.2176171753e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      4.4642109490e-01 x1
+                     -8.2513056199e-01 x2
+                     -7.6865374289e-01 x3
+                     -5.5934574775e-01 x4
+                     -2.0722315511e-01 x5
+                     -6.6287092595e-01 x6
+                      2.9209725186e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_7W6T5MZp
+
+Active response data for evaluation 6:
+Active set vector = { 1 }
+                      2.2351488585e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      2.7064477417e-01 x1
+                     -3.2455393142e-01 x2
+                     -2.4290764553e-01 x3
+                      7.1525729775e-01 x4
+                      1.8855104894e-01 x5
+                      8.2070145770e-01 x6
+                      7.0802285148e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_iKqJZW24
+
+Active response data for evaluation 7:
+Active set vector = { 1 }
+                      2.1959579713e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      3.0259673825e-01 x1
+                      7.2990628785e-01 x2
+                      5.6554930196e-01 x3
+                     -9.5813453408e-01 x4
+                     -4.2772893393e-01 x5
+                      3.1167439249e-01 x6
+                      1.0799540233e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_pvXfbrVQ
+
+Active response data for evaluation 8:
+Active set vector = { 1 }
+                      1.4872758589e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      6.7292866577e-01 x1
+                      6.5287192520e-02 x2
+                     -8.3588592007e-01 x3
+                     -7.1952343605e-01 x4
+                      9.3358960425e-01 x5
+                      6.2553266603e-02 x6
+                      3.8250474831e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_dkQ6Rfke
+
+Active response data for evaluation 9:
+Active set vector = { 1 }
+                      2.2695326996e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      7.7695325680e-01 x1
+                     -6.7584277571e-01 x2
+                      6.2473423735e-01 x3
+                      5.9396048690e-01 x4
+                     -5.7711597319e-01 x5
+                      9.8632448492e-01 x6
+                      4.8255471216e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_gFvqrItF
+
+Active response data for evaluation 10:
+Active set vector = { 1 }
+                      2.3342259634e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      8.8531565296e-01 x1
+                      9.0695802227e-01 x2
+                     -8.7562121348e-02 x3
+                     -8.1192460609e-01 x4
+                     -1.8002596395e-02 x5
+                     -2.7148512455e-01 x6
+                      1.7988612450e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_2y6dBnW0
+
+Active response data for evaluation 11:
+Active set vector = { 1 }
+                      2.7331910151e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      9.3675240080e-01 x1
+                      5.0690722787e-01 x2
+                     -7.2501351948e-01 x3
+                     -9.0699055550e-01 x4
+                     -4.9923981095e-01 x5
+                      9.1929501548e-01 x6
+                      9.0489570748e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_pX1R9I6A
+
+Active response data for evaluation 12:
+Active set vector = { 1 }
+                      2.4395916425e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.7915165668e-01 x1
+                     -7.0868204648e-01 x2
+                      3.5831551502e-01 x3
+                      8.1386810835e-01 x4
+                     -7.9008175817e-01 x5
+                     -4.7200843779e-01 x6
+                      2.1698615124e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_D0uko2c2
+
+Active response data for evaluation 13:
+Active set vector = { 1 }
+                      2.2219201005e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      3.3648120365e-01 x1
+                     -7.3387124017e-03 x2
+                     -8.5641691199e-01 x3
+                     -1.7982507458e-01 x4
+                      5.1124131647e-01 x5
+                     -5.2619944057e-01 x6
+                      7.8659063518e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_MsAJI9fg
+
+Active response data for evaluation 14:
+Active set vector = { 1 }
+                      2.2036038804e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      2.4334267838e-01 x1
+                     -9.4968277534e-01 x2
+                      8.8424978990e-01 x3
+                     -9.8008218719e-01 x4
+                      6.5896934979e-01 x5
+                     -7.3244877465e-01 x6
+                      5.4725732479e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_gh3nk0zX
+
+Active response data for evaluation 15:
+Active set vector = { 1 }
+                      2.3973784208e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      5.4450602179e-01 x1
+                     -4.1274196973e-01 x2
+                      6.5038727143e-01 x3
+                     -4.6375267475e-01 x4
+                     -7.4361660388e-01 x5
+                     -8.2393126614e-01 x6
+                      4.1246981691e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_xIvROjvi
+
+Active response data for evaluation 16:
+Active set vector = { 1 }
+                      2.2506872622e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      5.0120027023e-01 x1
+                      9.5375836481e-01 x2
+                      7.4299742462e-01 x3
+                      9.6826268667e-01 x4
+                     -1.1936130173e-01 x5
+                     -1.9764272115e-01 x6
+                      5.0324617751e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_YmFldLxh
+
+Active response data for evaluation 17:
+Active set vector = { 1 }
+                      2.2957001013e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.2501363609e-01 x1
+                      8.2965845034e-01 x2
+                     -6.6302084152e-01 x3
+                      1.5803437427e-01 x4
+                     -6.2493400983e-01 x5
+                      4.5204009618e-01 x6
+                      1.8156654029e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_s2VlIFFY
+
+Active response data for evaluation 18:
+Active set vector = { 1 }
+                      3.5693793792e+02 obj_fn
+
+
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      9.4925920142e-01 x1
+                     -8.4960135149e-01 x2
+                      3.8373584362e-01 x3
+                      6.4860508712e-01 x4
+                     -2.4967291846e-01 x5
+                     -8.8971550066e-01 x6
+                      7.7727976711e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_8YGJDTTn
+
+Active response data for evaluation 19:
+Active set vector = { 1 }
+                      2.3648951319e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      5.7704645353e-01 x1
+                     -5.5967272990e-01 x2
+                      8.6660258387e-01 x3
+                     -4.9955615369e-01 x4
+                      2.6181309746e-01 x5
+                      4.1990337240e-01 x6
+                      1.4851007466e-02 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_gvWm552h
+
+Active response data for evaluation 20:
+Active set vector = { 1 }
+                      2.1891858056e+03 obj_fn
+
+
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      7.3030417122e-02 x1
+                      8.4122339983e-01 x2
+                      4.9967633455e-01 x3
+                     -1.3290727403e-01 x4
+                      8.2245151136e-01 x5
+                      7.8693989738e-01 x6
+                      8.6029108831e-01 x7
+
+blocking fork: python eval_worker.py params.in C:\Users\vova1\AppData\Local\Temp\dakota_results_N0EVC167

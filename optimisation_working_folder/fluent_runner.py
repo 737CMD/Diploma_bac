@@ -54,13 +54,14 @@ def run_fluent_simulation(solver_session, target_cya, cya_tol, cxa_tol, Mach, Re
             solver_session.settings.solution.run_calculation.iterate(iter_count=step_iter)
             total_iterations += step_iter
             converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)
+            if total_iterations >= 2500: return target_cya, 1
         return cya, cxa
     cya, cxa = run_calc(100, cya_tol, cxa_tol)
-    if cya < 0: return cya, 0.5
+    if cya < 0: return None, None
     alpha_step = 0.5
     #метод Ньютона для решения 
     while(abs(cya-target_cya) > cya_tol):
-        if total_iterations >= 1500: return cya, 0.5
+        if total_iterations >= 2500: return cya, 0.5
         alpha_step *= -1
         curralpha = solver_session.settings.parameters.input_parameters.expression["alpha"].value()
         newalpha = curralpha + alpha_step

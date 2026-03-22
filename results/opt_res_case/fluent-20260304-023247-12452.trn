@@ -1,0 +1,297 @@
+Auto-Transcript Start Time:  02:32:47, 04 Mar 2026 Russia TZ 2 Standard Time 
+Current Directory: "E:\tsagi_dipl\Diploma_bac\results\opt_res_case"
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@localhost
+Host spawning Node 0 on machine "VVCh" (win64).
+
+--------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    Vendor                               
+--------------------------------------------------------------------------------
+n7    VVCh      8/16  Windows-x64  16320  AMD Ryzen 7 5700X 8-Core Processor   
+n6    VVCh      7/16  Windows-x64  26092  AMD Ryzen 7 5700X 8-Core Processor   
+n5    VVCh      6/16  Windows-x64  18852  AMD Ryzen 7 5700X 8-Core Processor   
+n4    VVCh      5/16  Windows-x64  19972  AMD Ryzen 7 5700X 8-Core Processor   
+n3    VVCh      4/16  Windows-x64  25784  AMD Ryzen 7 5700X 8-Core Processor   
+n2    VVCh      3/16  Windows-x64  16192  AMD Ryzen 7 5700X 8-Core Processor   
+n1    VVCh      2/16  Windows-x64  8416   AMD Ryzen 7 5700X 8-Core Processor   
+n0*   VVCh      1/16  Windows-x64  3620   AMD Ryzen 7 5700X 8-Core Processor   
+host  VVCh            Windows-x64  2084   AMD Ryzen 7 5700X 8-Core Processor   
+
+MPI Option Selected: intel
+Selected system interconnect: default
+--------------------------------------------------------------------------------
+
+Cleanup script file is E:\\tsagi_dipl\\Diploma_bac\\results\\opt_res_case\\cleanup-fluent-VVCh-2084.bat
+Fast-loading "E:\Program files\ANSYS Inc\v242\fluent\fluent24.2.0\\addons\afd\lib\hdfio.bin"
+Done.
+Multicore SMT processors detected. Processor affinity set!
+
+Reading from VVCh:"E:/tsagi_dipl/Diploma_bac/results/opt_res_case/cl0.3M0.75.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+Warning: reading 10 partition grid onto 8 compute node machine.
+         will auto partition.
+       72160 cells,     1 cell zone  ...
+          72160 quadrilateral cells,  zone id: 7
+      144836 faces,     4 face zones ...
+         143804 2D interior faces,  zone id: 8
+            261 2D wall faces,  zone id: 9
+            451 2D pressure-far-field faces,  zone id: 10
+            320 2D pressure-outlet faces,  zone id: 11
+       72676 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast, Laplace),
+	distributing mesh
+		parts........,
+		faces........,
+		nodes........,
+		cells........,
+        bandwidth reduction using Reverse Cuthill-McKee: 8193/87 = 94.1724
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	outlet
+	wall
+	int_solid
+	inlet
+	solid
+     parallel,
+Done.
+
+Reading from VVCh:"E:/tsagi_dipl/Diploma_bac/results/opt_res_case/cl0.3M0.75.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+
+> (cx-gui-do cx-activate-item "ToolBar*Mesh Display*fl_mesh_svg_graphics_toolbar")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "ToolBar*Mesh Display*fl_mesh_svg_graphics_toolbar")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)" '( 2 3 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)" '( 0 2 3 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)" '( 0 1 2 3 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)" '( 0 1 2 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)" '( 0 2 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)" '( 0 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-list-selections "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)" '( 0 2 4))
+(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame3*Frame1*List1(Surfaces)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 1)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 2)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 3)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 4)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 5)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 6)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 7)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-set-expression-entry "Pressure Far-Field*Frame3*Frame1(Momentum)*Table1*Table12*ExpressionEntry1(Mach Number)" '("Mach" . 1))
+(cx-gui-do cx-activate-item "Pressure Far-Field*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=11)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-set-expression-entry "Pressure Far-Field*Frame3*Frame1(Momentum)*Table1*Table12*ExpressionEntry1(Mach Number)" '("Mach" . 1))
+(cx-gui-do cx-activate-item "Pressure Far-Field*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )
+(cx-use-window-id 51)
+(dolly-camera -0.215865 -0.275028 0)
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Report Definitions|cya"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Report Definitions|cya"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Report Definitions|cya"))
+(cx-gui-do cx-set-expression-entry "Expression Report Definition*Table1*ExpressionEntry2" '("cos(alpha/180*PI)*cy-sin(alpha/180*PI)*cx" . 1))
+(cx-gui-do cx-activate-item "Expression Report Definition*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Report Definitions|cya"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Report Definitions|cya"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Report Definitions|cya"))
+(cx-gui-do cx-activate-item "Expression Report Definition*PanelButtons*PushButton4(Compute)")
+                      Expression                  []
+-------------------------------- -------------------
+                             cya          0.30034254
+(cx-gui-do cx-set-expression-entry "Expression Report Definition*Table1*ExpressionEntry2" '("cos(alpha/180*PI)*cy-sin(alpha/180*PI)*cx" . 1))
+(cx-gui-do cx-set-expression-entry "Expression Report Definition*Table1*ExpressionEntry2" '("cos(alpha/180*PI)*cy-sin(alpha/180*PI)*cx" . 1))
+(cx-gui-do cx-activate-item "Expression Report Definition*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(dolly-camera -11.7763 0.521469 0)
+(cx-use-window-id 51)
+(dolly-camera 2.26507 2.10628 0)
+(cx-use-window-id 51)
+(dolly-camera 1.67225 -26.493 0)
+(cx-use-window-id 51)
+(dolly-camera 4.21161 -21.1944 0)
+(cx-use-window-id 51)
+(dolly-camera -5.94579 35.5928 0)
+(cx-use-window-id 51)
+(dolly-camera 1.36259 1.15187 0)
+(cx-use-window-id 51)
+(dolly-camera 8.60903 -4.14674 0)
+(cx-use-window-id 51)
+(dolly-camera -1.79613 -4.83786 0)
+(cx-use-window-id 51)
+(dolly-camera -3.90194 5.52899 0)
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(dolly-camera -0.770183 2.25346 0)
+(cx-use-window-id 51)
+(dolly-camera -2.14005 -38.4734 0)
+(cx-use-window-id 51)
+
+Probe position = (-6.2481914 48.467976 0.00020786555)
+ Contour level 69, value in [0.74747539, 0.75829798].
+(cx-use-window-id 51)
+(cxg-clear-all-selections (cx-active-window))
+(cxg-add-surfaces-to-selection '(solid) (cx-active-window))
+(cx-use-window-id 51)
+(build-popup-menu)
+(cx-use-window-id 51)
+(cxg-clear-all-selections (cx-active-window))
+(cxg-add-surfaces-to-selection '() (cx-active-window))
+(cx-use-window-id 51)
+(dolly-camera 0.505191 14.0343 0)
+(cx-use-window-id 51)
+(dolly-camera 3.82559 26.9942 0)
+(cx-use-window-id 51)
+(dolly-camera 0.989323 -10.6717 0)
+(cx-use-window-id 51)
+(dolly-camera 11.0821 -2.73964 0)
+(cx-use-window-id 51)
+(dolly-camera -11.83 3.24541 0)
+(cx-use-window-id 51)
+(dolly-camera -1.69399 22.9451 0)
+(cx-use-window-id 51)
+(dolly-camera 5.26949 37.4892 0)
+(cx-use-window-id 51)
+(dolly-camera 0.213034 0.0289898 0)
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Initialization"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Initialization"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Initialization"))
+(cx-gui-do cx-set-list-selections "Solution Initialization*Table1*DropDownList1(Compute from)" '( 1))
+(cx-gui-do cx-activate-item "Solution Initialization*Table1*DropDownList1(Compute from)")
+(cx-gui-do cx-activate-item "Solution Initialization*Table1*Frame9*PushButton1(Initialize)")
+(cx-gui-do cx-activate-item "Solution Initialization*Table1*Frame9*PushButton1(Initialize)")
+(cx-gui-do cx-activate-item "Question*OK")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton4(Compute)")
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(dolly-camera 0.461723 31.0342 0)
+(cx-gui-do cx-set-toggle-button2 "Solution Initialization*Table1*ToggleBox3(Initialization Methods)*Hybrid  Initialization" #t)
+(cx-gui-do cx-activate-item "Solution Initialization*Table1*ToggleBox3(Initialization Methods)*Hybrid  Initialization")
+(cx-use-window-id 51)
+(dolly-camera -4.53526 27.9257 0)
+(cx-use-window-id 51)
+(dolly-camera -11.4608 9.8025 0)
+(cx-use-window-id 51)
+(dolly-camera 0.0875682 0.0329974 0)
+(cx-gui-do cx-activate-item "Solution Initialization*Table1*Frame12*PushButton2(Initialize)")
+(cx-gui-do cx-activate-item "Question*OK")
+
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case combines farfield, inlets and outlets 
+-Pressure information is available at the boundaries
+
+	iter		scalar-0		scalar-1
+
+	1		1.000000e+00	1.000000e+00
+	2		3.941850e-08	1.029091e-16
+	3		1.349445e-08	1.107108e-16
+	4		5.815183e-09	1.110904e-16
+	5		2.795769e-09	1.120062e-16
+	6		1.258913e-09	1.117171e-16
+	7		6.643413e-10	1.091460e-16
+	8		2.998455e-10	1.139982e-16
+	9		1.641164e-10	1.121348e-16
+	10		7.435135e-11	1.133844e-16
+
+Hybrid initialization is done.
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results|Graphics|Contours|mach-number"))
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Contours*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(dolly-camera 2.25162 0.197058 0)
+(cx-use-window-id 51)
+(dolly-camera 29.0472 20.6375 0)
+(cx-use-window-id 51)
+(dolly-camera -0.040294 -0.174649 0)
+(cx-use-window-id 51)
+(dolly-camera 0.00314312 0.46537 0)
+(cx-use-window-id 51)
+(dolly-camera -0.0216544 -0.105201 0)
+(cx-use-window-id 51)
+(dolly-camera 0.176769 -0.0336975 0)
+(cx-use-window-id 51)
+(dolly-camera -0.106946 0.0172597 0)
+(cx-use-window-id 51)
+(dolly-camera 0.382264 -0.0180819 0)
+(cx-use-window-id 51)
+(dolly-camera 57.3271 7.05658 0)
+(cx-use-window-id 51)
+(dolly-camera 18.0024 7.7661 0)
+(cx-gui-do cx-set-toggle-button2 "Solution Initialization*Table1*ToggleBox3(Initialization Methods)*Standard Initialization" #t)
+(cx-gui-do cx-activate-item "Solution Initialization*Table1*ToggleBox3(Initialization Methods)*Standard Initialization")
+/exit y
+(cx-gui-do cx-activate-item "Question*OK")
+Auto-Transcript Stop Time:  02:39:19, 04 Mar 2026 Russia TZ 2 Standard Time 
+Total Transcript Time: 6 Minute 32 Second.

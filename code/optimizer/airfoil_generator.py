@@ -106,10 +106,12 @@ class airfoil_structured:
         k = 0
         while thickness < min_thick:
             k += 1
-            factor = min_thick / thickness
-            for i in range(2, self.N-1):
-                self.up_y_coords[i] *= factor
-                self.down_y_coords[i] *= factor
+            #factor = np.clip(min_thick / thickness - 1, 0, 0.1) 
+            #for i in range(2, self.N-1):
+            #    self.up_y_coords[i] += factor * (np.abs(self.up_y_coords[i]))
+            #    self.down_y_coords[i] -= factor * (np.abs(self.down_y_coords[i]))
+            i = self.N//2
+            self.up_y_coords[i] += 0.01 
             self.update_curve()
             thickness, pos = self.thick()
         
