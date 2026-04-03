@@ -27,24 +27,9 @@ config = {
 }
 
 def main():
-    print("Запуск сессии Fluent как сервера...")
-    session = pyfluent.launch_fluent(
-        processor_count=10, 
-        dimension=2, 
-        cwd=script_dir, 
-        precision="double", 
-        case_file_name=fluent_case_path,
-        show_gui=False, 
-        start_transcript=False
-    )
     
     # Формируем общий пакет данных для Worker'а
     shared_data = {
-        "connection": {
-            "ip": session.connection_properties.ip,
-            "port": session.connection_properties.port,
-            "password": session.connection_properties.password
-        },
         "config": config
     }
     
@@ -53,17 +38,16 @@ def main():
     with open(json_file, 'w') as f:
         json.dump(shared_data, f, indent=4)
         
-    print(f"Fluent готов. Конфигурация и доступы сохранены в {json_file}")
+    print(f"Конфигурация сохранена в {json_file}")
     
     # Запускаем DAKOTA
     print("Запуск DAKOTA...")
     try:
-        subprocess.run(["dakota", "-i", "dakota.in", "-o", "dakota.out"], check=True)
+        subprocess.run(["dakota", "-i", "dakota.in", "-o", "dakota.out", "-r", "restart_data.rst"], check=True)
     except Exception as e:
         print(f"Критическая ошибка при запуске DAKOTA: {e}")
     finally:
         print("Закрытие сессии Fluent и очистка временных файлов...")
-        session.exit()
         if os.path.exists(json_file):
             os.remove(json_file)
 

@@ -4,15 +4,15 @@ environment
 
 method
     efficient_global
-    initial_samples = 50
+    initial_samples = 500
     max_iterations = 100
     seed = 54321
 
 variables
-    continuous_design = 7
-    lower_bounds     0.01   -1.0  -1.0  -1.0  -1.0  -1.0   0.0
-    upper_bounds     1.0    1.0   1.0   1.0   1.0   1.0   1.0
-    descriptors      'x1'  'x2'  'x3'  'x4'  'x5'  'x6'  'x7'
+    continuous_design = 9
+    lower_bounds     0.1   -1.0  -1.0  -1.0  -1.0  -1.0  -1.0  -1.0   0.0
+    upper_bounds     1.0    1.0   1.0   1.0   1.0   1.0   1.0   1.0   1.0
+    descriptors      'x1'  'x2'  'x3'  'x4'  'x5'  'x6'  'x7'  'x8'  'x9'
 
 interface
     fork

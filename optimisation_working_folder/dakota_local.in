@@ -1,0 +1,31 @@
+environment
+    tabular_data
+        tabular_data_file = 'opt_history_local.dat'
+
+method
+    # Метод сопряженных градиентов Флетчера-Ривса
+    conmin_frcg
+    convergence_tolerance = 1e-3
+    max_iterations = 50
+
+variables
+    continuous_design = 3
+    initial_point =  0.5 0.4 0.7            
+    lower_bounds    0.1   -1.0   0.0
+    upper_bounds    1.0    1.0   1.0
+    descriptors     'x1'  'x2'   'x3' 
+
+interface
+    fork
+    analysis_driver = 'python eval_worker.py'
+    parameters_file = 'params.in'
+    file_save
+
+responses
+    objective_functions = 1
+    numerical_gradients
+        method_source dakota
+        interval_type forward # передние разности 
+        fd_step_size = 0.005
+        absolute
+    no_hessians

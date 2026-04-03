@@ -49,26 +49,34 @@ def run_fluent_simulation(solver_session, target_cya, cya_tol, cxa_tol, Mach, Re
         nonlocal total_iterations
         solver_session.settings.solution.run_calculation.iterate(iter_count=step_iter)
         total_iterations += step_iter
-        converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)  
+        converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)
+        if cya == 0.0 and cxa == 0.0 and not converged:
+            print("Обнаружен развал решения. Прерывание цикла во избежание зависания.")
+            return None, None  
         while not converged: 
             solver_session.settings.solution.run_calculation.iterate(iter_count=step_iter)
             total_iterations += step_iter
             converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)
-            if total_iterations >= 2500: return target_cya, 1
+            if cya == 0.0 and cxa == 0.0 and not converged:
+                print("Обнаружен развал решения. Прерывание цикла во избежание зависания.")
+                return None, None
+            if total_iterations >= 2500: return target_cya, None
         return cya, cxa
     cya, cxa = run_calc(100, cya_tol, cxa_tol)
-    if cya < 0: return cya, 0.5
+    if cya < 0: return None, None
     alpha_step = 0.5
     #метод Ньютона для решения 
     while(abs(cya-target_cya) > cya_tol):
-        if total_iterations >= 2500: return cya, 0.5
+        if total_iterations >= 2500: return cya, None
         alpha_step *= -1
         curralpha = solver_session.settings.parameters.input_parameters.expression["alpha"].value()
         newalpha = curralpha + alpha_step
         solver_session.settings.parameters.input_parameters.expression["alpha"].value = newalpha
         newcya, newcxa = run_calc(50, cya_tol, cxa_tol)
         cya_a = (newcya - cya)/alpha_step
-        newalpha = curralpha + (target_cya-cya)/cya_a
+        delta_alpha = (target_cya - cya)/cya_a
+        delta_alpha = np.clip(delta_alpha, -2, 2)
+        newalpha = curralpha + delta_alpha   
         solver_session.settings.parameters.input_parameters.expression["alpha"].value = newalpha
         cya, cxa = run_calc(50, cya_tol, cxa_tol)
     return cya, cxa

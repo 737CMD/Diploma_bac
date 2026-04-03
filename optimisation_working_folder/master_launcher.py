@@ -15,55 +15,40 @@ config = {
     "T": 300,
     "min_thick": 12,
     "target_cl": 0.5,
-    "min_r_forw": 0.007,
-    "points": 3,
-    "dy_te": 0.005,
-    "cl_tol": 0.0015,
+    "min_r_forw": 0.007, #верхняя граница в 10 раз больше 
+    "points": 1,
+    "dy_te": 0.00,
+    "cl_tol": 0.001,
     "cd_tol": 0.0001,
     "conv_iter": 30,
-    "r_bound": 0.07, #макс радиус кривизны передней кромки
     "point_bound": 0.2, #макс координата точки
     "teta_bound": np.deg2rad(20) #Максимальный угол заклинения 
 }
 
 def main():
-    print("Запуск сессии Fluent как сервера...")
-    session = pyfluent.launch_fluent(
-        processor_count=10, 
-        dimension=2, 
-        cwd=script_dir, 
-        precision="double", 
-        case_file_name=fluent_case_path,
-        show_gui=True, 
-        start_transcript=False
-    )
     
     # Формируем общий пакет данных для Worker'а
     shared_data = {
-        "connection": {
-            "ip": session.connection_properties.ip,
-            "port": session.connection_properties.port,
-            "password": session.connection_properties.password
-        },
-        "config": config
+        "config": config #Хвост от того, что раньше передавалось больше
     }
     
-    # Сохраняем в единый JSON
+    #JSON
     json_file = os.path.join(script_dir, 'shared_data.json')
     with open(json_file, 'w') as f:
         json.dump(shared_data, f, indent=4)
         
-    print(f"Fluent готов. Конфигурация и доступы сохранены в {json_file}")
+    print(f"Конфигурация сохранена в {json_file}")
     
     # Запускаем DAKOTA
     print("Запуск DAKOTA...")
+    dakota_file_name = "dakota_local.in"
     try:
-        subprocess.run(["dakota", "-i", "dakota.in", "-o", "dakota.out"], check=True)
+        subprocess.run(["dakota", "-i", dakota_file_name, "-o", "dakota.out", "-r", "restart_data.rst"], check=True)
+        # "-r", "restart_data.rst" 
     except Exception as e:
         print(f"Критическая ошибка при запуске DAKOTA: {e}")
     finally:
         print("Закрытие сессии Fluent и очистка временных файлов...")
-        session.exit()
         if os.path.exists(json_file):
             os.remove(json_file)
 
