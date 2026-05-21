@@ -1,0 +1,365 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Списки}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Нумерованные}
+
+\begin{frame}{Нумерованные списки}
+  \begin{enumerate}
+    \item один
+    \item два
+    \item три
+  \end{enumerate}
+\end{frame}
+\note{
+  Этот текст будет виден только если его отображение включено в~файле \textbf{Presentation/setup}.
+  Для раздельного вывода презентации и заметок на~разные экраны (как в~impress или powerpoint)
+  можно использовать программу \textit{pdf-presenter-console}.
+}
+
+\subsection{Не нумерованные}
+
+\begin{frame}{Перечисления}
+  \begin{itemize}
+    \item Проблема 1
+    \item Проблема 2
+    \item Проблема 3
+  \end{itemize}
+\end{frame}
+\note[itemize]{
+  \item Тезис 1
+  \item Тезис 2
+  \item Тезис 3
+}
+
+\subsection{Комбинированные}
+
+\begin{frame}{Комбинация списков}
+  \begin{enumerate}
+    \item \textbf{Задача 1}
+      \begin{itemize}
+        \item Подзадача 1-1
+        \item Подзадача 1-2
+      \end{itemize}
+    \item \textbf{Задача 2}
+      \begin{itemize}
+        \item Подзадача 2-1
+        \item Подзадача 2-2
+        \item Подзадача 2-3
+      \end{itemize}
+    \item \textbf{Задача 3}
+      \begin{itemize}
+        \item Подзадача 3-1
+        \item Подзадача 3-2
+        \item Подзадача 3-3
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+\note[itemize]{
+  \item Задача 1
+  \item Задача 2
+  \item Задача 3
+}
+
+\begin{frame}{Большой многоуровневый список}
+  \begin{itemize}
+    \item \textbf{Пункт 1}
+    \begin{itemize}
+      \itemi Подпункт 1-1
+      \itemi Подпункт 1-2
+    \end{itemize}
+    \item \textbf{Пункт 2}
+    \begin{itemize}
+      \itemi Подпункт 2-1
+    \end{itemize}
+    \item \textbf{Пункт 3}
+    \begin{itemize}
+      \itemi Подпункт 3-1
+      \itemi Подпункт 3-2
+    \end{itemize}
+    \item \textbf{Пункт 4}
+    \begin{itemize}
+      \itemi Подпункт 4-1
+    \end{itemize}
+    \item \textbf{Пункт 5}
+    \begin{itemize}
+      \pro Подпункт 5-1
+      \pro Подпункт 5-2
+      \con Подпункт 5-3
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Разделение слайда}
+  Поясняющий текст
+  \begin{itemize}
+    \item Один
+    \item Два
+    \item Три
+  \end{itemize}
+  \framebreak
+  Продолжение предыдущего слайда
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Графика}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Одиночное изображение}
+  \centering
+  \includegraphics[width=0.8\linewidth]{latex} % окружение figure не требуется
+\end{frame}
+
+\subsection{Расположение}
+
+\begin{frame}{Изображения по-вертикали}
+  \centering
+  \vfill
+  \includegraphics[width=0.5\linewidth,height=0.1\textheight]{latex}
+  
+  \TeX
+  \vfill
+  \includegraphics[width=0.5\linewidth,height=0.2\textheight]{latex}
+  
+  \LaTeX
+  \vfill
+  \includegraphics[scale=0.2]{latex}
+  \vfill
+\end{frame}
+
+\begin{frame}{Изображения по-горизонтали}
+  \begin{minipage}[t]{0.47\linewidth}
+    \textbf{Составная \\ подпись 1}
+    \center{\includegraphics[width=0.8\linewidth]{knuth1}}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.47\linewidth}
+    \textbf{Составная \\ подпись 2}
+    \center{\includegraphics[width=0.8\linewidth]{knuth2}}
+  \end{minipage}
+\end{frame}
+
+\subsection{Линии}
+
+\begin{frame}{Разделяющие линии}
+  \begin{minipage}[c]{0.47\linewidth}
+    \center{\includegraphics[width=1\linewidth]{latex}}
+    \bigskip
+    \hrule{}
+    \bigskip
+    \textbf{Составная \\ подпись 1}
+  \end{minipage}
+  \hfill
+  \vrule{}
+  \hfill
+  \begin{minipage}[c]{0.47\linewidth}
+    \flushright
+    \textbf{Составная \\ подпись 2}
+    \center{\includegraphics[width=0.8\linewidth]{knuth2}}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Четыре изображения}
+  \centering
+  \includegraphics[width=0.25\linewidth,angle=35]{latex}
+  \includegraphics[width=0.25\linewidth,angle=135]{latex}\\
+  \includegraphics[width=0.25\linewidth,angle=15]{latex}
+  \includegraphics[width=0.25\linewidth,angle=-15]{latex}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Объекты}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Блоки}
+  \metroset{block=transparent}
+  \begin{block}{Прозрачный блок с заголовком}
+    Текст внутри блока,\\
+    который может занимать несколько строк
+  \end{block}
+
+  \metroset{block=fill}
+  \begin{block}{Заполненный блок с заголовком}
+    Текст внутри блока,\\
+    который может занимать несколько строк
+  \end{block}
+
+  \begin{block*}
+    Блок без заголовка\\
+    Текст внутри блока
+  \end{block*}
+
+  \begin{block*}[blue!10]
+    Блок без заголовка\\
+    Текст внутри блока
+  \end{block*}
+
+  \vspace{1ex}
+  \conclusion{0.8\textwidth}{Выводы можно оформить в рамке}
+\end{frame}
+
+\begin{frame}{Полосы}
+  \begin{stripe}
+    Серая полоса (по умолчанию)\\
+    Текст внутри полосы,\\
+    который может занимать несколько строк
+  \end{stripe}
+
+  \begin{stripe}[Orange!20]
+    Оранжевая полоса\\
+    Текст внутри полосы,\\
+    который может занимать несколько строк
+  \end{stripe}
+
+  \begin{stripe}[Green!20]
+    Зелёная полоса\\
+    Текст внутри полосы,\\
+    который может занимать несколько строк
+  \end{stripe}
+\end{frame}
+
+\begin{frame}{Сноски}
+  Текст с первой сноской\ftnmark.
+  \ftntext{Это текст первой сноски}
+  
+  Текст со второй сноской\ftnmark.
+  \ftntext{Это текст второй сноски}
+\end{frame}
+
+\begin{frame}[t]{Произвольное позиционирование объектов}
+  \begin{textblock*}{100pt}(0.5\textwidth, 0.5\textheight)
+    Окружение \texttt{textblock*} позволяет поместить объект в~любое место слайда
+  \end{textblock*}
+  
+  \begin{textblock*}{0pt}(0.05\textwidth, 0.05\textheight)
+    \includegraphics[height=0.1\textheight]{logos/MIPT_logo.png}\\
+  \end{textblock*}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Слои}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Слои}
+  \begin{itemize}
+    \item<+-> Отдельные части слайдов можно показывать последовательно, заменяя информацию или акцентируя внимание на \alert<2>{важных фрагментах}
+    \item<+-> \textbf{Жирный}, \textbf{Bold}
+    \item<+-> В Бимере это можно сделать при помощи слоёв (\texttt{overlays})
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Слои}
+  Простейший способ создать слой
+  \pause
+  --- поместить команду \alert{\texttt{\textbackslash pause}} между частями,
+  \pause
+  которые следует показать отдельно.
+\end{frame}
+
+\begin{frame}{Перечисления}
+  \begin{itemize}
+    \item<1-> Этот будет виден
+    \item<2> Проблема 2
+    \item<3> Проблема 3
+  \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Остальное}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Формулы}
+
+\begin{frame}{Формулы}
+  \[
+  \left\{
+  \begin{array}{rl}
+    \dot x = & \sigma (y-x)  \\
+    \dot y = & x (r - z) - y \\
+    \dot z = & xy - bz
+  \end{array}
+  \right.
+  \]
+\end{frame}
+
+\begin{frame}{Пакет amsmath}
+  \centering
+  \begin{minipage}[t]{0.5\linewidth}
+    \begin{multline*}
+      y = 1 x^1 + 2 x^2 + 3 x^3 + \\ + 4 x^4 + 5 x^5 + \dots
+    \end{multline*}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Интегралы}
+  Английский стиль записи пределов интегрирования:
+  \[
+    \int_{0}^{T} f(t)\,dt,\quad
+    \int_{g(t)=a}^{g(t)=b} f(t)\,dt.
+  \]
+  
+  Русский стиль:
+  \[
+    \int\limits_{0}^{T} f(t)\,dt,\quad
+    \int\limits_{g(t)=a}^{g(t)=b} f(t)\,dt.
+  \]
+\end{frame}
+
+\begin{frame}{Уравнения Максвелла}
+  \centering{
+    \small
+    \def\arraystretch{1.8}%
+    \begin{tabular}{ll}
+      \toprule
+      Интегральная форма & Дифференциальная форма \\ \midrule
+      \(Q_e(t) = \displaystyle\oiint\limits_S \vec D(t) \cdot d\vec{s} = \displaystyle\iiint\limits_V \rho_v(t) dv\)
+      & \(\nabla \cdot \vec D(t) = \rho_v(t)\) \\
+      \(\displaystyle\oiint\limits_S \vec B(t) \cdot d\vec{s} = 0\)
+      & \(\nabla \cdot \vec B(t) = 0\) \\
+      \(V_{emf}(t) = \displaystyle\oint\limits_L \vec E(t) \cdot d\vec{l}\) = \(- \displaystyle\iint\limits_S \left[\frac{\partial\vec{B}(t)}{\partial t}\right] \cdot d\vec{s}\)
+      & \(\nabla \times \vec E(t) = - \frac{\partial\vec{B}(t)}{\partial t}\) \\
+      \(I(t) = \displaystyle\oint\limits_L \vec H(t) \cdot d\vec{l} = \displaystyle\iint\limits_S \left[\vec J(t) + \frac{\partial\vec{D}(t)}{\partial t}\right] \cdot d\vec{s}\)
+      & \(\nabla \times \vec H(t) = \vec J(t) + \frac{\partial\vec{D}(t)}{\partial t}\) \\
+      \midrule
+      \(\displaystyle\oiint\limits_S \vec J \cdot d\vec{s} = -\frac{\partial Q_e}{\partial t}\)
+      & \(\nabla \cdot \vec J = - \frac{\partial \rho_v}{\partial t}\) \\
+      \bottomrule
+      \multicolumn{2}{c}{\(\vec D(t) = \left[\varepsilon(t)\right] * \vec E(t)\)} \\
+      \multicolumn{2}{c}{\(\vec B(t) = \left[\mu(t)\right] * \vec H(t)\)} \\
+    \end{tabular}
+  }
+\end{frame}
+
+\subsection{Таблицы}
+
+\begin{frame}{Таблица}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Заголовок 1} & \textbf{Заголовок 2} \\
+    \hline
+    Сумма        & \(b+a\) \\
+    \hline
+    Разность     & \(a-b\) \\
+    \hline
+    Произведение & \(a*b\) \\
+    \hline
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Другая таблица}
+  \centering
+  \begin{tabular}{lc}
+    \toprule
+    \multicolumn{1}{c}{\textbf{Заголовок 1}} & \textbf{Заголовок 2} \\
+    \midrule
+    Сумма        & \(b+a\) \\
+    Разность     & \(a-b\) \\
+    Произведение & \(a*b\) \\
+    \bottomrule
+  \end{tabular}
+\end{frame}

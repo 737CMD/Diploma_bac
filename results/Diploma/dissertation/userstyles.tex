@@ -1,0 +1,56 @@
+% для вертикального центрирования ячеек в tabulary
+\def\zz{\ifx\[$\else\aftergroup\zzz\fi}
+%$ \] % <-- чиним подсветку синтаксиса в некоторых редакторах
+\def\zzz{\setbox0\lastbox
+\dimen0\dimexpr\extrarowheight + \ht0-\dp0\relax
+\setbox0\hbox{\raise-.5\dimen0\box0}%
+\ht0=\dimexpr\ht0+\extrarowheight\relax
+\dp0=\dimexpr\dp0+\extrarowheight\relax
+\box0
+}
+
+% Ширина текста минус ширина надписи 999
+\newlength{\twless}
+\newlength{\lmarg}
+\setlength{\lmarg}{\widthof{999}}   % ширина надписи 999
+\setlength{\twless}{\textwidth-\lmarg}
+
+% значок С++ — используйте команду \cpp
+\newcommand{\cpp}{%
+    C\nolinebreak\hspace{-.05em}%
+    \raisebox{.2ex}{+}\nolinebreak\hspace{-.10em}%
+    \raisebox{.2ex}{+}%
+}
+
+%%% Ради примера во второй главе
+\let\originalepsilon\epsilon
+\let\originalphi\phi
+\let\originalkappa\kappa
+\let\originalle\le
+\let\originalge\ge
+%\let\originalleq\leq  % не работает с пакетом unicode-math
+%\let\originalgeq\geq  % не работает с пакетом unicode-math
+\let\originalemptyset\emptyset
+\let\originalvarnothing\varnothing
+\let\originaltan\tan
+\let\originalcot\cot
+\let\originalcsc\csc
+
+%%% Русская традиция начертания математических знаков
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+%\renewcommand{\leq}{\ensuremath{\leqslant}} % не работает с пакетом unicode-math
+%\renewcommand{\geq}{\ensuremath{\geqslant}} % не работает с пакетом unicode-math
+%\renewcommand{\emptyset}{\varnothing}       % не работает с пакетом unicode-math
+
+%%% Русская традиция начертания математических функций (на случай копирования из зарубежных источников)
+\renewcommand{\tan}{\operatorname{tg}}
+\renewcommand{\cot}{\operatorname{ctg}}
+\renewcommand{\csc}{\operatorname{cosec}}
+
+%%% Русская традиция начертания греческих букв
+% Из-за использовании пакета unicode-math переопределения вынесены
+% в отдельный файл rumath.tex и добавлены после начала документа
+%\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+%\renewcommand{\phi}{\ensuremath{\varphi}}
+%\renewcommand{\kappa}{\ensuremath{\varkappa}}

@@ -1,0 +1,43 @@
+Auto-Transcript Start Time:  15:11:55, 15 May 2026 Russia TZ 2 Standard Time 
+Current Directory: "E:\tsagi_dipl\Diploma_bac\optimisation_working_folder"
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@localhost
+Host spawning Node 0 on machine "VVCh" (win64).
+
+---------------------------------------------------------------------------------
+ID    Hostname  Core   O.S.         PID    Vendor                               
+---------------------------------------------------------------------------------
+n9    VVCh      10/16  Windows-x64  17276  AMD Ryzen 7 5700X 8-Core Processor   
+n8    VVCh      9/16   Windows-x64  11672  AMD Ryzen 7 5700X 8-Core Processor   
+n7    VVCh      8/16   Windows-x64  19632  AMD Ryzen 7 5700X 8-Core Processor   
+n6    VVCh      7/16   Windows-x64  14032  AMD Ryzen 7 5700X 8-Core Processor   
+n5    VVCh      6/16   Windows-x64  27672  AMD Ryzen 7 5700X 8-Core Processor   
+n4    VVCh      5/16   Windows-x64  12752  AMD Ryzen 7 5700X 8-Core Processor   
+n3    VVCh      4/16   Windows-x64  2408   AMD Ryzen 7 5700X 8-Core Processor   
+n2    VVCh      3/16   Windows-x64  11128  AMD Ryzen 7 5700X 8-Core Processor   
+n1    VVCh      2/16   Windows-x64  16840  AMD Ryzen 7 5700X 8-Core Processor   
+n0*   VVCh      1/16   Windows-x64  16392  AMD Ryzen 7 5700X 8-Core Processor   
+host  VVCh             Windows-x64  11096  AMD Ryzen 7 5700X 8-Core Processor   
+
+MPI Option Selected: intel
+Selected system interconnect: default
+---------------------------------------------------------------------------------
+
+Cleanup script file is E:\\tsagi_dipl\\Diploma_bac\\optimisation_working_folder\\cleanup-fluent-VVCh-11096.bat
+Information: The server has started and is running.
+
+> Shutting down Server...
+Services Shutdown...Done.
+Server Shutdown...Done.
+Queue Cleared...Done.
+Shutdown Complete.
+Fatal failure in fluent (disconnected / ended abnormally) - exiting...

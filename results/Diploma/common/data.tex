@@ -1,0 +1,66 @@
+%%% Основные сведения %%%
+\newcommand{\thesisAuthorLastName}{\fixme{Фамилия}}
+\newcommand{\thesisAuthorOtherNames}{\fixme{Имя Отчество}}
+\newcommand{\thesisAuthorInitials}{\fixme{И.\:О.}}
+\newcommand{\thesisAuthor}              % ВКР, ФИО автора
+{%
+  \texorpdfstring{% \texorpdfstring takes two arguments and uses the first for (La)TeX and the second for pdf
+    \thesisAuthorLastName~\thesisAuthorOtherNames% так будет отображаться на титульном листе или в тексте, где будет использоваться переменная
+  }{%
+    \thesisAuthorLastName, \thesisAuthorOtherNames% эта запись для свойств pdf-файла. В таком виде, если pdf будет обработан программами для сбора библиографических сведений, будет правильно представлена фамилия.
+  }
+}
+\newcommand{\thesisAuthorShort}         % Диссертация, ФИО автора инициалами
+{\thesisAuthorInitials~\thesisAuthorLastName}
+\newcommand{\thesisTitle}               % Название ВКР
+{\fixme{Название ВКР}}
+\newcommand{\thesisForm}                % Форма ВКР: бакаларская работа, магистерская диссертация
+{\fixme{магистерская диссертация}}
+\newcommand{\thesisSpecialtyNumber}     % Номер специальности
+{\fixme{03.04.01.}}
+\newcommand{\thesisSpecialtyTitle}      % Название специальности
+{\fixme{Прикладные математика и физика}}
+\newcommand{\thesisProfile}             % Направленность (профиль) подготовки
+{\fixme{Авиационные технологии}}
+\newcommand{\thesisCity}                % Город написания ВКР
+{Жуковский}
+\newcommand{\thesisYear}                % Год написания ВКР
+{\fixme{2026}}
+\newcommand{\defenseData}               % Дата защиты ВКР
+{\fixme{20 июня}}
+
+\newcommand{\thesisOrganization}        % Организация
+{
+  Федеральное государственное автономное образовательное учреждение высшего образования
+  <<Московский физико-технический институт (национальный исследовательский университет)>>
+}
+\newcommand{\thesisOrganizationShort}   % Краткое название организации
+{МФТИ}
+\newcommand{\thesisDepartment}          % Название факультета
+{Физтех-школа авиационных и цифровых технологий}
+\newcommand{\thesisDepartmentShort}     % Краткое название факультета
+{ПИШ ФАЛТ}
+\newcommand{\thesisChair}               % Название кафедры
+{Кафедра аэрофизики и летательных аппаратов}
+
+\newcommand{\supervisorFio}             % Научный руководитель, ФИО
+{\fixme{Фамилия Имя Отчество}}
+\newcommand{\supervisorRegalia}         % Научный руководитель, регалии
+{\fixme{кандидит технических наук}}
+\newcommand{\supervisorFioShort}        % Научный руководитель, ФИО кратко
+{\fixme{Фамилия\:И.\:О.}}
+\newcommand{\supervisorRegaliaShort}    % Научный руководитель, регалии кратко
+{\fixme{канд.\:техн.\:наук}}
+
+%\newcommand{\advisorFio}                % Консультант, ФИО
+%{\fixme{Фамилия Имя Отчество}}
+\newcommand{\advisorRegalia}            % Консультант, регалии
+{\fixme{кандидит технических наук}}
+\newcommand{\advisorFioShort}           % Консультант, ФИО кратко
+{\fixme{Фамилия\:И.\:О.}}
+\newcommand{\advisorRegaliaShort}       % Консультант, регалии кратко
+{\fixme{д-р\:физ.-мат.\:наук}}
+
+% To avoid conflict with beamer class use \providecommand
+\providecommand{\keywords}%             % Ключевые слова для метаданных PDF ВКР
+{}

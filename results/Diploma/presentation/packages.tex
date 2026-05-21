@@ -1,0 +1,15 @@
+%%% Пакеты для презентации %%%
+\usepackage{polyglossia}          % russian language
+
+% Подключаем unicode-math, чтобы использовать команду \setmathfont{}
+\usepackage[
+  math-style=french,  % Настройка прямого и наклонного начертаний латинских и греческих букв
+%  bold-style=upright,
+%  sans-style=literal,
+]{unicode-math}
+
+\usepackage{appendixnumberbeamer} % не считать номера страниц после команды \appendix
+\usepackage{textpos}              % for textblock*
+\usepackage{pifont}               % pix for \pro and \con
+\usepackage{pgfpages}             % для печати 2 слайдов на 1 странице в режиме handout
+\usepackage{array, booktabs}      % для таблиц

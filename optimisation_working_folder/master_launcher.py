@@ -16,7 +16,7 @@ config = {
     "min_thick": 12,
     "target_cl": 0.5,
     "min_r_forw": 0.007, #верхняя граница в 10 раз больше 
-    "points": 1,
+    "points": 3,
     "dy_te": 0.00,
     "cl_tol": 0.001,
     "cd_tol": 0.0001,
@@ -41,7 +41,7 @@ def main():
     
     # Запускаем DAKOTA
     print("Запуск DAKOTA...")
-    dakota_file_name = "dakota_local.in"
+    dakota_file_name = "dakota.in"
     try:
         subprocess.run(["dakota", "-i", dakota_file_name, "-o", "dakota.out", "-r", "restart_data.rst"], check=True)
         # "-r", "restart_data.rst" 

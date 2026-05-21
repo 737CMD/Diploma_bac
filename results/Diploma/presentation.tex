@@ -1,0 +1,45 @@
+%!TEX program = lualatex
+%&preformat-present
+
+% Выбор режима сборки: 1 -- обычный, 2 -- черновик, 3 -- распечатка
+\def\beamerMode{1}
+
+\ifnum\beamerMode=1
+  \documentclass[9pt,xcolor={table,svgnames},aspectratio=169]{beamer}
+\else
+  \ifnum\beamerMode=2
+    \documentclass[draft,9pt,xcolor={table,svgnames},aspectratio=169]{beamer}
+  \else
+    \ifnum\beamerMode=3
+      \documentclass[handout,9pt,xcolor={table,svgnames},aspectratio=169]{beamer}
+    \fi
+  \fi
+\fi
+
+\input{common/data}                % Основные сведения
+\input{common/characteristic}      % Цель, задачи, апробация
+
+\input{Presentation/setup}         % Настройки презентации
+\input{Presentation/packages}      % Библиотеки презентации
+\input{Presentation/styles}        % Стили презентации
+\input{Presentation/definitions}   % Определения
+\input{Presentation/title}         % Титульный слайд
+
+% Вывести информацию о версиях используемых библиотек в лог сборки
+\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\includeonly{Presentation/content}
+
+\begin{document}
+  \input{Presentation/preamble}      % Первые слайды презентации
+  \input{Presentation/content}       % Содержание
+  \input{Presentation/conclusion}    % Последние слайды презентации
+  \ifnum\beamerMode=3
+    % Не добавляем запасные слайды в распечатку
+  \else
+    \appendix
+    \input{Presentation/appendix}      % Запасные слайды презентации
+  \fi
+\end{document}

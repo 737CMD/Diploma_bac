@@ -1,17 +1,19 @@
-                                          5 variables
-                      3.623026093599333e-01 x1
-                      3.225493310306811e-01 x2
-                      4.514488844533628e-01 x3
-                     -4.054714252078565e-01 x4
-                      4.930833192693423e-01 x5
+                                          6 variables
+                      5.336676823092624e-01 x1
+                     -6.901488870577887e-01 x2
+                     -3.289048011368140e-01 x3
+                     -4.061194747183472e-01 x4
+                     -5.016357376119123e-01 x5
+                      1.190395887517370e-01 x6
                                           1 functions
                                           1 ASV_1:obj_fn
-                                          5 derivative_variables
+                                          6 derivative_variables
                                           1 DVV_1:x1
                                           2 DVV_2:x2
                                           3 DVV_3:x3
                                           4 DVV_4:x4
                                           5 DVV_5:x5
+                                          6 DVV_6:x6
                                           0 analysis_components
                                          29 eval_id
                                           0 metadata

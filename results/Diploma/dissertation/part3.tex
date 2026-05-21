@@ -1,0 +1,117 @@
+\begingroup
+  \let\clearpage\relax                        % Чтобы текст продолжался без разрывов
+  \par\vspace{3ex}                            % Отступ
+  \chapter{Вёрстка таблиц}\label{ch:ch3}
+\endgroup
+%\noskipchapter{Вёрстка таблиц}\label{ch:ch3}
+
+\section{Таблица обыкновенная}\label{sec:ch3/sect1}
+
+Так размещается таблица:
+
+\begin{table} [htbp]
+    \centering
+    \begin{threeparttable}% выравнивание подписи по границам таблицы
+        \caption{Название таблицы}\label{tab:Ts0Sib}%
+        \begin{tabular}{| p{3cm} || p{3cm} | p{3cm} | p{4cm}l |}
+            \hline
+            \hline
+            Месяц   & \centering \(T_{min}\), К & \centering \(T_{max}\), К & \centering  \((T_{max} - T_{min})\), К & \\
+            \hline
+            Декабрь & \centering  253.575       & \centering  257.778       & \centering      4.203                  & \\
+            Январь  & \centering  262.431       & \centering  263.214       & \centering      0.783                  & \\
+            Февраль & \centering  261.184       & \centering  260.381       & \centering     \(-\)0.803              & \\
+            \hline
+            \hline
+        \end{tabular}
+    \end{threeparttable}
+\end{table}
+
+\begin{table} [htbp]% Пример записи таблицы с номером, но без отображаемого наименования
+    \centering
+    \begin{threeparttable}% выравнивание подписи по границам таблицы
+        \caption{}%
+        \label{tab:test1}%
+        \begin{SingleSpace}
+            \begin{tabular}{| c | c | c | c |}
+                \hline
+                Оконная функция & \({2N}\) & \({4N}\) & \({8N}\) \\ \hline
+                Прямоугольное   & 8.72     & 8.77     & 8.77     \\ \hline
+                Ханна           & 7.96     & 7.93     & 7.93     \\ \hline
+                Хэмминга        & 8.72     & 8.77     & 8.77     \\ \hline
+                Блэкмана        & 8.72     & 8.77     & 8.77     \\ \hline
+            \end{tabular}%
+        \end{SingleSpace}
+    \end{threeparttable}
+\end{table}
+
+Таблица~\cref{tab:test2} "--- пример таблицы, оформленной в~классическом книжном
+варианте или~очень близко к~нему.
+\mbox{ГОСТу} по~сути не~противоречит.
+Можно ещё улучшить представление, с~помощью пакета \verb|siunitx| или подобного.
+
+\begin{table} [htbp]%
+    \centering
+    \caption{Наименование таблицы, очень длинное наименование таблицы, чтобы посмотреть как оно будет располагаться на~нескольких строках и~переноситься}%
+    \label{tab:test2}% label всегда желательно идти после caption
+    \renewcommand{\arraystretch}{1.5}%% Увеличение расстояния между рядами, для улучшения восприятия.
+    \begin{SingleSpace}
+        \begin{tabular}{@{}@{\extracolsep{20pt}}llll@{}} %Вертикальные полосы не используются принципиально, как и лишние горизонтальные (допускается по ГОСТ 2.105 пункт 4.4.5) % @{} позволяет прижиматься к краям
+            \toprule     %%% верхняя линейка
+            Оконная функция & \({2N}\) & \({4N}\) & \({8N}\) \\
+            \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
+            Прямоугольное   & 8.72     & 8.77     & 8.77     \\
+            Ханна           & 7.96     & 7.93     & 7.93     \\
+            Хэмминга        & 8.72     & 8.77     & 8.77     \\
+            Блэкмана        & 8.72     & 8.77     & 8.77     \\
+            \bottomrule %%% нижняя линейка
+        \end{tabular}%
+    \end{SingleSpace}
+\end{table}
+
+
+\section{Таблицы с форматированными числами}\label{sec:ch3/formatted-numbers}
+
+В таблицах \cref{tab:S:parse,tab:S:align} представлены примеры использования опции
+форматирования чисел \texttt{S}, предоставляемой пакетом \texttt{siunitx}.
+
+\begin{table}[!h]
+    \centering
+    \begin{threeparttable}% выравнивание подписи по границам таблицы
+        \caption{Выравнивание столбцов}\label{tab:S:parse}
+        \begin{tabular}{SS[table-parse-only]}
+            \toprule
+            {Выравнивание по разделителю} & {Обычное выравнивание} \\
+            \midrule
+            12.345                        & 12.345                 \\
+            6,78                          & 6,78                   \\
+            -88.8(9)                      & -88.8(9)               \\
+            4.5e3                         & 4.5e3                  \\
+            \bottomrule
+        \end{tabular}
+    \end{threeparttable}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \begin{threeparttable}% выравнивание подписи по границам таблицы
+        \caption{Выравнивание с использованием опции \texttt{S}}\label{tab:S:align}
+        \sisetup{
+            table-figures-integer = 2,
+            table-figures-decimal = 4
+        }
+        \begin{tabular}
+            {SS[table-number-alignment = center]S[table-number-alignment = left]S[table-number-alignment = right]}
+            \toprule
+            {Колонка 1} & {Колонка 2} & {Колонка 3} & {Колонка 4} \\
+            \midrule
+            2.3456      & 2.3456      & 2.3456      & 2.3456      \\
+            34.2345     & 34.2345     & 34.2345     & 34.2345     \\
+            56.7835     & 56.7835     & 56.7835     & 56.7835     \\
+            90.473      & 90.473      & 90.473      & 90.473      \\
+            \bottomrule
+        \end{tabular}
+    \end{threeparttable}
+\end{table}
+
+\FloatBarrier

@@ -1,0 +1,17 @@
+% Титульный слайд
+\title{\thesisTitle}
+\author{\thesisAuthor}
+\date{\defenseData\;\thesisYear\:г.}
+\institute[\thesisOrganizationShort]
+{
+  Научный руководитель: \supervisorRegaliaShort\;\supervisorFioShort \\[0.5ex]
+  \thesisChair, \thesisDepartmentShort\;\thesisOrganizationShort, г.\:\thesisCity
+}
+\IfFileExists{images/logos/MIPT_logo.png}{
+  \ifnumequal{\value{logotitle}}{1}{
+    \titlegraphic{
+      \hfill
+      \includegraphics[height=0.8cm]{logos/MIPT_logo.png}
+    }
+  }{}
+}{}

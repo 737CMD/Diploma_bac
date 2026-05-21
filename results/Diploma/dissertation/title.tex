@@ -1,0 +1,50 @@
+% Титульный лист (ГОСТ Р 7.0.11-2001, 5.1)
+\thispagestyle{empty}
+\begin{center}
+  \small
+  \thesisOrganization \\
+  \thesisDepartment \\
+  \thesisChair
+\end{center}
+
+\bigskip
+{
+  \small
+  \noindent \hspace{-2em}
+  \textbf{Направление подготовки\,/\,специальность:}
+  \thesisSpecialtyNumber~\thesisSpecialtyTitle \par
+  \noindent \hspace{-2em}
+  \textbf{Направленность (профиль) подготовки:}
+  \thesisProfile
+}
+
+\vspace{0pt plus 6fill}
+
+\begin{center}
+  \textbf{
+    \MakeUppercase{\thesisTitle}
+  } \\
+  {\small (\thesisForm)}
+
+  \vspace{0pt plus 3fill}
+
+  \begin{flushright}
+    \begin{tabular}{l}
+      \textbf{Студент:} \\
+      \thesisAuthor \\[6ex]
+
+      \textbf{Научный руководитель:} \\
+      \supervisorFio, \\
+      \supervisorRegaliaShort \\[6ex]
+
+      \ifdef{\advisorFio}{
+        \textbf{Консультант:} \\
+        \advisorFio, \\
+        \advisorRegaliaShort \\[6ex]
+      }{}
+    \end{tabular}
+  \end{flushright}
+
+  \vspace{0pt plus 1fill} % число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+  {\small \thesisCity{} --- \thesisYear{}}
+\end{center}

@@ -1,0 +1,46 @@
+%%% Стили оформления презентации %%%
+
+%%% Папки с рисунками
+\graphicspath{{images/}{Presentation/images/}}
+
+%%% Тема пакета metropolis (см. metropolistheme.pdf)
+\usetheme{metropolis}
+\setbeamercolor{normal text}{bg=white}
+\metroset{
+  sectionpage=progressbar, % none, simple, progressbar
+  subsectionpage=none,  % none, simple, progressbar
+  progressbar=frametitle, % none, head, frametitle, foot
+}
+
+%%% Настройки печтаного варианта (handout)
+\mode<handout>{
+%  \metroset{sectionpage=none, numbering=none}
+  \metroset{sectionpage=none}
+  \setbeamercolor{frametitle}{use=normal text, parent=normal text}
+  % 2 on 1
+  \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+}
+
+%%% Шрифты
+\setmainfont{Fira Sans Book}
+\setsansfont[BoldFont={Fira Sans SemiBold}]{Fira Sans Book}
+%\setmonofont{Source Code Pro}
+\setmonofont{Fira Mono}
+\setmathfont{STIX Two Math}[StylisticSet=8]
+
+%%% Размер полей слайдов
+%\setbeamersize{
+%  text margin left=1.0cm,
+%  text margin right=1.0cm,
+%}
+
+% Вывод на экран заметок к презентации
+\ifnumequal{\value{presnotes}}{0}{}{
+  \setbeameroption{show notes}
+  \ifnumequal{\value{presnotes}}{2}{
+    \setbeameroption{show notes on second screen=\presposition}
+  }{}
+}
+
+\DeclareRobustCommand{\fixme}{\textcolor{red}}  % решаем проблему превращения названия цвета в результате \MakeUppercase,
+% http://tex.stackexchange.com/a/187930, \DeclareRobustCommand protects \todo from expanding inside \MakeUppercase

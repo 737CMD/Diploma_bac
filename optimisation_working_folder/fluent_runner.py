@@ -62,11 +62,11 @@ def run_fluent_simulation(solver_session, target_cya, cya_tol, cxa_tol, Mach, Re
             if cya == None and cxa == None and not converged or np.abs(cya) > 100 and total_iterations > 200:
                 print("Обнаружен развал решения. Прерывание цикла во избежание зависания.")
                 return None, None
-            if total_iterations >= 2500 or run_iter >= 600: return target_cya, None
+            if total_iterations >= 2500 or run_iter >= 800: return target_cya, None
         return cya, cxa
     cya, cxa = run_calc(100, cya_tol, cxa_tol)
     if cya < -0.1: return None, None
-    alpha_step = 0.5
+    alpha_step = 0.1
     #метод Ньютона для решения 
     while(abs(cya-target_cya) > cya_tol):
         if total_iterations >= 2500: return cya, None

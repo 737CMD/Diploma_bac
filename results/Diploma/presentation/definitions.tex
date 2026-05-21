@@ -1,0 +1,66 @@
+%%% Новые команды и окружения %%%
+
+%%% Добавляем другие варианты для \item
+\newcommand{\itemi}{\item[\(\checkmark\)]}
+\newcommand{\pro}{\item[\textcolor{ForestGreen}{\normalsize\ding{52}}]}
+\newcommand{\con}{\item[\textcolor{FireBrick}{\normalsize\ding{56}}]}
+
+%%% Physical parameters
+\newcommand*{\Rey}{\mathrm{Re}}
+\newcommand*{\Mach}{\mathrm{M}}
+\newcommand*{\Tu}{\mathrm{Tu}}
+\newcommand*{\mut}{\mu_\mathrm{t}}
+\newcommand*{\DSO}{\Delta \sigma_\mathrm{o}}
+
+%%% Сноски
+\newcounter{FootnoteCounter}
+\newcommand*{\ftnmark}{%
+  \stepcounter{FootnoteCounter}%
+  \footnotemark[\value{FootnoteCounter}]%
+}
+\newcommand*{\ftntext}[1]{%
+  \footnotetext[\value{FootnoteCounter}]{#1}%
+}
+
+
+%%% Блок без заголовка
+\newenvironment{block*}[1][structure!10!bg]{%
+  \setbeamercolor{block body}{bg=#1}
+  \begin{block}{\vspace*{-3ex}}
+  }{%
+  \end{block}
+}
+
+%%% Окружение stripe (полоса)
+\newenvironment{stripe}[1][structure!10!bg]{%
+  \setbeamercolor{block body}{bg=#1}
+  \vspace*{-2ex}
+  \begin{columns}
+    \begin{column}{\paperwidth}
+      \begin{block}{\vspace*{-3ex}}
+        \hspace*{1em}
+        \begin{minipage}{0.94\paperwidth}
+        }{%
+        \end{minipage}
+      \end{block}
+    \end{column}
+  \end{columns}
+}
+
+%%% Вывод в рамке
+\newcommand{\conclusion}[2]{%
+  \begin{tikzpicture}
+    \node [draw, thick, text width=#1, color=alerted text.fg] {% цвет рамки
+      \usebeamercolor[fg]{normal text}%
+      \textbf{#2}
+    };
+  \end{tikzpicture}%
+}
+
+
+%%% Команды рецензирования
+\ifboolexpr{ (test {\ifnumequal{\value{showmarkup}}{1}}) }{
+  \newrobustcmd{\todo}[1]{\textcolor{red}{#1}}
+}{
+  \newrobustcmd{\todo}[1]{}
+}

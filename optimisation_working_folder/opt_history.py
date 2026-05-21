@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Путь к файлу с историей (настраивается)
-history_file = 'opt_history_local.dat'
+history_file = 'opt_history.dat'
 
 def plot_optimization_history(filename):
     if not os.path.exists(filename):
@@ -42,8 +42,7 @@ def plot_optimization_history(filename):
                 objectives.append(obj_val)
                 
                 # Отдельно сохраняем "хорошие" точки (без штрафа)
-                # Твой штраф начинается от 2000, поэтому всё, что меньше - это физичный профиль
-                if obj_val < 2000:
+                if obj_val < 1500:
                     valid_iterations.append(iteration)
                     valid_objectives.append(obj_val)
                     
@@ -70,7 +69,7 @@ def plot_optimization_history(filename):
         best_val = valid_objectives[best_idx]
         plt.plot(best_iter, best_val, 'r*', markersize=15, label=f'Оптимум: {best_val:.1f} (Итерация {best_iter})')
 
-    plt.title('История оптимизации профиля (CG DAKOTA)', fontsize=14)
+    plt.title('История оптимизации профиля (EGO DAKOTA)', fontsize=14)
     plt.xlabel('Номер итерации', fontsize=12)
     plt.ylabel('Целевая функция (Cxa * 10000)', fontsize=12)
     
@@ -78,7 +77,7 @@ def plot_optimization_history(filename):
     # Если есть хорошие точки, смотрим на их масштаб + небольшой запас сверху
     if valid_objectives:
         max_valid = max(valid_objectives)
-        plt.ylim(0, max_valid * 1.5) 
+        plt.ylim(0, max_valid * 3) 
     else:
         plt.ylim(0, max(objectives) * 1.1)
 

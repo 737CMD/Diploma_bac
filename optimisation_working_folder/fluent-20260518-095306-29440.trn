@@ -1,0 +1,771 @@
+Auto-Transcript Start Time:  09:53:06, 18 May 2026 Russia TZ 2 Standard Time 
+Current Directory: "E:\tsagi_dipl\Diploma_bac\optimisation_working_folder"
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@localhost
+Host spawning Node 0 on machine "VVCh" (win64).
+
+---------------------------------------------------------------------------------
+ID    Hostname  Core   O.S.         PID    Vendor                               
+---------------------------------------------------------------------------------
+n9    VVCh      10/16  Windows-x64  31520  AMD Ryzen 7 5700X 8-Core Processor   
+n8    VVCh      9/16   Windows-x64  6008   AMD Ryzen 7 5700X 8-Core Processor   
+n7    VVCh      8/16   Windows-x64  17852  AMD Ryzen 7 5700X 8-Core Processor   
+n6    VVCh      7/16   Windows-x64  20720  AMD Ryzen 7 5700X 8-Core Processor   
+n5    VVCh      6/16   Windows-x64  34076  AMD Ryzen 7 5700X 8-Core Processor   
+n4    VVCh      5/16   Windows-x64  14440  AMD Ryzen 7 5700X 8-Core Processor   
+n3    VVCh      4/16   Windows-x64  25092  AMD Ryzen 7 5700X 8-Core Processor   
+n2    VVCh      3/16   Windows-x64  23800  AMD Ryzen 7 5700X 8-Core Processor   
+n1    VVCh      2/16   Windows-x64  3316   AMD Ryzen 7 5700X 8-Core Processor   
+n0*   VVCh      1/16   Windows-x64  17936  AMD Ryzen 7 5700X 8-Core Processor   
+host  VVCh             Windows-x64  24276  AMD Ryzen 7 5700X 8-Core Processor   
+
+MPI Option Selected: intel
+Selected system interconnect: default
+---------------------------------------------------------------------------------
+
+Cleanup script file is E:\\tsagi_dipl\\Diploma_bac\\optimisation_working_folder\\cleanup-fluent-VVCh-24276.bat
+Information: The server has started and is running.
+
+> Fast-loading "E:\Program files\ANSYS Inc\v242\fluent\fluent24.2.0\\addons\afd\lib\hdfio.bin"
+Done.
+Multicore SMT processors detected. Processor affinity set!
+
+Reading from VVCh:"E:\tsagi_dipl\Diploma_bac\optimisation_working_folder\optimization_setup.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+       49125 cells,     1 cell zone  ...
+          49125 quadrilateral cells,  zone id: 7
+       98677 faces,     4 face zones ...
+          97823 2D interior faces,  zone id: 8
+            217 2D wall faces,  zone id: 9
+            375 2D pressure-far-field faces,  zone id: 10
+            262 2D pressure-outlet faces,  zone id: 11
+       49552 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	distributing mesh
+		parts..........,
+		faces..........,
+		nodes..........,
+		cells..........,
+        bandwidth reduction using Reverse Cuthill-McKee: 4823/73 = 66.0685
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	outlet
+	wall
+	int_solid
+	inlet
+	solid
+     parallel,
+Done.
+
+Writing Settings file "C:\Users\vova1\AppData\Local\Temp\6"...
+	writing rp variables ... Done.
+	writing domain variables ... Done.
+	writing solid (type fluid) (mixture) ... Done.
+	writing inlet (type pressure-far-field) (mixture) ... Done.
+	writing int_solid (type interior) (mixture) ... Done.
+	writing wall (type wall) (mixture) ... Done.
+	writing outlet (type pressure-outlet) (mixture) ... Done.
+	writing zones map name-id ... Done.
+Multicore SMT processors detected. Processor affinity set!
+
+Reading "E:\tsagi_dipl\Diploma_bac\optimisation_working_folder\geom.msh"...
+
+Buffering for file scan...
+
+
+       Clearing partially read grid.
+   76540 nodes.
+   76000 quadrilateral cells, zone  7.
+  151460 2D interior faces, zone  8.
+     285 2D wall faces, zone  9.
+     475 2D velocity-inlet faces, zone 10.
+     320 2D pressure-outlet faces, zone 11.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts..........,
+		faces..........,
+		nodes..........,
+		cells..........,
+        bandwidth reduction using Reverse Cuthill-McKee: 7535/82 = 91.8902
+     materials,
+     interface,
+     domains,
+     zones,
+	outlet
+	inlet
+	wall
+	int_solid
+	solid
+     parallel,
+Done.
+
+Reading Settings file "C:\Users\vova1\AppData\Local\Temp\6"...
+
+ Setting zone id of solid to 7.
+ Setting zone id of int_solid to 8.
+ Setting zone id of wall to 9.
+ Setting zone id of inlet to 10.
+ Setting zone id of outlet to 11.
+Done.
+
+Setting solid (mixture) ... Done.
+Setting inlet (mixture) (zone type changed to pressure-far-field) ... Done.
+Setting int_solid (mixture) ... Done.
+Setting wall (mixture) ... Done.
+Setting outlet (mixture) ... Done.
+
+
+
+Following contexts active in the case file have been de-activated because of their current context control conditions:
+"coupled-pseudo-transient"
+
+Performing preliminary standard initialization before hybrid initialization, in order to support evaluation of expressions and material property UDF.
+
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case combines farfield, inlets and outlets 
+-Pressure information is available at the boundaries
+
+	iter		scalar-0		scalar-1
+
+	1		1.000000e+00	1.000000e+00
+        Stabilizing ads-0 to enhance linear solver robustness.
+	2		1.015750e-06	1.748887e-16
+        Stabilizing ads-0 to enhance linear solver robustness.
+        Stabilizing ads-1 to enhance linear solver robustness.
+	3		5.453978e-07	1.832684e-16
+        Stabilizing ads-0 to enhance linear solver robustness.
+	4		1.485192e-07	9.388265e-17
+        Stabilizing ads-0 to enhance linear solver robustness.
+	5		1.113814e-07	1.523614e-16
+        Stabilizing ads-0 to enhance linear solver robustness.
+	6		2.631058e-07	1.602973e-16
+	7		3.582767e-07	1.449274e-16
+        Stabilizing ads-0 to enhance linear solver robustness.
+	8		8.563548e-07	1.558609e-16
+	9		6.838942e-08	1.465822e-16
+	10		4.485755e-07	1.611376e-16
+
+Hybrid initialization is done.
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+
+ Reversed flow on 320 faces (100.0% area) of pressure-outlet 11.
+     1  1.0000e+00  1.2824e-03  1.4346e-03  9.0099e-04  6.2637e-03 -9.7299e-02  1.9675e-01  2.1299e-01  0:00:00   99
+
+ Reversed flow on 320 faces (100.0% area) of pressure-outlet 11.
+     2  6.9265e-01  1.2016e-03  1.5052e-03  6.9935e-04  5.8262e-03 -2.6203e-01  7.1476e-02  6.5680e-01  0:00:00   98
+
+ Reversed flow on 320 faces (100.0% area) of pressure-outlet 11.
+     3  4.8119e-01  1.4651e-03  1.5459e-03  6.3799e-04  4.0472e-03 -2.0861e-01  1.9379e-02  5.9286e-01  0:00:00   97
+
+ Reversed flow on 319 faces (99.9% area) of pressure-outlet 11.
+     4  3.8622e-01  2.0557e-03  1.8569e-03  5.5676e-04  3.7188e-03 -1.9826e-01 -1.9148e-02  5.6416e-01  0:00:00   96
+        Stabilizing temperature to enhance linear solver robustness.
+
+ Reversed flow on 306 faces (98.7% area) of pressure-outlet 11.
+     5  3.1630e-01  1.8055e-03  1.9337e-03  9.1047e-04  1.2654e-03 -1.8887e-01 -6.1960e-02  5.3545e-01  0:01:35   95
+        Stabilizing temperature to enhance linear solver robustness.
+
+ Reversed flow on 89 faces (14.7% area) of pressure-outlet 11.
+     6  2.1150e-01  1.3437e-03  3.9942e-03  2.1194e-03  5.3534e-05 -1.7986e-01 -7.9763e-02  5.0851e-01  0:01:15   94
+        Stabilizing temperature to enhance linear solver robustness.
+     7  1.6067e-01  9.1097e-04  2.8303e-03  2.0825e-03  3.3006e-05 -1.7055e-01 -8.3718e-02  4.8524e-01  0:01:00   93
+        Stabilizing temperature to enhance linear solver robustness.
+     8  1.4312e-01  7.1825e-04  2.0587e-03  1.8699e-03  4.0067e-05 -1.6139e-01 -7.9427e-02  4.6436e-01  0:00:47   92
+        Stabilizing temperature to enhance linear solver robustness.
+
+ Reversed flow on 14 faces (1.3% area) of pressure-outlet 11.
+     9  1.3266e-01  3.4933e-04  8.7524e-04  1.5619e-03  3.6076e-05 -1.5176e-01 -6.7924e-02  4.4875e-01  0:00:37   91
+        Stabilizing temperature to enhance linear solver robustness.
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 458 cells 
+    10  1.0785e-01  1.1899e-04  2.4757e-04  1.2707e-03  3.1605e-05 -1.4395e-01 -5.1832e-02  4.2739e-01  0:00:29   90
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 2202 cells 
+    11  9.5652e-02  4.6908e-05  7.8586e-05  1.0257e-03  2.3529e-05 -1.3712e-01 -4.7843e-02  4.0442e-01  0:00:41   89
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 3243 cells 
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    12  8.3599e-02  2.7416e-05  3.5059e-05  7.6400e-04  2.3851e-05 -1.3048e-01 -3.9864e-02  3.8309e-01  0:00:33   88
+        Stabilizing temperature to enhance linear solver robustness.
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 3860 cells 
+    13  7.5355e-02  1.8725e-05  1.8295e-05  6.6328e-04  2.2601e-05 -1.2417e-01 -3.3591e-02  3.6286e-01  0:00:26   87
+        Stabilizing temperature to enhance linear solver robustness.
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 3918 cells 
+    14  6.8630e-02  1.3769e-05  1.1092e-05  5.8597e-04  2.1081e-05 -1.1792e-01 -2.9421e-02  3.4462e-01  0:00:20   86
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 3493 cells 
+    15  6.2898e-02  1.0811e-05  7.8975e-06  5.6383e-04  1.9815e-05 -1.1270e-01 -2.4548e-02  3.2381e-01  0:00:16   85
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 3075 cells 
+    16  5.9159e-02  8.7072e-06  6.2838e-06  4.7857e-04  1.8915e-05 -1.0680e-01 -1.7593e-02  3.0862e-01  0:00:13   84
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 3240 cells 
+    17  5.6283e-02  6.8509e-06  5.1822e-06  5.0415e-04  1.7827e-05 -1.0188e-01 -1.0360e-02  2.9104e-01  0:00:27   83
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 5427 cells 
+    18  5.5007e-02  5.4528e-06  4.2447e-06  5.1774e-04  1.6984e-05 -9.6209e-02 -1.5759e-03  2.7938e-01  0:00:21   82
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 6205 cells 
+    19  5.2771e-02  4.6714e-06  3.4782e-06  4.4356e-04  1.6547e-05 -9.0949e-02  7.6910e-03  2.6865e-01  0:00:17   81
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 6436 cells 
+    20  5.0787e-02  4.0504e-06  2.9231e-06  3.5303e-04  1.6093e-05 -8.5696e-02  1.7512e-02  2.6089e-01  0:00:13   80
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 6694 cells 
+    21  4.8509e-02  3.4734e-06  2.4765e-06  3.6192e-04  1.4963e-05 -8.0785e-02  2.7078e-02  2.5704e-01  0:00:10   79
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 6932 cells 
+    22  4.5578e-02  3.0375e-06  2.1434e-06  2.7972e-04  1.3005e-05 -7.6417e-02  3.7084e-02  2.4761e-01  0:00:08   78
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 7498 cells 
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    23  4.2533e-02  2.5821e-06  1.7792e-06  2.9896e-04  1.1052e-05 -7.2209e-02  4.6892e-02  2.3592e-01  0:00:06   77
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 8336 cells 
+    24  4.1403e-02  2.3070e-06  1.4550e-06  2.6487e-04  9.5353e-06 -6.7846e-02  5.6195e-02  2.2428e-01  0:00:05   76
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 9441 cells 
+    25  3.8750e-02  1.9173e-06  1.1974e-06  2.9569e-04  9.4125e-06 -6.3030e-02  6.4744e-02  2.0713e-01  0:00:19   75
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 11303 cells 
+    26  3.6137e-02  1.6125e-06  1.0085e-06  2.5981e-04  1.0502e-05 -5.7805e-02  7.1987e-02  1.9493e-01  0:00:15   74
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 12865 cells 
+    27  3.2033e-02  1.3306e-06  8.7205e-07  2.5970e-04  1.0505e-05 -5.6002e-02  7.8803e-02  1.8128e-01  0:00:12   73
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 14036 cells 
+    28  2.9525e-02  1.1333e-06  7.9611e-07  2.2281e-04  1.2946e-05 -6.1849e-02  8.4652e-02  1.9282e-01  0:00:09   72
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 14874 cells 
+    29  2.7556e-02  1.1211e-06  7.5566e-07  1.5573e-04  1.5837e-05 -7.3332e-02  9.0279e-02  2.2089e-01  0:00:07   71
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 15440 cells 
+    30  2.5137e-02  1.0410e-06  7.4413e-07  7.9172e-05  1.7647e-05 -8.1937e-02  9.5575e-02  2.2768e-01  0:00:20   70
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 15966 cells 
+    31  2.1836e-02  9.5382e-07  6.3068e-07  7.8822e-05  1.8303e-05 -9.4774e-02  9.6590e-02  2.4725e-01  0:00:16   69
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 16300 cells 
+    32  2.0349e-02  8.5788e-07  5.4633e-07  3.6900e-05  1.8189e-05 -1.2192e-01  9.4818e-02  3.0698e-01  0:00:12   68
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 16477 cells 
+    33  1.8538e-02  7.8568e-07  4.8525e-07  2.4296e-05  1.7489e-05 -1.5976e-01  9.4428e-02  3.8607e-01  0:00:10   67
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 16638 cells 
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    34  1.6944e-02  7.1450e-07  4.3274e-07  2.0938e-05  1.6882e-05 -2.0174e-01  9.4944e-02  4.7953e-01  0:00:08   66
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 16778 cells 
+    35  1.5910e-02  6.6196e-07  3.9719e-07  1.9306e-05  1.5935e-05 -2.4565e-01  9.5529e-02  5.9022e-01  0:00:19   65
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 16923 cells 
+    36  1.5125e-02  5.9807e-07  3.6908e-07  1.6994e-05  1.4775e-05 -2.8369e-01  9.7391e-02  7.0902e-01  0:00:15   64
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 17061 cells 
+    37  1.4942e-02  5.4754e-07  3.5585e-07  1.5651e-05  1.3684e-05 -3.1459e-01  9.9111e-02  8.1360e-01  0:00:12   63
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 17058 cells 
+    38  1.4586e-02  5.0341e-07  3.3481e-07  1.4286e-05  1.2976e-05 -3.4080e-01  1.0112e-01  9.1467e-01  0:00:09   62
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 16883 cells 
+    39  1.4369e-02  4.6009e-07  3.2153e-07  1.2520e-05  1.2996e-05 -3.5879e-01  1.0373e-01  9.8917e-01  0:00:07   61
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 16594 cells 
+    40  1.3788e-02  4.1310e-07  3.0071e-07  1.0963e-05  1.3413e-05 -3.6705e-01  1.0607e-01  1.0327e+00  0:00:18   60
+        Negative nut in 14 cells after linear solve.
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 15900 cells 
+    41  1.3096e-02  3.6388e-07  2.7868e-07  9.6393e-06  1.3770e-05 -3.6454e-01  1.0765e-01  1.0409e+00  0:00:14   59
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 13893 cells 
+    42  1.2163e-02  3.1665e-07  2.4839e-07  8.4926e-06  1.4916e-05 -3.5782e-01  1.0916e-01  1.0243e+00  0:00:11   58
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 9678 cells 
+    43  1.0925e-02  2.7065e-07  2.1496e-07  7.3350e-06  1.4982e-05 -3.4747e-01  1.0992e-01  9.8923e-01  0:00:20   57
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 6266 cells 
+    44  9.7705e-03  2.4500e-07  1.9200e-07  6.2531e-06  1.5272e-05 -3.3403e-01  1.0928e-01  9.4284e-01  0:00:16   56
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 3937 cells 
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    45  8.8502e-03  2.4174e-07  1.8931e-07  5.6005e-06  1.5656e-05 -3.1650e-01  1.0636e-01  8.8705e-01  0:00:12   55
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 2658 cells 
+    46  8.1252e-03  2.4572e-07  1.9267e-07  5.5282e-06  1.6516e-05 -2.9141e-01  9.9035e-02  8.1828e-01  0:00:10   54
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 1730 cells 
+    47  7.7657e-03  2.5740e-07  2.0333e-07  4.9761e-06  1.7139e-05 -2.6218e-01  8.9265e-02  7.3978e-01  0:00:08   53
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 1219 cells 
+    48  7.3673e-03  2.6832e-07  2.2269e-07  4.0910e-06  1.6422e-05 -2.3203e-01  7.8330e-02  6.5764e-01  0:00:16   52
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 941 cells 
+    49  6.9656e-03  2.7035e-07  2.3435e-07  3.3027e-06  1.4170e-05 -2.0050e-01  6.6750e-02  5.7286e-01  0:00:13   51
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 665 cells 
+    50  6.5632e-03  2.6908e-07  2.4146e-07  2.6817e-06  1.0876e-05 -1.6961e-01  5.5379e-02  4.8825e-01  0:00:10   50
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 299 cells 
+    51  6.2024e-03  2.6325e-07  2.4068e-07  2.2717e-06  8.0934e-06 -1.4533e-01  4.5517e-02  4.1934e-01  0:00:08   49
+    52  5.8670e-03  2.6287e-07  2.3795e-07  1.8901e-06  5.9625e-06 -1.3353e-01  3.9017e-02  3.8439e-01  0:00:16   48
+    53  5.5514e-03  2.7112e-07  2.3678e-07  1.6846e-06  4.6642e-06 -1.3211e-01  3.5617e-02  3.7795e-01  0:00:12   47
+    54  5.0482e-03  2.8490e-07  2.3687e-07  1.5932e-06  3.9864e-06 -1.4285e-01  3.4354e-02  4.0225e-01  0:00:10   46
+    55  4.5798e-03  2.9917e-07  2.3461e-07  1.5439e-06  4.1711e-06 -1.6034e-01  3.4461e-02  4.4997e-01  0:00:08   45
+        Negative nut in 316 cells after linear solve.
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    56  4.0982e-03  3.0113e-07  2.2649e-07  1.4873e-06  3.7088e-06 -1.7279e-01  3.4861e-02  4.9332e-01  0:00:15   44
+    57  3.6605e-03  3.1844e-07  2.3949e-07  1.5367e-06  4.8294e-06 -1.7874e-01  3.5608e-02  5.2267e-01  0:00:12   43
+    58  3.2656e-03  3.1841e-07  2.4886e-07  1.4572e-06  4.2566e-06 -1.7898e-01  3.5515e-02  5.3761e-01  0:00:09   42
+        Negative nut in 1434 cells after linear solve.
+    59  2.9793e-03  3.1291e-07  2.4256e-07  1.3670e-06  3.8484e-06 -1.7739e-01  3.5028e-02  5.4896e-01  0:00:15   41
+    60  2.7640e-03  3.5496e-07  2.6758e-07  1.5018e-06  2.1153e-05 -1.7429e-01  3.4475e-02  5.5637e-01  0:00:12   40
+    61  2.6041e-03  3.5083e-07  2.6107e-07  1.4211e-06  9.8255e-06 -1.7061e-01  3.3839e-02  5.5637e-01  0:00:09   39
+    62  2.4510e-03  3.4573e-07  2.5389e-07  1.3462e-06  6.4832e-06 -1.6776e-01  3.3179e-02  5.5618e-01  0:00:07   38
+    63  2.2879e-03  3.3653e-07  2.4214e-07  1.2672e-06  5.2701e-06 -1.6514e-01  3.2627e-02  5.5417e-01  0:00:06   37
+    64  2.1389e-03  3.2660e-07  2.2711e-07  1.1834e-06  4.5803e-06 -1.6284e-01  3.2161e-02  5.5116e-01  0:00:12   36
+    65  2.0135e-03  3.1739e-07  2.1238e-07  1.1359e-06  3.9415e-06 -1.6029e-01  3.1435e-02  5.4667e-01  0:00:09   35
+    66  1.8446e-03  3.5817e-07  2.2744e-07  1.2489e-06  6.1786e-06 -1.5833e-01  3.0942e-02  5.4270e-01  0:00:07   34
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    67  1.7336e-03  3.6897e-07  2.1918e-07  1.2411e-06  7.3077e-06 -1.5721e-01  3.0598e-02  5.4043e-01  0:00:12   33
+    68  1.5947e-03  3.6426e-07  2.0785e-07  1.1649e-06  7.5695e-06 -1.5667e-01  3.0417e-02  5.3936e-01  0:00:09   32
+    69  1.4648e-03  3.5602e-07  1.9925e-07  1.1031e-06  7.5370e-06 -1.5649e-01  3.0344e-02  5.3913e-01  0:00:07   31
+    70  1.3454e-03  3.4247e-07  1.9228e-07  1.0417e-06  7.0632e-06 -1.5653e-01  3.0347e-02  5.3938e-01  0:00:06   30
+        Negative nut in 79 cells after linear solve.
+    71  1.2435e-03  3.2414e-07  1.8337e-07  9.7295e-07  6.1781e-06 -1.5673e-01  3.0399e-02  5.3989e-01  0:00:04   29
+    72  1.1709e-03  3.4333e-07  1.9259e-07  1.0438e-06  1.9791e-05 -1.5715e-01  3.0545e-02  5.4083e-01  0:00:09   28
+    73  1.1066e-03  3.3132e-07  1.8566e-07  1.0043e-06  1.1094e-05 -1.5768e-01  3.0671e-02  5.4195e-01  0:00:07   27
+    74  1.0406e-03  3.2181e-07  1.8049e-07  9.5122e-07  8.4505e-06 -1.5811e-01  3.0757e-02  5.4286e-01  0:00:05   26
+    75  9.7342e-04  3.1143e-07  1.7614e-07  8.9454e-07  7.7782e-06 -1.5844e-01  3.0837e-02  5.4365e-01  0:00:04   25
+    76  9.2443e-04  3.0671e-07  1.7371e-07  8.7501e-07  8.2049e-06 -1.5845e-01  3.0826e-02  5.4382e-01  0:00:03   24
+    77  8.5935e-04  2.9229e-07  1.6534e-07  8.0124e-07  7.6000e-06 -1.5814e-01  3.0772e-02  5.4314e-01  0:00:02   23
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    78  8.0090e-04  2.8207e-07  1.5853e-07  7.5528e-07  7.4802e-06 -1.5760e-01  3.0695e-02  5.4171e-01  0:00:06   22
+    79  7.4799e-04  2.6735e-07  1.4928e-07  7.0851e-07  6.9016e-06 -1.5693e-01  3.0595e-02  5.3970e-01  0:00:05   21
+    80  6.9606e-04  2.6521e-07  1.4542e-07  6.9646e-07  7.8267e-06 -1.5630e-01  3.0508e-02  5.3760e-01  0:00:04   20
+    81  6.4933e-04  2.5337e-07  1.3824e-07  6.5490e-07  7.4180e-06 -1.5585e-01  3.0445e-02  5.3585e-01  0:00:03   19
+    82  6.0688e-04  2.4317e-07  1.3219e-07  6.2601e-07  7.2733e-06 -1.5562e-01  3.0423e-02  5.3468e-01  0:00:02   18
+    83  5.6565e-04  2.3158e-07  1.2519e-07  5.8893e-07  7.0768e-06 -1.5561e-01  3.0433e-02  5.3421e-01  0:00:02   17
+    84  5.2821e-04  2.1893e-07  1.1802e-07  5.5653e-07  6.5781e-06 -1.5572e-01  3.0472e-02  5.3419e-01  0:00:04   16
+    85  4.9087e-04  2.0568e-07  1.1112e-07  5.2082e-07  5.8552e-06 -1.5590e-01  3.0539e-02  5.3450e-01  0:00:03   15
+    86  4.5905e-04  1.9339e-07  1.0487e-07  4.8759e-07  5.0824e-06 -1.5610e-01  3.0616e-02  5.3487e-01  0:00:02   14
+    87  4.2852e-04  1.8141e-07  9.8374e-08  4.5406e-07  4.3123e-06 -1.5624e-01  3.0685e-02  5.3506e-01  0:00:02   13
+    88  4.0197e-04  1.6990e-07  9.0876e-08  4.2699e-07  3.5413e-06 -1.5635e-01  3.0748e-02  5.3516e-01  0:00:01   12
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+    89  3.7881e-04  1.5919e-07  8.3738e-08  3.9850e-07  2.8510e-06 -1.5644e-01  3.0803e-02  5.3516e-01  0:00:03   11
+    90  3.5609e-04  1.4890e-07  7.7643e-08  3.7137e-07  2.2472e-06 -1.5650e-01  3.0851e-02  5.3507e-01  0:00:02   10
+    91  3.3669e-04  1.3889e-07  7.2180e-08  3.4858e-07  1.8110e-06 -1.5652e-01  3.0892e-02  5.3486e-01  0:00:02    9
+    92  3.1607e-04  1.2861e-07  6.7157e-08  3.2455e-07  1.4956e-06 -1.5651e-01  3.0923e-02  5.3455e-01  0:00:01    8
+    93  2.9572e-04  1.1883e-07  6.2737e-08  2.9978e-07  1.2784e-06 -1.5646e-01  3.0942e-02  5.3414e-01  0:00:01    7
+    94  2.7697e-04  1.1028e-07  5.9105e-08  2.8126e-07  1.1048e-06 -1.5633e-01  3.0942e-02  5.3340e-01  0:00:02    6
+    95  2.5668e-04  1.0306e-07  5.5869e-08  2.6448e-07  9.5392e-07 -1.5618e-01  3.0928e-02  5.3253e-01  0:00:01    5
+    96  2.3911e-04  9.6481e-08  5.2730e-08  2.4829e-07  8.0788e-07 -1.5606e-01  3.0914e-02  5.3178e-01  0:00:01    4
+    97  2.2092e-04  9.0527e-08  4.9881e-08  2.3230e-07  6.6382e-07 -1.5595e-01  3.0902e-02  5.3113e-01  0:00:00    3
+    98  2.0484e-04  8.4997e-08  4.7139e-08  2.1724e-07  5.4034e-07 -1.5581e-01  3.0887e-02  5.3046e-01  0:00:00    2
+    99  1.9194e-04  7.9523e-08  4.4625e-08  2.0266e-07  4.6901e-07 -1.5569e-01  3.0873e-02  5.2979e-01  0:00:00    1
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   100  1.8030e-04  7.4415e-08  4.2245e-08  1.9023e-07  4.5682e-07 -1.5560e-01  3.0873e-02  5.2924e-01  0:00:00    0
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   100  1.8030e-04  7.4415e-08  4.2245e-08  1.9023e-07  4.5682e-07 -1.5560e-01  3.0873e-02  5.2924e-01  0:00:24  100
+   101  1.6793e-04  6.9670e-08  3.9966e-08  1.7727e-07  4.9185e-07 -1.5554e-01  3.0879e-02  5.2882e-01  0:00:39   99
+   102  1.5701e-04  6.5264e-08  3.7668e-08  1.6527e-07  5.4424e-07 -1.5550e-01  3.0882e-02  5.2844e-01  0:00:31   98
+   103  1.4695e-04  6.1248e-08  3.5340e-08  1.5538e-07  5.8076e-07 -1.5545e-01  3.0882e-02  5.2807e-01  0:00:24   97
+   104  1.3786e-04  5.7591e-08  3.3122e-08  1.4618e-07  6.0094e-07 -1.5539e-01  3.0879e-02  5.2770e-01  0:00:19   96
+   105  1.2919e-04  5.4214e-08  3.1052e-08  1.3767e-07  6.0528e-07 -1.5534e-01  3.0876e-02  5.2734e-01  0:00:15   95
+   106  1.2106e-04  5.1187e-08  2.9090e-08  1.2890e-07  5.9840e-07 -1.5528e-01  3.0870e-02  5.2702e-01  0:00:31   94
+   107  1.1387e-04  4.8407e-08  2.7171e-08  1.2229e-07  5.8206e-07 -1.5524e-01  3.0867e-02  5.2672e-01  0:00:24   93
+   108  1.0716e-04  4.5838e-08  2.5398e-08  1.1587e-07  5.5445e-07 -1.5520e-01  3.0864e-02  5.2646e-01  0:00:19   92
+   109  1.0102e-04  4.3497e-08  2.3844e-08  1.1015e-07  5.2038e-07 -1.5517e-01  3.0864e-02  5.2622e-01  0:00:15   91
+   110  9.5165e-05  4.1302e-08  2.2473e-08  1.0446e-07  4.7921e-07 -1.5514e-01  3.0864e-02  5.2599e-01  0:00:30   90
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   111  8.9852e-05  3.9315e-08  2.1166e-08  9.9101e-08  4.4135e-07 -1.5511e-01  3.0863e-02  5.2576e-01  0:00:24   89
+   112  8.4893e-05  3.7487e-08  1.9962e-08  9.4144e-08  4.0426e-07 -1.5509e-01  3.0863e-02  5.2553e-01  0:00:19   88
+   113  8.0161e-05  3.5783e-08  1.8864e-08  8.9256e-08  3.6386e-07 -1.5506e-01  3.0861e-02  5.2532e-01  0:00:15   87
+   114  7.5946e-05  3.4176e-08  1.7975e-08  8.4654e-08  3.2554e-07 -1.5503e-01  3.0859e-02  5.2512e-01  0:00:12   86
+   115  7.1720e-05  3.2715e-08  1.6785e-08  8.0207e-08  2.8875e-07 -1.5501e-01  3.0855e-02  5.2494e-01  0:00:26   85
+   116  6.7762e-05  3.1346e-08  1.5788e-08  7.5256e-08  2.5045e-07 -1.5498e-01  3.0851e-02  5.2477e-01  0:00:21   84
+   117  6.4177e-05  3.0098e-08  1.4857e-08  7.1333e-08  2.1488e-07 -1.5496e-01  3.0846e-02  5.2462e-01  0:00:16   83
+   118  6.0769e-05  2.8888e-08  1.4044e-08  6.7767e-08  1.8498e-07 -1.5494e-01  3.0841e-02  5.2448e-01  0:00:13   82
+   119  5.7574e-05  2.7726e-08  1.3299e-08  6.4271e-08  1.6015e-07 -1.5492e-01  3.0836e-02  5.2436e-01  0:00:26   81
+   120  5.4521e-05  2.6618e-08  1.2632e-08  6.0980e-08  1.4173e-07 -1.5491e-01  3.0832e-02  5.2424e-01  0:00:21   80
+   121  5.1616e-05  2.5538e-08  1.2020e-08  5.7909e-08  1.3294e-07 -1.5489e-01  3.0827e-02  5.2412e-01  0:00:17   79
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   122  4.8915e-05  2.4489e-08  1.1458e-08  5.4971e-08  1.3458e-07 -1.5487e-01  3.0822e-02  5.2400e-01  0:00:29   78
+   123  4.6342e-05  2.3492e-08  1.0927e-08  5.2124e-08  1.3965e-07 -1.5485e-01  3.0817e-02  5.2389e-01  0:00:23   77
+   124  4.4010e-05  2.2534e-08  1.0430e-08  4.9486e-08  1.4628e-07 -1.5484e-01  3.0812e-02  5.2380e-01  0:00:18   76
+   125  4.1891e-05  2.1646e-08  9.9346e-09  4.7024e-08  1.5567e-07 -1.5482e-01  3.0808e-02  5.2371e-01  0:00:14   75
+   126  3.9904e-05  2.0775e-08  9.4797e-09  4.4687e-08  1.5180e-07 -1.5481e-01  3.0804e-02  5.2363e-01  0:00:26   74
+   127  3.7998e-05  1.9946e-08  9.0554e-09  4.2501e-08  1.4667e-07 -1.5480e-01  3.0800e-02  5.2356e-01  0:00:20   73
+   128  3.6233e-05  1.9132e-08  8.6777e-09  4.0377e-08  1.3883e-07 -1.5479e-01  3.0796e-02  5.2350e-01  0:00:16   72
+   129  3.4456e-05  1.8353e-08  8.3253e-09  3.8360e-08  1.3179e-07 -1.5478e-01  3.0792e-02  5.2344e-01  0:00:13   71
+   130  3.2560e-05  1.7599e-08  7.9450e-09  3.6426e-08  1.2706e-07 -1.5477e-01  3.0788e-02  5.2339e-01  0:00:10   70
+   131  3.0695e-05  1.6876e-08  7.5553e-09  3.4605e-08  1.2588e-07 -1.5476e-01  3.0785e-02  5.2334e-01  0:00:22   69
+   132  2.8957e-05  1.6193e-08  7.1604e-09  3.2909e-08  1.3216e-07 -1.5475e-01  3.0781e-02  5.2330e-01  0:00:17   68
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   133  2.7344e-05  1.5532e-08  6.7917e-09  3.1301e-08  1.4255e-07 -1.5474e-01  3.0778e-02  5.2326e-01  0:00:14   67
+   134  2.5988e-05  1.4894e-08  6.4516e-09  2.9779e-08  1.4630e-07 -1.5474e-01  3.0775e-02  5.2323e-01  0:00:24   66
+   135  2.4775e-05  1.4259e-08  6.1703e-09  2.8338e-08  1.5114e-07 -1.5473e-01  3.0772e-02  5.2320e-01  0:00:19   65
+   136  2.3586e-05  1.3654e-08  5.8914e-09  2.6965e-08  1.5473e-07 -1.5472e-01  3.0769e-02  5.2318e-01  0:00:15   64
+   137  2.2463e-05  1.3080e-08  5.6063e-09  2.5699e-08  1.5728e-07 -1.5472e-01  3.0765e-02  5.2315e-01  0:00:12   63
+   138  2.1428e-05  1.2513e-08  5.3379e-09  2.4491e-08  1.5710e-07 -1.5471e-01  3.0761e-02  5.2313e-01  0:00:22   62
+   139  2.0459e-05  1.1997e-08  5.0949e-09  2.3428e-08  1.6049e-07 -1.5470e-01  3.0756e-02  5.2310e-01  0:00:17   61
+   140  1.9550e-05  1.1517e-08  4.8633e-09  2.2369e-08  1.6649e-07 -1.5469e-01  3.0751e-02  5.2307e-01  0:00:13   60
+   141  1.8621e-05  1.1055e-08  4.6441e-09  2.1376e-08  1.7105e-07 -1.5468e-01  3.0747e-02  5.2305e-01  0:00:11   59
+   142  1.7683e-05  1.0593e-08  4.4349e-09  2.0342e-08  1.7412e-07 -1.5468e-01  3.0744e-02  5.2304e-01  0:00:20   58
+   143  1.6821e-05  1.0121e-08  4.2275e-09  1.9371e-08  1.6789e-07 -1.5467e-01  3.0742e-02  5.2304e-01  0:00:16   57
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   144  1.6033e-05  9.6677e-09  4.0291e-09  1.8441e-08  1.6294e-07 -1.5467e-01  3.0741e-02  5.2304e-01  0:00:12   56
+   145  1.5303e-05  9.2373e-09  3.8472e-09  1.7553e-08  1.5698e-07 -1.5468e-01  3.0740e-02  5.2305e-01  0:00:10   55
+   146  1.4559e-05  8.8413e-09  3.6692e-09  1.6721e-08  1.5424e-07 -1.5467e-01  3.0739e-02  5.2305e-01  0:00:08   54
+   147  1.3878e-05  8.4577e-09  3.5002e-09  1.5933e-08  1.5231e-07 -1.5467e-01  3.0737e-02  5.2305e-01  0:00:17   53
+   148  1.3245e-05  8.0928e-09  3.3407e-09  1.5188e-08  1.5011e-07 -1.5467e-01  3.0735e-02  5.2304e-01  0:00:13   52
+   149  1.2619e-05  7.7371e-09  3.1857e-09  1.4479e-08  1.4552e-07 -1.5467e-01  3.0734e-02  5.2304e-01  0:00:10   51
+   150  1.2019e-05  7.3934e-09  3.0353e-09  1.3804e-08  1.4206e-07 -1.5467e-01  3.0732e-02  5.2304e-01  0:00:08   50
+   151  1.1461e-05  7.0636e-09  2.8905e-09  1.3158e-08  1.3903e-07 -1.5466e-01  3.0730e-02  5.2304e-01  0:00:16   49
+   152  1.0935e-05  6.7454e-09  2.7507e-09  1.2569e-08  1.3627e-07 -1.5466e-01  3.0728e-02  5.2304e-01  0:00:13   48
+   153  1.0374e-05  6.4413e-09  2.6168e-09  1.1943e-08  1.3386e-07 -1.5466e-01  3.0727e-02  5.2304e-01  0:00:10   47
+   154  9.8367e-06  6.1401e-09  2.4870e-09  1.1380e-08  1.3169e-07 -1.5466e-01  3.0725e-02  5.2304e-01  0:00:08   46
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   155  9.3613e-06  5.8545e-09  2.3626e-09  1.0830e-08  1.2946e-07 -1.5465e-01  3.0723e-02  5.2304e-01  0:00:06   45
+   156  8.9137e-06  5.5840e-09  2.2456e-09  1.0330e-08  1.2698e-07 -1.5465e-01  3.0721e-02  5.2304e-01  0:00:14   44
+   157  8.4642e-06  5.3259e-09  2.1344e-09  9.8328e-09  1.2424e-07 -1.5465e-01  3.0719e-02  5.2304e-01  0:00:11   43
+   158  8.0587e-06  5.0807e-09  2.0289e-09  9.3713e-09  1.2131e-07 -1.5465e-01  3.0718e-02  5.2304e-01  0:00:08   42
+   159  7.6783e-06  4.8566e-09  1.9281e-09  8.9269e-09  1.1817e-07 -1.5465e-01  3.0717e-02  5.2304e-01  0:00:06   41
+   160  7.3138e-06  4.6498e-09  1.8317e-09  8.5022e-09  1.1489e-07 -1.5464e-01  3.0716e-02  5.2304e-01  0:00:13   40
+   161  6.9654e-06  4.4561e-09  1.7414e-09  8.1031e-09  1.1145e-07 -1.5464e-01  3.0715e-02  5.2304e-01  0:00:10   39
+   162  6.6417e-06  4.2708e-09  1.6578e-09  7.7281e-09  1.0790e-07 -1.5464e-01  3.0714e-02  5.2304e-01  0:00:08   38
+   163  6.3335e-06  4.0958e-09  1.5796e-09  7.3737e-09  1.0424e-07 -1.5464e-01  3.0713e-02  5.2304e-01  0:00:06   37
+   164  6.0528e-06  3.9287e-09  1.5066e-09  7.0312e-09  9.9489e-08 -1.5464e-01  3.0712e-02  5.2305e-01  0:00:12   36
+   165  5.7924e-06  3.7702e-09  1.4382e-09  6.7237e-09  9.5125e-08 -1.5464e-01  3.0712e-02  5.2305e-01  0:00:09   35
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   166  5.5348e-06  3.6180e-09  1.3725e-09  6.4262e-09  9.1023e-08 -1.5464e-01  3.0711e-02  5.2305e-01  0:00:07   34
+   167  5.2837e-06  3.4720e-09  1.3078e-09  6.1386e-09  8.7255e-08 -1.5464e-01  3.0711e-02  5.2305e-01  0:00:06   33
+   168  5.0465e-06  3.3342e-09  1.2461e-09  5.8700e-09  8.3889e-08 -1.5464e-01  3.0710e-02  5.2305e-01  0:00:11   32
+   169  4.8192e-06  3.2030e-09  1.1883e-09  5.6178e-09  8.0919e-08 -1.5464e-01  3.0710e-02  5.2305e-01  0:00:08   31
+   170  4.6085e-06  3.0797e-09  1.1342e-09  5.3798e-09  7.8197e-08 -1.5464e-01  3.0709e-02  5.2305e-01  0:00:06   30
+   171  4.3947e-06  2.9640e-09  1.0826e-09  5.1278e-09  7.5509e-08 -1.5464e-01  3.0709e-02  5.2305e-01  0:00:11   29
+   172  4.2130e-06  2.8535e-09  1.0320e-09  4.9251e-09  7.2855e-08 -1.5464e-01  3.0708e-02  5.2305e-01  0:00:08   28
+   173  4.0556e-06  2.7485e-09  9.8437e-10  4.7341e-09  7.0143e-08 -1.5464e-01  3.0708e-02  5.2305e-01  0:00:06   27
+   174  3.8996e-06  2.6476e-09  9.3971e-10  4.5448e-09  6.7379e-08 -1.5464e-01  3.0708e-02  5.2305e-01  0:00:05   26
+   175  3.7444e-06  2.5487e-09  8.9719e-10  4.3603e-09  6.4597e-08 -1.5464e-01  3.0707e-02  5.2305e-01  0:00:04   25
+   176  3.5803e-06  2.4446e-09  8.5682e-10  4.1723e-09  6.1830e-08 -1.5464e-01  3.0707e-02  5.2305e-01  0:00:08   24
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   177  3.4273e-06  2.3417e-09  8.1827e-10  3.9864e-09  5.9115e-08 -1.5464e-01  3.0707e-02  5.2305e-01  0:00:06   23
+   178  3.2765e-06  2.2429e-09  7.8192e-10  3.8040e-09  5.6459e-08 -1.5464e-01  3.0706e-02  5.2305e-01  0:00:05   22
+   179  3.1289e-06  2.1502e-09  7.4722e-10  3.6329e-09  5.3893e-08 -1.5464e-01  3.0706e-02  5.2305e-01  0:00:03   21
+   180  2.9935e-06  2.0660e-09  7.1292e-10  3.4761e-09  5.1445e-08 -1.5464e-01  3.0706e-02  5.2306e-01  0:00:07   20
+   181  2.8689e-06  1.9870e-09  6.7939e-10  3.3290e-09  4.9073e-08 -1.5464e-01  3.0706e-02  5.2306e-01  0:00:05   19
+   182  2.7494e-06  1.9106e-09  6.4705e-10  3.1899e-09  4.6807e-08 -1.5464e-01  3.0705e-02  5.2306e-01  0:00:04   18
+   183  2.6373e-06  1.8381e-09  6.1672e-10  3.0580e-09  4.4628e-08 -1.5463e-01  3.0705e-02  5.2306e-01  0:00:03   17
+   184  2.5398e-06  1.7749e-09  5.8775e-10  2.9378e-09  4.2539e-08 -1.5463e-01  3.0705e-02  5.2306e-01  0:00:05   16
+   185  2.4562e-06  1.7222e-09  5.6033e-10  2.8311e-09  4.0524e-08 -1.5463e-01  3.0705e-02  5.2306e-01  0:00:04   15
+   186  2.3756e-06  1.6705e-09  5.3502e-10  2.7306e-09  3.8617e-08 -1.5463e-01  3.0705e-02  5.2306e-01  0:00:03   14
+   187  2.2972e-06  1.6231e-09  5.1121e-10  2.6382e-09  3.6769e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:02   13
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   188  2.2193e-06  1.5772e-09  4.8907e-10  2.5507e-09  3.5017e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:04   12
+   189  2.1509e-06  1.5326e-09  4.6989e-10  2.4688e-09  3.3326e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:03   11
+   190  2.0852e-06  1.4891e-09  4.5321e-10  2.3918e-09  3.1651e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:02   10
+   191  2.0175e-06  1.4453e-09  4.3891e-10  2.3188e-09  3.0040e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:02    9
+   192  1.9437e-06  1.3958e-09  4.2565e-10  2.2415e-09  2.8500e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:01    8
+   193  1.8740e-06  1.3411e-09  4.1329e-10  2.1548e-09  2.7044e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:02    7
+   194  1.8163e-06  1.2852e-09  4.0151e-10  2.0639e-09  2.5670e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:01    6
+   195  1.7462e-06  1.2259e-09  3.8808e-10  1.9653e-09  2.4383e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:01    5
+   196  1.6679e-06  1.1649e-09  3.7463e-10  1.8701e-09  2.3182e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:01    4
+   197  1.5910e-06  1.1102e-09  3.5998e-10  1.7769e-09  2.2081e-08 -1.5463e-01  3.0704e-02  5.2305e-01  0:00:01    3
+   198  1.5233e-06  1.0615e-09  3.4482e-10  1.6897e-09  2.1046e-08 -1.5463e-01  3.0704e-02  5.2304e-01  0:00:01    2
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   199  1.4541e-06  1.0245e-09  3.2891e-10  1.6198e-09  2.0076e-08 -1.5463e-01  3.0704e-02  5.2304e-01  0:00:00    1
+   200  1.3896e-06  9.8982e-10  3.1183e-10  1.5554e-09  1.9141e-08 -1.5463e-01  3.0704e-02  5.2304e-01  0:00:00    0
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   200  1.3896e-06  9.8982e-10  3.1183e-10  1.5554e-09  1.9141e-08 -1.5463e-01  3.0704e-02  5.2304e-01  0:00:08   50
+   201  7.4976e-04  9.5966e-10  2.9499e-10  2.3579e-07  5.4767e-07 -1.5455e-01  3.0711e-02  5.2217e-01  0:00:07   49
+   202  8.6113e-04  8.9139e-08  5.6977e-07  2.9160e-07  2.1711e-06 -1.5439e-01  3.0750e-02  5.2034e-01  0:00:05   48
+   203  4.7197e-04  6.0377e-08  6.7231e-07  2.4377e-07  3.6372e-06 -1.5416e-01  3.0797e-02  5.1717e-01  0:00:04   47
+   204  2.6915e-04  9.0534e-08  6.8846e-07  2.1348e-07  4.7543e-06 -1.5384e-01  3.0822e-02  5.1367e-01  0:00:12   46
+   205  3.1380e-04  9.7817e-08  6.5154e-07  2.3411e-07  5.4373e-06 -1.5355e-01  3.0850e-02  5.1097e-01  0:00:10   45
+   206  3.7855e-04  9.5709e-08  5.8041e-07  2.4560e-07  5.7555e-06 -1.5334e-01  3.0886e-02  5.0861e-01  0:00:08   44
+   207  4.2821e-04  8.8816e-08  4.8429e-07  2.4104e-07  5.6823e-06 -1.5319e-01  3.0913e-02  5.0661e-01  0:00:06   43
+   208  4.1534e-04  7.7025e-08  4.0277e-07  2.3035e-07  5.3538e-06 -1.5321e-01  3.0967e-02  5.0506e-01  0:00:05   42
+   209  3.9383e-04  6.3746e-08  3.3163e-07  2.1598e-07  4.7647e-06 -1.5344e-01  3.1049e-02  5.0465e-01  0:00:04   41
+   210  3.6117e-04  5.4502e-08  2.5511e-07  2.1403e-07  4.0753e-06 -1.5382e-01  3.1164e-02  5.0517e-01  0:00:03   40
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   211  3.1370e-04  5.3318e-08  1.8231e-07  2.1498e-07  3.3691e-06 -1.5430e-01  3.1297e-02  5.0627e-01  0:00:02   39
+   212  2.7112e-04  5.6695e-08  1.2562e-07  2.0795e-07  2.7016e-06 -1.5466e-01  3.1392e-02  5.0724e-01  0:00:09   38
+   213  2.2597e-04  6.3717e-08  9.0222e-08  2.0062e-07  2.1652e-06 -1.5499e-01  3.1484e-02  5.0832e-01  0:00:07   37
+   214  1.8806e-04  6.8343e-08  8.7510e-08  1.9014e-07  1.7398e-06 -1.5529e-01  3.1569e-02  5.0941e-01  0:00:06   36
+   215  1.5725e-04  6.8458e-08  9.4748e-08  1.8051e-07  1.3901e-06 -1.5554e-01  3.1665e-02  5.1055e-01  0:00:04   35
+   216  1.3437e-04  6.4342e-08  9.2962e-08  1.6138e-07  1.1140e-06 -1.5565e-01  3.1734e-02  5.1119e-01  0:00:03   34
+   217  1.2664e-04  5.7220e-08  8.4621e-08  1.3470e-07  9.1249e-07 -1.5566e-01  3.1757e-02  5.1138e-01  0:00:03   33
+   218  1.2411e-04  4.7945e-08  7.2994e-08  1.1103e-07  8.0094e-07 -1.5561e-01  3.1766e-02  5.1137e-01  0:00:02   32
+   219  1.1424e-04  3.8195e-08  6.3894e-08  9.1245e-08  7.3220e-07 -1.5550e-01  3.1763e-02  5.1112e-01  0:00:02   31
+   220  1.0202e-04  2.9039e-08  5.4804e-08  8.0384e-08  6.4379e-07 -1.5534e-01  3.1746e-02  5.1065e-01  0:00:07   30
+   221  8.8584e-05  2.2429e-08  4.5501e-08  7.8338e-08  5.9101e-07 -1.5505e-01  3.1707e-02  5.0960e-01  0:00:06   29
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   222  7.5840e-05  2.2615e-08  3.7560e-08  7.5711e-08  5.5408e-07 -1.5476e-01  3.1654e-02  5.0848e-01  0:00:04   28
+   223  6.5895e-05  2.4935e-08  3.0831e-08  7.1586e-08  5.3140e-07 -1.5455e-01  3.1605e-02  5.0758e-01  0:00:03   27
+   224  5.9932e-05  2.6101e-08  2.5102e-08  6.6197e-08  5.0571e-07 -1.5446e-01  3.1568e-02  5.0699e-01  0:00:03   26
+   225  5.7022e-05  2.5420e-08  2.0361e-08  5.9565e-08  4.6285e-07 -1.5447e-01  3.1550e-02  5.0680e-01  0:00:02   25
+   226  5.3606e-05  2.3889e-08  1.6341e-08  5.3276e-08  4.1821e-07 -1.5458e-01  3.1551e-02  5.0699e-01  0:00:02   24
+   227  4.9281e-05  2.2009e-08  1.3005e-08  4.8952e-08  3.8039e-07 -1.5477e-01  3.1571e-02  5.0749e-01  0:00:01   23
+   228  4.4601e-05  2.0086e-08  1.0948e-08  4.6961e-08  3.3850e-07 -1.5500e-01  3.1603e-02  5.0820e-01  0:00:05   22
+   229  3.9770e-05  1.8432e-08  1.0685e-08  4.4857e-08  3.0241e-07 -1.5520e-01  3.1640e-02  5.0892e-01  0:00:04   21
+   230  3.5603e-05  1.6860e-08  1.1233e-08  4.1426e-08  2.7181e-07 -1.5533e-01  3.1672e-02  5.0950e-01  0:00:03   20
+   231  3.1772e-05  1.5245e-08  1.1487e-08  3.6761e-08  2.4632e-07 -1.5538e-01  3.1694e-02  5.0983e-01  0:00:02   19
+   232  2.8960e-05  1.3445e-08  1.1102e-08  3.1769e-08  2.4218e-07 -1.5536e-01  3.1704e-02  5.0991e-01  0:00:02   18
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   233  2.6711e-05  1.1554e-08  1.0203e-08  2.7904e-08  2.4705e-07 -1.5528e-01  3.1702e-02  5.0976e-01  0:00:01   17
+   234  2.4800e-05  9.8053e-09  8.9364e-09  2.5809e-08  2.4678e-07 -1.5517e-01  3.1691e-02  5.0946e-01  0:00:01   16
+   235  2.2939e-05  8.7610e-09  7.7731e-09  2.4884e-08  2.4330e-07 -1.5506e-01  3.1675e-02  5.0909e-01  0:00:04   15
+   236  2.1191e-05  8.0313e-09  6.8133e-09  2.4577e-08  2.3554e-07 -1.5497e-01  3.1657e-02  5.0866e-01  0:00:03   14
+   237  1.9312e-05  7.4988e-09  5.8777e-09  2.1977e-08  2.1677e-07 -1.5493e-01  3.1646e-02  5.0843e-01  0:00:02   13
+   238  1.7506e-05  6.8384e-09  4.9942e-09  1.9073e-08  1.8845e-07 -1.5493e-01  3.1642e-02  5.0833e-01  0:00:02   12
+   239  1.6099e-05  6.3025e-09  4.2262e-09  1.6401e-08  1.6098e-07 -1.5497e-01  3.1645e-02  5.0836e-01  0:00:01   11
+   240  1.4828e-05  5.8854e-09  3.4870e-09  1.4827e-08  1.3743e-07 -1.5504e-01  3.1654e-02  5.0850e-01  0:00:03   10
+   241  1.3567e-05  5.4932e-09  2.8775e-09  1.4784e-08  1.2193e-07 -1.5513e-01  3.1670e-02  5.0876e-01  0:00:02    9
+   242  1.2396e-05  5.1586e-09  2.5446e-09  1.4428e-08  1.1012e-07 -1.5519e-01  3.1685e-02  5.0901e-01  0:00:01    8
+   243  1.1329e-05  4.8367e-09  2.3369e-09  1.3131e-08  1.0089e-07 -1.5522e-01  3.1695e-02  5.0914e-01  0:00:01    7
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   244  1.0295e-05  4.4227e-09  2.1490e-09  1.1318e-08  1.0095e-07 -1.5521e-01  3.1698e-02  5.0915e-01  0:00:01    6
+   245  9.3154e-06  3.9534e-09  1.8990e-09  9.9200e-09  9.9788e-08 -1.5516e-01  3.1694e-02  5.0900e-01  0:00:00    5
+   246  8.4225e-06  3.5695e-09  1.5675e-09  1.0154e-08  1.0343e-07 -1.5510e-01  3.1685e-02  5.0877e-01  0:00:01    4
+   247  7.7201e-06  3.3077e-09  1.3858e-09  9.7874e-09  1.0833e-07 -1.5506e-01  3.1678e-02  5.0860e-01  0:00:01    3
+   248  7.0968e-06  3.0538e-09  1.3299e-09  8.6201e-09  1.0804e-07 -1.5505e-01  3.1675e-02  5.0852e-01  0:00:00    2
+   249  6.5873e-06  2.7630e-09  1.2648e-09  7.4194e-09  1.0193e-07 -1.5506e-01  3.1675e-02  5.0851e-01  0:00:00    1
+   250  6.1376e-06  2.4629e-09  1.1416e-09  6.5072e-09  9.2169e-08 -1.5507e-01  3.1678e-02  5.0857e-01  0:00:00    0
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   250  6.1376e-06  2.4629e-09  1.1416e-09  6.5072e-09  9.2169e-08 -1.5507e-01  3.1678e-02  5.0857e-01  0:00:06   50
+   251  5.6611e-06  2.1653e-09  9.4968e-10  5.8771e-09  7.9754e-08 -1.5508e-01  3.1681e-02  5.0861e-01  0:00:14   49
+   252  5.1994e-06  1.9210e-09  8.2313e-10  5.2775e-09  6.7329e-08 -1.5509e-01  3.1684e-02  5.0860e-01  0:00:11   48
+   253  4.7767e-06  1.7554e-09  7.1776e-10  4.8818e-09  5.4602e-08 -1.5509e-01  3.1685e-02  5.0858e-01  0:00:09   47
+   254  4.4090e-06  1.6401e-09  6.2156e-10  4.6929e-09  4.4972e-08 -1.5508e-01  3.1685e-02  5.0855e-01  0:00:07   46
+   255  4.0818e-06  1.5522e-09  5.5117e-10  4.5533e-09  3.8684e-08 -1.5508e-01  3.1685e-02  5.0851e-01  0:00:05   45
+   256  3.8211e-06  1.4754e-09  5.0414e-10  4.3543e-09  3.8370e-08 -1.5507e-01  3.1685e-02  5.0847e-01  0:00:13   44
+   257  3.5957e-06  1.3983e-09  4.7076e-10  4.0927e-09  3.9622e-08 -1.5507e-01  3.1685e-02  5.0845e-01  0:00:10   43
+   258  3.3664e-06  1.3151e-09  4.3591e-10  3.7978e-09  3.9111e-08 -1.5507e-01  3.1686e-02  5.0843e-01  0:00:08   42
+   259  3.1593e-06  1.2323e-09  4.0080e-10  3.5754e-09  3.7369e-08 -1.5507e-01  3.1687e-02  5.0842e-01  0:00:06   41
+   260  2.9659e-06  1.1575e-09  3.7000e-10  3.4003e-09  3.4428e-08 -1.5507e-01  3.1688e-02  5.0841e-01  0:00:05   40
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   261  2.7896e-06  1.0924e-09  3.4740e-10  3.2665e-09  3.0542e-08 -1.5507e-01  3.1688e-02  5.0839e-01  0:00:12   39
+   262  2.6293e-06  1.0362e-09  3.3195e-10  3.1523e-09  2.6225e-08 -1.5506e-01  3.1689e-02  5.0836e-01  0:00:09   38
+   263  2.4874e-06  9.8568e-10  3.2114e-10  3.0283e-09  2.2251e-08 -1.5506e-01  3.1689e-02  5.0834e-01  0:00:07   37
+   264  2.3538e-06  9.3939e-10  3.1046e-10  2.8792e-09  1.8939e-08 -1.5506e-01  3.1689e-02  5.0832e-01  0:00:05   36
+   265  2.2279e-06  8.9283e-10  2.9677e-10  2.7124e-09  1.6200e-08 -1.5506e-01  3.1690e-02  5.0830e-01  0:00:11   35
+   266  2.1101e-06  8.4633e-10  2.7932e-10  2.5439e-09  1.4524e-08 -1.5506e-01  3.1690e-02  5.0829e-01  0:00:09   34
+   267  1.9932e-06  7.9927e-10  2.5982e-10  2.3862e-09  1.2712e-08 -1.5506e-01  3.1690e-02  5.0828e-01  0:00:07   33
+   268  1.8845e-06  7.5577e-10  2.4046e-10  2.2463e-09  1.0907e-08 -1.5506e-01  3.1691e-02  5.0827e-01  0:00:12   32
+   269  1.7786e-06  7.1599e-10  2.2275e-10  2.1243e-09  9.2455e-09 -1.5506e-01  3.1691e-02  5.0827e-01  0:00:09   31
+   270  1.6823e-06  6.7936e-10  2.0737e-10  2.0133e-09  7.7436e-09 -1.5505e-01  3.1691e-02  5.0826e-01  0:00:07   30
+   271  1.5910e-06  6.4507e-10  1.9371e-10  1.8926e-09  6.4437e-09 -1.5505e-01  3.1692e-02  5.0825e-01  0:00:11   29
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   272  1.5070e-06  6.1241e-10  1.8078e-10  1.7951e-09  5.4546e-09 -1.5505e-01  3.1692e-02  5.0824e-01  0:00:09   28
+   273  1.4265e-06  5.8122e-10  1.6868e-10  1.6999e-09  4.6836e-09 -1.5505e-01  3.1692e-02  5.0824e-01  0:00:07   27
+   274  1.3518e-06  5.5051e-10  1.5728e-10  1.6067e-09  4.0222e-09 -1.5505e-01  3.1693e-02  5.0823e-01  0:00:05   26
+   275  1.2811e-06  5.2203e-10  1.4652e-10  1.5165e-09  3.4509e-09 -1.5505e-01  3.1693e-02  5.0823e-01  0:00:09   25
+   276  1.2141e-06  4.9494e-10  1.3666e-10  1.4327e-09  3.0089e-09 -1.5506e-01  3.1693e-02  5.0823e-01  0:00:07   24
+   277  1.1486e-06  4.6930e-10  1.2715e-10  1.3545e-09  2.6966e-09 -1.5506e-01  3.1694e-02  5.0822e-01  0:00:05   23
+   278  1.0858e-06  4.4564e-10  1.1860e-10  1.2789e-09  2.5189e-09 -1.5506e-01  3.1694e-02  5.0822e-01  0:00:04   22
+   279  1.0257e-06  4.2307e-10  1.1064e-10  1.2082e-09  2.3923e-09 -1.5506e-01  3.1694e-02  5.0822e-01  0:00:07   21
+   280  9.6901e-07  4.0180e-10  1.0323e-10  1.1414e-09  2.2381e-09 -1.5506e-01  3.1694e-02  5.0822e-01  0:00:06   20
+   281  9.1486e-07  3.8128e-10  9.6255e-11  1.0771e-09  2.0620e-09 -1.5506e-01  3.1694e-02  5.0822e-01  0:00:04   19
+   282  8.6295e-07  3.6154e-10  8.9625e-11  1.0144e-09  1.8984e-09 -1.5506e-01  3.1695e-02  5.0821e-01  0:00:03   18
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   283  8.1314e-07  3.4248e-10  8.3351e-11  9.5552e-10  1.8028e-09 -1.5506e-01  3.1695e-02  5.0821e-01  0:00:06   17
+   284  7.6505e-07  3.2444e-10  7.7542e-11  8.9888e-10  1.7929e-09 -1.5506e-01  3.1695e-02  5.0821e-01  0:00:04   16
+   285  7.1957e-07  3.0731e-10  7.2096e-11  8.4539e-10  1.8423e-09 -1.5506e-01  3.1695e-02  5.0821e-01  0:00:03   15
+   286  6.7634e-07  2.9062e-10  6.7011e-11  7.9497e-10  1.8952e-09 -1.5506e-01  3.1696e-02  5.0821e-01  0:00:02   14
+   287  6.3525e-07  2.7477e-10  6.2377e-11  7.4776e-10  1.9169e-09 -1.5506e-01  3.1696e-02  5.0821e-01  0:00:02   13
+   288  5.9616e-07  2.5958e-10  5.8249e-11  7.0304e-10  1.8981e-09 -1.5506e-01  3.1696e-02  5.0821e-01  0:00:04   12
+   289  5.5936e-07  2.4513e-10  5.4421e-11  6.6027e-10  1.8500e-09 -1.5506e-01  3.1696e-02  5.0821e-01  0:00:03   11
+   290  5.2389e-07  2.3151e-10  5.0774e-11  6.1984e-10  1.7969e-09 -1.5506e-01  3.1696e-02  5.0821e-01  0:00:02   10
+   291  4.9058e-07  2.1856e-10  4.7282e-11  5.8166e-10  1.7662e-09 -1.5506e-01  3.1697e-02  5.0821e-01  0:00:01    9
+   292  4.5866e-07  2.0623e-10  4.3973e-11  5.4547e-10  1.7766e-09 -1.5506e-01  3.1697e-02  5.0821e-01  0:00:03    8
+   293  4.2859e-07  1.9469e-10  4.0820e-11  5.1188e-10  1.8151e-09 -1.5506e-01  3.1697e-02  5.0821e-01  0:00:02    7
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   294  4.0089e-07  1.8364e-10  3.7886e-11  4.8046e-10  1.8584e-09 -1.5506e-01  3.1697e-02  5.0821e-01  0:00:01    6
+   295  3.7461e-07  1.7355e-10  3.5136e-11  4.5123e-10  1.8853e-09 -1.5506e-01  3.1697e-02  5.0821e-01  0:00:01    5
+   296  3.5091e-07  1.6423e-10  3.2666e-11  4.2435e-10  1.8864e-09 -1.5506e-01  3.1698e-02  5.0821e-01  0:00:01    4
+   297  3.2917e-07  1.5601e-10  3.0432e-11  4.0033e-10  1.8658e-09 -1.5506e-01  3.1698e-02  5.0821e-01  0:00:01    3
+   298  3.0876e-07  1.4865e-10  2.8504e-11  3.7864e-10  1.8386e-09 -1.5506e-01  3.1698e-02  5.0821e-01  0:00:00    2
+   299  2.9002e-07  1.4179e-10  2.6809e-11  3.5793e-10  1.8202e-09 -1.5506e-01  3.1698e-02  5.0820e-01  0:00:00    1
+   300  2.7291e-07  1.3536e-10  2.5301e-11  3.3856e-10  1.8138e-09 -1.5506e-01  3.1698e-02  5.0820e-01  0:00:00    0
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   300  2.7291e-07  1.3536e-10  2.5301e-11  3.3856e-10  1.8138e-09 -1.5506e-01  3.1698e-02  5.0820e-01  0:00:17   50
+   301  4.1916e-04  1.2958e-10  2.4084e-11  1.4178e-07  3.3707e-07 -1.5501e-01  3.1702e-02  5.0775e-01  0:00:13   49
+   302  4.7148e-04  5.4943e-08  3.3053e-07  1.7413e-07  1.3311e-06 -1.5491e-01  3.1722e-02  5.0667e-01  0:00:10   48
+   303  2.5501e-04  3.4457e-08  3.8619e-07  1.4327e-07  2.2269e-06 -1.5477e-01  3.1747e-02  5.0486e-01  0:00:18   47
+   304  1.4931e-04  5.0923e-08  3.9706e-07  1.2562e-07  2.9253e-06 -1.5460e-01  3.1761e-02  5.0293e-01  0:00:14   46
+   305  1.8572e-04  5.6259e-08  3.7447e-07  1.3778e-07  3.3449e-06 -1.5444e-01  3.1776e-02  5.0145e-01  0:00:11   45
+   306  2.1999e-04  5.4912e-08  3.3059e-07  1.4393e-07  3.5315e-06 -1.5432e-01  3.1795e-02  5.0011e-01  0:00:08   44
+   307  2.4163e-04  5.0711e-08  2.7501e-07  1.4424e-07  3.5157e-06 -1.5426e-01  3.1818e-02  4.9886e-01  0:00:07   43
+   308  2.3512e-04  4.3042e-08  2.3022e-07  1.3350e-07  3.2847e-06 -1.5430e-01  3.1850e-02  4.9820e-01  0:00:05   42
+   309  2.2196e-04  3.4654e-08  1.8935e-07  1.2631e-07  2.9190e-06 -1.5444e-01  3.1901e-02  4.9809e-01  0:00:04   41
+   310  1.9448e-04  2.9440e-08  1.4491e-07  1.2788e-07  2.5135e-06 -1.5473e-01  3.1983e-02  4.9865e-01  0:00:03   40
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   311  1.7084e-04  2.9850e-08  1.0302e-07  1.2745e-07  2.0582e-06 -1.5499e-01  3.2055e-02  4.9933e-01  0:00:10   39
+   312  1.4512e-04  3.3861e-08  7.1068e-08  1.2233e-07  1.6517e-06 -1.5517e-01  3.2105e-02  4.9987e-01  0:00:08   38
+   313  1.2088e-04  3.8092e-08  5.0975e-08  1.1661e-07  1.3230e-06 -1.5534e-01  3.2151e-02  5.0045e-01  0:00:06   37
+   314  1.0014e-04  4.0168e-08  4.9290e-08  1.0972e-07  1.0745e-06 -1.5547e-01  3.2190e-02  5.0100e-01  0:00:05   36
+   315  8.3697e-05  3.9246e-08  5.2613e-08  1.0031e-07  8.6933e-07 -1.5557e-01  3.2223e-02  5.0145e-01  0:00:04   35
+   316  7.5934e-05  3.5939e-08  5.0814e-08  8.8591e-08  6.9257e-07 -1.5562e-01  3.2245e-02  5.0177e-01  0:00:03   34
+   317  7.4245e-05  3.0937e-08  4.5661e-08  7.5421e-08  5.5835e-07 -1.5562e-01  3.2260e-02  5.0194e-01  0:00:02   33
+   318  7.0020e-05  2.5294e-08  4.0183e-08  6.2550e-08  4.7585e-07 -1.5559e-01  3.2264e-02  5.0195e-01  0:00:08   32
+   319  6.3240e-05  1.9799e-08  3.5572e-08  5.2007e-08  4.2726e-07 -1.5552e-01  3.2260e-02  5.0181e-01  0:00:06   31
+   320  5.5514e-05  1.4945e-08  3.0108e-08  4.6979e-08  3.8787e-07 -1.5543e-01  3.2248e-02  5.0156e-01  0:00:05   30
+   321  4.7707e-05  1.2725e-08  2.4806e-08  4.5254e-08  3.5890e-07 -1.5528e-01  3.2227e-02  5.0106e-01  0:00:04   29
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   322  4.0554e-05  1.3319e-08  2.0229e-08  4.3286e-08  3.3357e-07 -1.5514e-01  3.2200e-02  5.0051e-01  0:00:03   28
+   323  3.4974e-05  1.4514e-08  1.6388e-08  4.0758e-08  3.1316e-07 -1.5504e-01  3.2174e-02  5.0005e-01  0:00:02   27
+   324  3.2398e-05  1.4814e-08  1.3214e-08  3.7417e-08  2.9704e-07 -1.5499e-01  3.2156e-02  4.9977e-01  0:00:02   26
+   325  3.0688e-05  1.4263e-08  1.0676e-08  3.3583e-08  2.7956e-07 -1.5500e-01  3.2147e-02  4.9967e-01  0:00:01   25
+   326  2.8644e-05  1.3156e-08  8.4732e-09  2.9786e-08  2.5212e-07 -1.5505e-01  3.2146e-02  4.9974e-01  0:00:06   24
+   327  2.6364e-05  1.1878e-08  6.6355e-09  2.6747e-08  2.2735e-07 -1.5513e-01  3.2153e-02  4.9996e-01  0:00:04   23
+   328  2.3730e-05  1.0553e-08  5.5234e-09  2.4651e-08  2.0284e-07 -1.5522e-01  3.2165e-02  5.0025e-01  0:00:03   22
+   329  2.1188e-05  9.4743e-09  5.3935e-09  2.2994e-08  1.8515e-07 -1.5530e-01  3.2180e-02  5.0055e-01  0:00:03   21
+   330  1.8845e-05  8.6193e-09  5.7049e-09  2.1127e-08  1.5919e-07 -1.5535e-01  3.2194e-02  5.0080e-01  0:00:02   20
+   331  1.6712e-05  7.7743e-09  5.8389e-09  1.9088e-08  1.5060e-07 -1.5538e-01  3.2204e-02  5.0097e-01  0:00:02   19
+   332  1.5045e-05  6.8794e-09  5.7001e-09  1.6966e-08  1.5288e-07 -1.5538e-01  3.2208e-02  5.0104e-01  0:00:05   18
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   333  1.3678e-05  5.9507e-09  5.2804e-09  1.4985e-08  1.5476e-07 -1.5535e-01  3.2208e-02  5.0100e-01  0:00:04   17
+   334  1.2610e-05  5.1075e-09  4.6571e-09  1.3524e-08  1.4977e-07 -1.5531e-01  3.2203e-02  5.0090e-01  0:00:03   16
+   335  1.1664e-05  4.5379e-09  4.0439e-09  1.2739e-08  1.3850e-07 -1.5527e-01  3.2196e-02  5.0076e-01  0:00:02   15
+   336  1.0794e-05  4.1322e-09  3.5511e-09  1.2007e-08  1.2620e-07 -1.5523e-01  3.2190e-02  5.0062e-01  0:00:02   14
+   337  9.9960e-06  3.8415e-09  3.0753e-09  1.1071e-08  1.1176e-07 -1.5521e-01  3.2185e-02  5.0052e-01  0:00:04   13
+   338  9.2823e-06  3.5781e-09  2.6424e-09  9.9819e-09  9.4642e-08 -1.5521e-01  3.2183e-02  5.0047e-01  0:00:03   12
+   339  8.6782e-06  3.3569e-09  2.2484e-09  8.8076e-09  7.9266e-08 -1.5523e-01  3.2184e-02  5.0048e-01  0:00:02   11
+   340  8.0819e-06  3.2150e-09  1.9025e-09  7.9104e-09  6.7354e-08 -1.5526e-01  3.2188e-02  5.0054e-01  0:00:01   10
+   341  7.5461e-06  3.0858e-09  1.6112e-09  7.5349e-09  5.9018e-08 -1.5529e-01  3.2193e-02  5.0062e-01  0:00:01    9
+   342  7.0938e-06  2.9520e-09  1.4117e-09  7.3339e-09  5.2789e-08 -1.5532e-01  3.2198e-02  5.0071e-01  0:00:01    8
+   343  6.6760e-06  2.8193e-09  1.2756e-09  7.1009e-09  4.7133e-08 -1.5533e-01  3.2202e-02  5.0079e-01  0:00:01    7
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   344  6.2394e-06  2.6663e-09  1.1944e-09  6.4341e-09  4.3468e-08 -1.5534e-01  3.2204e-02  5.0082e-01  0:00:02    6
+   345  5.8195e-06  2.4711e-09  1.0870e-09  5.7095e-09  4.2300e-08 -1.5533e-01  3.2204e-02  5.0082e-01  0:00:01    5
+   346  5.3984e-06  2.3079e-09  9.6389e-10  5.1872e-09  4.2241e-08 -1.5531e-01  3.2202e-02  5.0078e-01  0:00:01    4
+   347  4.8736e-06  2.1253e-09  8.3710e-10  5.0808e-09  4.3282e-08 -1.5528e-01  3.2198e-02  5.0071e-01  0:00:00    3
+   348  4.4948e-06  1.9601e-09  7.4094e-10  5.0116e-09  4.5528e-08 -1.5526e-01  3.2193e-02  5.0063e-01  0:00:00    2
+   349  4.1959e-06  1.8029e-09  7.3302e-10  4.7477e-09  4.6716e-08 -1.5525e-01  3.2191e-02  5.0058e-01  0:00:00    1
+   350  3.9188e-06  1.6566e-09  7.2320e-10  4.3030e-09  4.5433e-08 -1.5525e-01  3.2189e-02  5.0056e-01  0:00:00    0
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   350  3.9188e-06  1.6566e-09  7.2320e-10  4.3030e-09  4.5433e-08 -1.5525e-01  3.2189e-02  5.0056e-01  0:00:03   50
+   351  3.6568e-06  1.5014e-09  6.7963e-10  3.8282e-09  4.2333e-08 -1.5526e-01  3.2190e-02  5.0057e-01  0:00:03   49
+   352  3.3949e-06  1.3795e-09  5.9938e-10  3.5330e-09  3.8009e-08 -1.5527e-01  3.2191e-02  5.0060e-01  0:00:02   48
+   353  3.1438e-06  1.2788e-09  5.1258e-10  3.4020e-09  3.3509e-08 -1.5528e-01  3.2193e-02  5.0063e-01  0:00:02   47
+   354  2.8899e-06  1.2049e-09  4.4649e-10  3.1778e-09  2.9032e-08 -1.5528e-01  3.2195e-02  5.0065e-01  0:00:01   46
+   355  2.6533e-06  1.1395e-09  3.9565e-10  2.8771e-09  2.5493e-08 -1.5528e-01  3.2195e-02  5.0065e-01  0:00:10   45
+   356  2.4634e-06  1.0864e-09  3.4360e-10  2.7223e-09  2.3460e-08 -1.5527e-01  3.2194e-02  5.0062e-01  0:00:08   44
+   357  2.3249e-06  1.0489e-09  3.0245e-10  2.6892e-09  2.2395e-08 -1.5527e-01  3.2192e-02  5.0060e-01  0:00:06   43
+   358  2.2263e-06  1.0245e-09  2.9077e-10  2.6174e-09  2.1862e-08 -1.5526e-01  3.2192e-02  5.0058e-01  0:00:05   42
+   359  2.1418e-06  1.0027e-09  2.8170e-10  2.4811e-09  2.2316e-08 -1.5526e-01  3.2191e-02  5.0057e-01  0:00:04   41
+   360  2.0666e-06  9.7459e-10  2.6858e-10  2.3082e-09  2.2018e-08 -1.5526e-01  3.2191e-02  5.0058e-01  0:00:11   40
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   361  1.9935e-06  9.3867e-10  2.5008e-10  2.1862e-09  2.0765e-08 -1.5526e-01  3.2191e-02  5.0058e-01  0:00:09   39
+   362  1.8928e-06  8.7482e-10  2.3244e-10  2.0857e-09  1.8943e-08 -1.5527e-01  3.2192e-02  5.0060e-01  0:00:07   38
+   363  1.7747e-06  8.0496e-10  2.2454e-10  1.9824e-09  1.6853e-08 -1.5527e-01  3.2192e-02  5.0061e-01  0:00:05   37
+   364  1.6711e-06  7.4609e-10  2.2105e-10  1.8148e-09  1.4914e-08 -1.5527e-01  3.2192e-02  5.0061e-01  0:00:11   36
+   365  1.5567e-06  6.8801e-10  2.1425e-10  1.6934e-09  1.3840e-08 -1.5527e-01  3.2192e-02  5.0061e-01  0:00:09   35
+   366  1.4454e-06  6.3475e-10  2.0276e-10  1.6049e-09  1.3645e-08 -1.5527e-01  3.2192e-02  5.0060e-01  0:00:07   34
+   367  1.3405e-06  5.9194e-10  1.9008e-10  1.5292e-09  1.4169e-08 -1.5527e-01  3.2192e-02  5.0060e-01  0:00:12   33
+   368  1.2554e-06  5.5569e-10  1.7784e-10  1.4436e-09  1.4804e-08 -1.5527e-01  3.2192e-02  5.0059e-01  0:00:09   32
+   369  1.1785e-06  5.2809e-10  1.6439e-10  1.3621e-09  1.5202e-08 -1.5527e-01  3.2192e-02  5.0059e-01  0:00:07   31
+   370  1.1159e-06  5.0582e-10  1.5089e-10  1.2972e-09  1.5225e-08 -1.5527e-01  3.2192e-02  5.0060e-01  0:00:12   30
+   371  1.0588e-06  4.8868e-10  1.3809e-10  1.2452e-09  1.4900e-08 -1.5527e-01  3.2192e-02  5.0060e-01  0:00:09   29
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   372  1.0116e-06  4.7429e-10  1.2717e-10  1.1965e-09  1.4346e-08 -1.5527e-01  3.2192e-02  5.0060e-01  0:00:07   28
+   373  9.7140e-07  4.6132e-10  1.1812e-10  1.1521e-09  1.3685e-08 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:05   27
+   374  9.3472e-07  4.4828e-10  1.0991e-10  1.1103e-09  1.3037e-08 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:09   26
+   375  8.9784e-07  4.3377e-10  1.0245e-10  1.0665e-09  1.2410e-08 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:07   25
+   376  8.6106e-07  4.1730e-10  9.5793e-11  1.0185e-09  1.1769e-08 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:05   24
+   377  8.1927e-07  3.9755e-10  8.9692e-11  9.7254e-10  1.1123e-08 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:04   23
+   378  7.6913e-07  3.7064e-10  8.4107e-11  9.2185e-10  1.0480e-08 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:03   22
+   379  7.1062e-07  3.3941e-10  7.9355e-11  8.6272e-10  9.8319e-09 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:07   21
+   380  6.5311e-07  3.0778e-10  7.5263e-11  8.0031e-10  9.1860e-09 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:05   20
+   381  5.9955e-07  2.7575e-10  7.1030e-11  7.3993e-10  8.5542e-09 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:04   19
+   382  5.4989e-07  2.4708e-10  6.6736e-11  6.7419e-10  7.9488e-09 -1.5527e-01  3.2193e-02  5.0060e-01  0:00:03   18
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   383  5.0985e-07  2.2253e-10  6.2313e-11  6.1938e-10  7.3740e-09 -1.5527e-01  3.2193e-02  5.0061e-01  0:00:06   17
+   384  4.8288e-07  2.0516e-10  5.8056e-11  5.7055e-10  6.8328e-09 -1.5527e-01  3.2193e-02  5.0061e-01  0:00:04   16
+   385  4.6335e-07  1.9809e-10  5.4158e-11  5.4154e-10  6.3205e-09 -1.5527e-01  3.2193e-02  5.0061e-01  0:00:03   15
+   386  4.5788e-07  1.9808e-10  5.0922e-11  5.2235e-10  5.8349e-09 -1.5527e-01  3.2193e-02  5.0061e-01  0:00:02   14
+   387  4.6021e-07  2.0486e-10  4.8230e-11  5.1722e-10  5.3710e-09 -1.5527e-01  3.2193e-02  5.0061e-01  0:00:02   13
+   388  4.6596e-07  2.1102e-10  4.6263e-11  5.1545e-10  4.9321e-09 -1.5527e-01  3.2193e-02  5.0061e-01  0:00:04   12
+   389  4.7303e-07  2.1538e-10  4.4449e-11  5.1210e-10  4.5196e-09 -1.5527e-01  3.2193e-02  5.0061e-01  0:00:03   11
+   390  4.7987e-07  2.1373e-10  4.3215e-11  5.0199e-10  4.1303e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:02   10
+   391  4.7108e-07  2.0863e-10  4.2727e-11  4.8842e-10  3.7753e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:01    9
+   392  4.4663e-07  2.0168e-10  4.2572e-11  4.6854e-10  3.4564e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:03    8
+   393  4.1671e-07  1.9240e-10  4.2077e-11  4.4519e-10  3.1740e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:02    7
+
+  iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
+   394  3.9101e-07  1.8298e-10  4.1697e-11  4.2612e-10  2.9253e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:01    6
+   395  3.6319e-07  1.7427e-10  4.1149e-11  4.0779e-10  2.7010e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:01    5
+   396  3.3563e-07  1.6698e-10  3.9721e-11  3.8784e-10  2.4898e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:01    4
+   397  3.1187e-07  1.5988e-10  3.7780e-11  3.7297e-10  2.2898e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:01    3
+   398  2.9620e-07  1.5203e-10  3.6083e-11  3.6103e-10  2.0963e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:00    2
+   399  2.7760e-07  1.4036e-10  3.4746e-11  3.4367e-10  1.9051e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:00    1
+   400  2.6072e-07  1.2790e-10  3.2997e-11  3.2111e-10  1.7201e-09 -1.5527e-01  3.2193e-02  5.0062e-01  0:00:00    0
+Shutting down Server...
+Services Shutdown...Done.
+Server Shutdown...Done.
+Queue Cleared...Done.
+Shutdown Complete.
+Auto-Transcript Stop Time:  09:55:28, 18 May 2026 Russia TZ 2 Standard Time 
+Total Transcript Time: 2 Minute 22 Second.

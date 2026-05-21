@@ -1,0 +1,19 @@
+%%% Кодировки и шрифты %%%
+% Язык по-умолчанию русский с поддержкой приятных команд пакета babel
+\setmainlanguage[babelshorthands=true]{russian}
+% Дополнительный язык = английский (в американской вариации по-умолчанию)
+\setotherlanguage{english}
+
+\setmonofont{Source Code Pro}[Scale=0.9]                    % Моноширинный шрифт
+\newfontfamily\cyrillicfonttt{Source Code Pro}[Scale=0.9]   % Моноширинный шрифт для кириллицы
+
+\defaultfontfeatures{Ligatures=TeX}                 % Стандартные лигатуры TeX, замены нескольких дефисов на тире и т. п. Настройки моноширинного шрифта должны идти до этой строки, чтобы при врезках кода программ в коде не применялись лигатуры и замены дефисов.
+
+\setmainfont{STIX Two Text}                         % Шрифт с засечками
+\newfontfamily\cyrillicfont{STIX Two Text}          % Шрифт с засечками для кириллицы
+
+\setsansfont{Source Sans Pro}                       % Шрифт без засечек
+\newfontfamily\cyrillicfontsf{Source Sans Pro}      % Шрифт без засечек для кириллицы
+
+\setmathfont{STIX Two Math}[StylisticSet=8]         % Математический шрифт
+\newfontfamily\cyrillicfontmf{STIX Two Math}        % Математический шрифт для кириллицы
