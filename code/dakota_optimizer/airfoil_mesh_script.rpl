@@ -20,8 +20,8 @@ set mesh_number 120
 
 ic_comment "Along airfoil *0.9"
 set nxA [expr  0.9*$mesh_number]
-ic_comment "Across airfoil *0.4"
-set nyA [expr  0.4*$mesh_number]
+ic_comment "Across airfoil *0.5"
+set nyA [expr  0.6*$mesh_number]
 ic_comment "Radial close *1"
 set nr1 [expr  1*$mesh_number] 
 ic_comment "Radial far *0.35"

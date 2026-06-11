@@ -1,0 +1,29 @@
+environment
+    tabular_data
+        tabular_data_file = 'opt_history_local.dat'
+
+method
+    # Метод NOMAD
+    mesh_adaptive_search
+    max_function_evaluations = 250
+    max_iterations = 50
+    variable_tolerance = 1e-3
+    initial_delta = 0.01
+
+variables
+    continuous_design = 7
+    initial_point =   0.1986  0.278   0.3714  0.2704 -0.425  -0.3536  0.4602           
+    lower_bounds    0.1  -1.0 -1.0 -1.0 -1.0 -1.0  0.0
+    upper_bounds    1.0   1.0  1.0  1.0  1.0  1.0  1.0
+    descriptors     'x1' 'x2' 'x3' 'x4' 'x5' 'x6'  'x7' 
+
+interface
+    fork
+    analysis_driver = 'python eval_worker.py'
+    parameters_file = 'params.in'
+    file_save
+
+responses
+    objective_functions = 1
+    no_gradients
+    no_hessians

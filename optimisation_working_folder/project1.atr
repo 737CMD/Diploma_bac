@@ -1,0 +1,26 @@
+# Written by ICEM CFD 24.2, user vova1, Wed May 27 5:28:55 AM Russia TZ 2 Standard Time 2026
+
+begin family WALL
+    begin solver "Ansys Fluent"
+    end solver "Ansys Fluent"
+end family WALL
+
+begin family GEOM
+    begin solver "Ansys Fluent"
+    end solver "Ansys Fluent"
+end family GEOM
+
+begin family SOLID
+    begin solver "Ansys Fluent"
+    end solver "Ansys Fluent"
+end family SOLID
+
+begin family INLET
+    begin solver "Ansys Fluent"
+    end solver "Ansys Fluent"
+end family INLET
+
+begin family OUTLET
+    begin solver "Ansys Fluent"
+    end solver "Ansys Fluent"
+end family OUTLET

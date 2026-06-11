@@ -1,0 +1,173 @@
+Auto-Transcript Start Time:  14:38:55, 11 Jun 2026 Russia TZ 2 Standard Time 
+Current Directory: "E:\tsagi_dipl\Diploma_bac\optimisation_working_folder"
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@localhost
+Host spawning Node 0 on machine "VVCh" (win64).
+
+--------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID    Vendor                               
+--------------------------------------------------------------------------------
+n7    VVCh      8/16  Windows-x64  26320  AMD Ryzen 7 5700X 8-Core Processor   
+n6    VVCh      7/16  Windows-x64  28404  AMD Ryzen 7 5700X 8-Core Processor   
+n5    VVCh      6/16  Windows-x64  26432  AMD Ryzen 7 5700X 8-Core Processor   
+n4    VVCh      5/16  Windows-x64  27084  AMD Ryzen 7 5700X 8-Core Processor   
+n3    VVCh      4/16  Windows-x64  16032  AMD Ryzen 7 5700X 8-Core Processor   
+n2    VVCh      3/16  Windows-x64  28044  AMD Ryzen 7 5700X 8-Core Processor   
+n1    VVCh      2/16  Windows-x64  27388  AMD Ryzen 7 5700X 8-Core Processor   
+n0*   VVCh      1/16  Windows-x64  24464  AMD Ryzen 7 5700X 8-Core Processor   
+host  VVCh            Windows-x64  25320  AMD Ryzen 7 5700X 8-Core Processor   
+
+MPI Option Selected: intel
+Selected system interconnect: default
+--------------------------------------------------------------------------------
+
+Cleanup script file is E:\\tsagi_dipl\\Diploma_bac\\optimisation_working_folder\\cleanup-fluent-VVCh-25320.bat
+Fast-loading "E:\Program files\ANSYS Inc\v242\fluent\fluent24.2.0\\addons\afd\lib\hdfio.bin"
+Done.
+Multicore SMT processors detected. Processor affinity set!
+
+Reading from VVCh:"E:/tsagi_dipl/Diploma_bac/optimisation_working_folder/optimization_setup.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+Warning: reading 10 partition grid onto 8 compute node machine.
+         will auto partition.
+       49125 cells,     1 cell zone  ...
+          49125 quadrilateral cells,  zone id: 7
+       98677 faces,     4 face zones ...
+          97823 2D interior faces,  zone id: 8
+            217 2D wall faces,  zone id: 9
+            375 2D pressure-far-field faces,  zone id: 10
+            262 2D pressure-outlet faces,  zone id: 11
+       49552 nodes,     1 node zone  ...
+  Done.
+
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast, Laplace),
+	distributing mesh
+		parts........,
+		faces........,
+		nodes........,
+		cells........,
+        bandwidth reduction using Reverse Cuthill-McKee: 4995/81 = 61.6667
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	outlet
+	wall
+	int_solid
+	inlet
+	solid
+     parallel,
+Done.
+
+> (cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list ))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Materials|Fluid|air"))
+(cx-gui-do cx-activate-item "Create/Edit Materials*PanelButtons*PushButton1(Close)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 1)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 2)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 3)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 4)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 5)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 6)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 7)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Far-Field*Frame3" 1)
+(cx-gui-do cx-activate-item "Pressure Far-Field*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=11)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=11)"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=11)"))
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 6)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 7)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 8)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 1)
+(cx-gui-do cx-enable-apply-button "Pressure Outlet")
+(cx-gui-do cx-set-expression-entry "Pressure Outlet*Frame2*Frame2*Frame2(Thermal)*Table1*Table1*ExpressionEntry1(Backflow Total Temperature)" '("Temperature" . 1))
+(cx-gui-do cx-activate-item "Pressure Outlet*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Pressure Outlet*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Inlet|inlet (pressure-far-field, id=10)"))
+(cx-gui-do cx-enable-apply-button "Pressure Far-Field")
+(cx-gui-do cx-set-expression-entry "Pressure Far-Field*Frame3*Frame2(Thermal)*Table1*Table1*ExpressionEntry1(Temperature)" '("Temperature" . 1))
+(cx-gui-do cx-activate-item "Pressure Far-Field*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Pressure Far-Field*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-activate-item "MenuBar*WriteSubMenu*Case...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "optimization_setup.cas.h5") "CFF Case Files (*.cas.h5 )")
+(cx-gui-do cx-activate-item "Question*OK")
+
+Writing to VVCh:"E:/tsagi_dipl/Diploma_bac/optimisation_working_folder/optimization_setup.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+       49125 cells,     1 zone  ...
+       98677 faces,     4 zones ...
+       49552 nodes,     1 zone  ...
+  Done.
+Done.
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Named Expressions|Temperature"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Named Expressions|Temperature"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Named Expressions|Temperature"))
+(cx-gui-do cx-activate-tab-index "Expression*Table1*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Expression*Table1*Frame1" 1)
+(cx-gui-do cx-activate-tab-index "Expression*Table1*Frame1" 0)
+(cx-gui-do cx-set-expression-entry "Parameter Expression*Table1*ExpressionEntry3(Definition)" '("300 [K]" . 1))
+(cx-gui-do cx-activate-item "Parameter Expression*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Internal|int_solid (interior, id=8)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Internal|int_solid (interior, id=8)"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Internal|int_solid (interior, id=8)"))
+(cx-gui-do cx-activate-item "Interior*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=11)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=11)"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions|Outlet|outlet (pressure-outlet, id=11)"))
+(cx-gui-do cx-activate-tab-index "Pressure Outlet*Frame2*Frame2" 0)
+(cx-gui-do cx-activate-item "Pressure Outlet*PanelButtons*PushButton2(Cancel)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))

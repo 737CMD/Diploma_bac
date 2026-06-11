@@ -32,7 +32,7 @@ def check_convergence(file_name, tol_cya, tol_cxa, conv_iter):
         cxa_ok = np.all(np.abs(last_ma_cxa - final_cxa) <= tol_cxa)
         return (cya_ok and cxa_ok), final_cya, final_cxa
     except Exception as e:    
-        return False, 0.0, 0.0
+        return False, None, None
 
 def run_fluent_simulation(solver_session, target_cya, cya_tol, cxa_tol, Mach, Re, T, conv_iter, mesh_file, file_name):
     solver_session.settings.file.replace_mesh(file_name = mesh_file)
@@ -41,30 +41,32 @@ def run_fluent_simulation(solver_session, target_cya, cya_tol, cxa_tol, Mach, Re
     solver_session.settings.parameters.input_parameters.expression["Mach"].value = Mach
     solver_session.settings.parameters.input_parameters.expression["Temperature"].value = T
     solver_session.settings.solution.initialization.initialize()
-    solver_session.settings.solution.initialization.hybrid_initialize()
     solver_session.settings.setup.reference_values.compute(from_zone_type = 'pressure-far-field', from_zone_name = 'inlet')
     solver_session.tui.solve.report_files.clear_data('integral_char')
     total_iterations = 0
     def run_calc(step_iter, cya_tol, cxa_tol):
         nonlocal total_iterations
+        run_iter = 0
         solver_session.settings.solution.run_calculation.iterate(iter_count=step_iter)
         total_iterations += step_iter
+        run_iter += step_iter
         converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)
-        if cya == 0.0 and cxa == 0.0 and not converged:
+        if cya == None and cxa == None and not converged or np.abs(cya) > 100 and total_iterations > 200:
             print("Обнаружен развал решения. Прерывание цикла во избежание зависания.")
             return None, None  
         while not converged: 
             solver_session.settings.solution.run_calculation.iterate(iter_count=step_iter)
             total_iterations += step_iter
+            run_iter += step_iter
             converged, cya, cxa = check_convergence(file_name, cya_tol, cxa_tol, conv_iter)
-            if cya == 0.0 and cxa == 0.0 and not converged:
+            if cya == None and cxa == None and not converged or np.abs(cya) > 100 and total_iterations > 200:
                 print("Обнаружен развал решения. Прерывание цикла во избежание зависания.")
                 return None, None
-            if total_iterations >= 2500: return target_cya, None
+            if total_iterations >= 2500 or run_iter >= 800: return target_cya, None
         return cya, cxa
     cya, cxa = run_calc(100, cya_tol, cxa_tol)
-    if cya < 0: return None, None
-    alpha_step = 0.5
+    if cya < -0.1: return None, None
+    alpha_step = 0.1
     #метод Ньютона для решения 
     while(abs(cya-target_cya) > cya_tol):
         if total_iterations >= 2500: return cya, None

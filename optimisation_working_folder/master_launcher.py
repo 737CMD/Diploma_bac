@@ -41,9 +41,9 @@ def main():
     
     # Запускаем DAKOTA
     print("Запуск DAKOTA...")
-    dakota_file_name = "dakota.in"
+    dakota_file_name = "dakota_local.in"
     try:
-        subprocess.run(["dakota", "-i", dakota_file_name, "-o", "dakota.out", "-r", "restart_data.rst"], check=True)
+        subprocess.run(["dakota", "-i", dakota_file_name, "-o", "dakota.out"], check=True)
         # "-r", "restart_data.rst" 
     except Exception as e:
         print(f"Критическая ошибка при запуске DAKOTA: {e}")

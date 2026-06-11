@@ -5,7 +5,7 @@ ic_set_meshing_params global 0 gttol $toler gtrel 1
 ic_delete_elements family SOLID no_undo 1
 ic_delete_geometry curve all 1 1
 ic_delete_geometry point all 1 1
-ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/optimisation_working_folder/bezier_airfoil_icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
+ic_geo_cre_geom_input E:/tsagi_dipl/Diploma_bac/optimisation_working_folder/rae2822icem.txt 0.000001 input PNTS {} WALL crv SURFS {} 
 
 ic_boco_solver 
 ic_boco_clear_icons 
