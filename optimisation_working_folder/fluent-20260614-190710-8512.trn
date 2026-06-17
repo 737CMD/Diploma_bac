@@ -1,0 +1,45 @@
+Auto-Transcript Start Time:  19:07:10, 14 Jun 2026 Russia TZ 2 Standard Time 
+Current Directory: "e:\tsagi_dipl\Diploma_bac\optimisation_working_folder"
+Information: The server has started and is running.
+
+              Welcome to ANSYS Fluent 2024 R2
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 13 2024 11:28:30 EST  Build Id: 10192  
+ 
+Connected License Server List:	1055@localhost
+Host spawning Node 0 on machine "VVCh" (win64).
+
+---------------------------------------------------------------------------------
+ID    Hostname  Core   O.S.         PID    Vendor                               
+---------------------------------------------------------------------------------
+n9    VVCh      10/16  Windows-x64  23804  AMD Ryzen 7 5700X 8-Core Processor   
+n8    VVCh      9/16   Windows-x64  24348  AMD Ryzen 7 5700X 8-Core Processor   
+n7    VVCh      8/16   Windows-x64  30960  AMD Ryzen 7 5700X 8-Core Processor   
+n6    VVCh      7/16   Windows-x64  21964  AMD Ryzen 7 5700X 8-Core Processor   
+n5    VVCh      6/16   Windows-x64  25680  AMD Ryzen 7 5700X 8-Core Processor   
+n4    VVCh      5/16   Windows-x64  27732  AMD Ryzen 7 5700X 8-Core Processor   
+n3    VVCh      4/16   Windows-x64  22708  AMD Ryzen 7 5700X 8-Core Processor   
+n2    VVCh      3/16   Windows-x64  23752  AMD Ryzen 7 5700X 8-Core Processor   
+n1    VVCh      2/16   Windows-x64  15156  AMD Ryzen 7 5700X 8-Core Processor   
+n0*   VVCh      1/16   Windows-x64  4456   AMD Ryzen 7 5700X 8-Core Processor   
+host  VVCh             Windows-x64  18528  AMD Ryzen 7 5700X 8-Core Processor   
+
+MPI Option Selected: intel
+Selected system interconnect: default
+---------------------------------------------------------------------------------
+
+Cleanup script file is e:\\tsagi_dipl\\Diploma_bac\\optimisation_working_folder\\cleanup-fluent-VVCh-18528.bat
+
+> /exit y
+Shutting down Server...
+Services Shutdown...Done.
+Server Shutdown...Done.
+Queue Cleared...Done.
+Shutdown Complete.
+Auto-Transcript Stop Time:  03:35:56, 15 Jun 2026 Russia TZ 2 Standard Time 
+Total Transcript Time: 8 Hour 28 Minute 46 Second.

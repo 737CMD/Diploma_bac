@@ -1,5 +1,5 @@
 # ICEM CFD Project Settings
-# Saved by vova1 on VVCh on Wed May 27 5:28:55 AM Russia TZ 2 Standard Time 2026
+# Saved by vova1 on VVCh on Sun Jun 14 7:32:39 PM Russia TZ 2 Standard Time 2026
 # ICEM CFD - version 24.2 - Release date: May 30 2024
 
 array set file_name {
@@ -8,25 +8,24 @@ array set file_name {
     domain_loaded 1
     cart_file_loaded 0
     cart_file {}
-    domain_saved project1.uns
     archive {}
     med_replay {}
     topology_dir E:/tsagi_dipl/Diploma_bac/optimisation_working_folder
     ugparts_dir E:/tsagi_dipl/Diploma_bac/optimisation_working_folder
     icons {{$env(ICEM_ACN)/lib/ai_env/icons} {$env(ICEM_ACN)/lib/va/EZCAD/icons} {$env(ICEM_ACN)/lib/icons} {$env(ICEM_ACN)/lib/va/CABIN/icons}}
-    tetin project1.tin
-    family_boco project1.fbc
+    tetin {}
+    family_boco {}
     prism_params project1.prism_params
     iges_dir E:/tsagi_dipl/Diploma_bac/optimisation_working_folder
     solver_params_loaded 1
     attributes_loaded 1
     project_lock {}
-    attributes project1.atr
-    domain project1.uns
+    attributes {}
+    domain {}
     domains_dir E:/tsagi_dipl/Diploma_bac/optimisation_working_folder
     settings_loaded 0
     settings project1.prj
-    blocking project1.blk
+    blocking {}
     hexa_replay {}
     transfer_dir E:/tsagi_dipl/Diploma_bac/optimisation_working_folder
     mesh_dir E:/tsagi_dipl/Diploma_bac/optimisation_working_folder
@@ -193,43 +192,44 @@ array set prism_values {
 }
 set aie_current_flavor {}
 array set vid_options {
-    wb_import_tritol 0.001
-    wb_import_mix_res_line 0
-    wb_import_cad_att_pre {SDFEA;DDM}
-    wb_import_surface_bodies 1
-    wb_NS_to_subset 0
     wb_import_mat_points 0
+    wb_NS_to_subset 0
+    wb_import_surface_bodies 1
+    wb_import_cad_att_pre {SDFEA;DDM}
+    wb_import_mix_res_line 0
+    wb_import_tritol 0.001
     auxiliary 0
-    wb_import_mix_res_surface 0
-    wb_import_mix_res -1
     wb_import_cad_att_trans 1
+    wb_import_mix_res -1
+    wb_import_mix_res_surface 0
     show_name 0
-    wb_import_delete_solids 0
     wb_import_solid_bodies 1
-    wb_import_save_pmdb {}
+    wb_import_delete_solids 0
     wb_import_mix_res_solid 0
+    wb_import_save_pmdb {}
     inherit 1
     default_part GEOM
     new_srf_topo 1
     wb_import_associativity_model_name {}
     DelPerFlag 0
-    wb_import_save_partfile 0
     wb_import_line_bodies 0
+    wb_import_save_partfile 0
+    show_item_name 0
     composite_tolerance 1.0
-    wb_import_en_sym_proc 1
     wb_NS_to_entity_parts 0
-    wb_import_reference_key 0
-    wb_import_work_points 0
+    wb_import_en_sym_proc 1
     wb_import_sel_proc 0
-    wb_NS_only 0
-    wb_import_pluginname {}
+    wb_import_work_points 0
+    wb_import_reference_key 0
     wb_import_mix_res_point 0
-    wb_import_refresh_pmdb 0
+    wb_import_pluginname {}
+    wb_NS_only 0
     wb_import_create_solids 0
-    wb_import_load_pmdb {}
-    wb_import_scale_geo Default
-    wb_import_sel_pre {}
+    wb_import_refresh_pmdb 0
     wb_import_lcs 0
+    wb_import_sel_pre {}
+    wb_import_scale_geo Default
+    wb_import_load_pmdb {}
     replace 0
     wb_import_cad_associativity 0
     same_pnt_tol 1e-4
@@ -237,8 +237,8 @@ array set vid_options {
     vid_mode 0
     DelBlkPerFlag 0
 }
-set savedTreeVisibility {geomNode 1 geom_subsetNode 2 geomPointNode 0 geomCurveNode 2 meshNode 1 mesh_subsetNode 2 meshPointNode 0 meshLineNode 2 meshShellNode 2 meshQuadNode 2 blockingNode 1 block_subsetNode 2 block_vertNode 0 block_edgeNode 2 block_faceNode 0 block_blockNode 0 block_meshNode 0 topoNode 2 topo-root 2 partNode 2 part-GEOM 2 part-INLET 2 part-OUTLET 2 part-SOLID 2 part-VORFN 0 part-WALL 2}
-set last_view {rot {0 0 0 1} scale {613.69723932 613.69723932 613.69723932} center {0 0 0} pos {-498.255812679 29.1920848973 0}}
+set savedTreeVisibility {partNode 2}
+set last_view {rot {0 0 0 1} scale {169.543398428 169.543398428 169.543398428} center {0 0 0} pos {-137.650910507 8.06476706032 0}}
 array set cut_info {
     active 0
     whole 1
@@ -317,5 +317,24 @@ namespace eval ::AIEnv::GUIManagement::DEZ {
         what_to_mesh {All Blocks}
         __hexMeshOptsDim_Last_Index 0
         nTetSmooth 20
+    }
+    array set setBackgroundStyleDEZ_data {
+        this setBackgroundStyleDEZ
+        type DEZ
+        BackgroundOpts {Solid {Top-Bottom Gradient} {Left-Right Gradient} {Diagonal Gradient}}
+        background_style {Top-Bottom Gradient}
+        __setBackgroundStyle_Last_Index 1
+    }
+    array set setProductDEZ_data {
+        this setProductDEZ
+        type DEZ
+        geom_on_mode 1
+        mesh_on_mode 1
+        hexa_on_mode 1
+        meshedit_on_mode 1
+        preprocessing_on_mode 1
+        output_on_mode 1
+        beta_on_mode 0
+        gui_style_on_mode icem
     }
 }

@@ -161,11 +161,11 @@ ic_hex_set_mesh 49 40 n $nr1 h1 0.0 h2 $dyWall r1 2 r2 1.02 lmax 0 geo2 unlocked
 ic_hex_set_mesh 46 34 n $nr1 h1 0.0 h2 [expr $dyWall*100] r1 2 r2 1.15 lmax 0 default locked
 ic_hex_set_mesh 50 34 n $nr1 h1 0.0 h2 linked 34 46 r1 2 r2 1.15 lmax 0 default unlocked
 ic_hex_set_mesh 21 50 n $nr2 h1 0.0 h2 linked 50 34 r1 2 r2 1.05 lmax 0 geo2 locked
-ic_hex_set_mesh 48 49 n $nxA h1 0.0 h2 linked 40 32 r1 1.05 r2 1.05 lmax 0 geo2 unlocked
-ic_hex_set_mesh 44 45 n $nxA h1 0.0 h2 linked 40 32 r1 1.05 r2 1.05 lmax 0 geo2 unlocked
+ic_hex_set_mesh 48 49 n $nxA h1 0.0 h2 linked 40 32 r1 1.07 r2 1.07 lmax 0 default unlocked
+ic_hex_set_mesh 44 45 n $nxA h1 0.0 h2 linked 40 32 r1 1.07 r2 1.07 lmax 0 default unlocked
 ic_hex_set_mesh 41 49 n $nr2 h1 0.0 h2 linked 49 40 r1 1 r2 1.05 lmax 0 geo2 locked
-ic_hex_set_mesh 33 40 n $nxA h1 linked 32 33 h2 0 r1 1.05 r2 1.05 lmax 0 default locked
-ic_hex_set_mesh 32 40 n $nxA h1 linked 32 33 h2 0 r1 1.05 r2 1.05 lmax 0 default locked
+ic_hex_set_mesh 33 40 n $nxA h1 linked 32 33 h2 linked 40 32 r1 1.07 r2 1.07 lmax 0 default locked
+ic_hex_set_mesh 32 40 n $nxA h1 linked 32 33 h2 0.003 r1 1.07 r2 1.07 lmax 0 default locked
 ic_hex_set_mesh 11 39 n $nxA h1 0.0 h2 linked 40 32 r1 1.05 r2 1.05 lmax 0 default locked
 ic_hex_set_mesh 13 41 n $nxA h1 0.0 h2 linked 40 32 r1 1.05 r2 1.05 lmax 0 default locked
 ic_hex_set_mesh 11 13 n $nyA h1 linked 11 39 h2 linked 13 41 r1 1.03 r2 1.03 lmax 0 default locked

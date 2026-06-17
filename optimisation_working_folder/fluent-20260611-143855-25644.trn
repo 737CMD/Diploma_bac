@@ -171,3 +171,6 @@ Done.
 (cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))
 (cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Results"))
 (cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))
+/exit y
+Auto-Transcript Stop Time:  16:32:09, 13 Jun 2026 Russia TZ 2 Standard Time 
+Total Transcript Time: 2 Day 1 Hour 53 Minute 14 Second.
