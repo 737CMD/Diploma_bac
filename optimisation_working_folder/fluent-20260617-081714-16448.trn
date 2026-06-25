@@ -29322,3 +29322,12 @@ Hybrid initialization is done.
   iter  continuity  x-velocity  y-velocity      energy         nut          mz          cx          cy     time/iter
   9999  2.5315e-07  5.7425e-11  1.3871e-11  1.6417e-10  2.9778e-10 -1.2130e-01 -1.5903e-03  9.0906e-01  0:00:00    1
  10000  2.4643e-07  5.5837e-11  1.3397e-11  1.6039e-10  2.9083e-10 -1.2130e-01 -1.5903e-03  9.0906e-01  0:00:00    0
+/exit y
+(cx-gui-do cx-activate-item "Question*OK")
+Shutting down Server...
+Services Shutdown...Done.
+Server Shutdown...Done.
+Queue Cleared...Done.
+Shutdown Complete.
+Auto-Transcript Stop Time:  20:06:56, 17 Jun 2026 Russia TZ 2 Standard Time 
+Total Transcript Time: 11 Hour 49 Minute 42 Second.
